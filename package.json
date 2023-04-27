@@ -6,7 +6,11 @@
     "develop:backend": "yarn --cwd backend develop",
     "develop:frontend": "wait-on http://localhost:1337/admin && yarn --cwd frontend dev",
     "develop": "cross-env FORCE_COLOR=1 npm-run-all -l -p develop:*",
-    "install-de": "yarn --cwd backend && yarn --cwd frontend"
+    "install-de": "yarn --cwd backend && yarn --cwd backend postinstall && yarn --cwd frontend",
+    "start:backend": "yarn --cwd backend build-production && yarn --cwd backend start",
+    "generate-api": "wait-on http://localhost:1337/admin && yarn --cwd backend generate-api",
+    "start:frontend": "yarn generate-api && cd frontend && yarn build && yarn serve",
+    "start": "cross-env FORCE_COLOR=2 npm-run-all -l -p start:*"
   },
   "devDependencies": {
     "npm-run-all": "4.1.5",

@@ -8,9 +8,6 @@ module.exports = ({ env }) => {
     webhooks: {
       populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
     },
-    url:
-      process.env.NODE_ENV === "production"
-        ? "https://cms.scssolutions.io"
-        : undefined,
+    url: process.env.NODE_ENV === "production" ? env("HOST_URL") : undefined,
   };
 };
