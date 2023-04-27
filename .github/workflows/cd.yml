@@ -23,7 +23,7 @@ jobs:
         key: ${{ secrets.SSHKEY }}
         port: 22
         script: |
-          cd cd /var/www/duocphuminh
+          cd /var/www/duocphuminh
           git pull origin master
           git status
           npm install
