@@ -3,7 +3,7 @@
 module.exports = ({ strapi }) => ({
   index(ctx) {
     ctx.body = strapi
-      .plugin('strapi-icon-select')
+      .plugin('icon-picker')
       .service('myService')
       .getWelcomeMessage();
   },

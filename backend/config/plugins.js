@@ -13,6 +13,7 @@ module.exports = ({ env }) => ({
   },
   "icon-picker": {
     enabled: true,
+    resolve: "./src/plugins/strapi-plugin-icon-picker",
   },
   upload: {
     config: {
