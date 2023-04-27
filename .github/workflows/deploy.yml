@@ -31,5 +31,5 @@ jobs:
             npm install
             yarn install-de
             touch backend/.env
-            echo "${{ variables.BACKEND_ENV }}" > backend/.env
+            echo "${{ vars.BACKEND_ENV }}" > backend/.env
             npm run start
