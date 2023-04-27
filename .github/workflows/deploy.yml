@@ -27,6 +27,7 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
           script: |
+            pm2 delete duocphuminh
             cd /var/www/duocphuminh
             npm install
             yarn install-de
