@@ -3,12 +3,16 @@ name: Deploy DuocPhuMinh
 on: [push]
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
     environment: main
     steps:
+      - name: Create env file
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > /backend/.env
       - uses: actions/checkout@v1
-
+   
       - name: Copy repository contents via scp
         uses: appleboy/scp-action@master
         with:
