@@ -1,0 +1,13 @@
+:root{
+  --primary: #3599cc;
+  --secondary: #18455d
+}
+.sticky {
+  position: sticky; top: 0;
+  background-color: white;
+  z-index: 9999;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.white-filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}

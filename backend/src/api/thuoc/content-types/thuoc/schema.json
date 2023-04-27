@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "thuocs",
+  "info": {
+    "singularName": "thuoc",
+    "pluralName": "thuocs",
+    "displayName": "Thuốc",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "form": {
+      "type": "string"
+    },
+    "packing": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "promotionPrice": {
+      "type": "decimal"
+    },
+    "material": {
+      "type": "text"
+    },
+    "uses": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "on",
+        "off"
+      ],
+      "default": "on"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "indication": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "guide": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "prescription": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "introduce": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "isHot": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -3,11 +3,72 @@
   "info": {
     "name": "feature",
     "displayName": "Feature",
-    "icon": "traffic-light"
+    "icon": "traffic-light",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": false
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "content2": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "buttonTitle": {
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    },
+    "name2": {
+      "type": "string"
+    },
+    "subTitle2": {
       "type": "string"
     }
   }

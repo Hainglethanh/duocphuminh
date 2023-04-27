@@ -1,0 +1,2221 @@
+diff --git a/node_modules/@strapi/plugin-documentation/LICENSE b/node_modules/@strapi/plugin-documentation/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/__mocks__/strapi.js b/node_modules/@strapi/plugin-documentation/__mocks__/strapi.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/__tests__/build-component-schema.test.js b/node_modules/@strapi/plugin-documentation/__tests__/build-component-schema.test.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/components/FieldActionWrapper/index.js b/node_modules/@strapi/plugin-documentation/admin/src/components/FieldActionWrapper/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/components/PluginIcon/index.js b/node_modules/@strapi/plugin-documentation/admin/src/components/PluginIcon/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/index.js b/node_modules/@strapi/plugin-documentation/admin/src/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/PluginPage/tests/index.test.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/PluginPage/tests/index.test.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/PluginPage/tests/server.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/PluginPage/tests/server.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/SettingsPage/index.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/SettingsPage/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/SettingsPage/tests/index.test.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/SettingsPage/tests/index.test.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/SettingsPage/tests/server.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/SettingsPage/tests/server.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/utils/api.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/utils/api.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/utils/schema.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/utils/schema.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pages/utils/useReactQuery.js b/node_modules/@strapi/plugin-documentation/admin/src/pages/utils/useReactQuery.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/permissions.js b/node_modules/@strapi/plugin-documentation/admin/src/permissions.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/pluginId.js b/node_modules/@strapi/plugin-documentation/admin/src/pluginId.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/translations/cs.json b/node_modules/@strapi/plugin-documentation/admin/src/translations/cs.json
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/translations/id.json b/node_modules/@strapi/plugin-documentation/admin/src/translations/id.json
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/translations/ms.json b/node_modules/@strapi/plugin-documentation/admin/src/translations/ms.json
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/translations/sv.json b/node_modules/@strapi/plugin-documentation/admin/src/translations/sv.json
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/utils/getTrad.js b/node_modules/@strapi/plugin-documentation/admin/src/utils/getTrad.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/admin/src/utils/index.js b/node_modules/@strapi/plugin-documentation/admin/src/utils/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/config/default-plugin-config.js b/node_modules/@strapi/plugin-documentation/server/config/default-plugin-config.js
+old mode 100644
+new mode 100755
+index 101f62a..08c185a
+--- a/node_modules/@strapi/plugin-documentation/server/config/default-plugin-config.js
++++ b/node_modules/@strapi/plugin-documentation/server/config/default-plugin-config.js
+@@ -19,9 +19,8 @@ module.exports = {
+   },
+   'x-strapi-config': {
+     path: '/documentation',
+-    showGeneratedFiles: true,
+-    generateDefaultResponse: true,
+-    plugins: ['email', 'upload', 'users-permissions'],
++    plugins: null,
++    mutateDocumentation: null,
+   },
+   servers: [],
+   externalDocs: {
+@@ -33,42 +32,4 @@ module.exports = {
+       bearerAuth: [],
+     },
+   ],
+-  components: {
+-    securitySchemes: {
+-      bearerAuth: {
+-        type: 'http',
+-        scheme: 'bearer',
+-        bearerFormat: 'JWT',
+-      },
+-    },
+-    schemas: {
+-      Error: {
+-        type: 'object',
+-        required: ['error'],
+-        properties: {
+-          data: {
+-            nullable: true,
+-            oneOf: [{ type: 'object' }, { type: 'array', items: [] }],
+-          },
+-          error: {
+-            type: 'object',
+-            properties: {
+-              status: {
+-                type: 'integer',
+-              },
+-              name: {
+-                type: 'string',
+-              },
+-              message: {
+-                type: 'string',
+-              },
+-              details: {
+-                type: 'object',
+-              },
+-            },
+-          },
+-        },
+-      },
+-    },
+-  },
+ };
+diff --git a/node_modules/@strapi/plugin-documentation/server/config/index.js b/node_modules/@strapi/plugin-documentation/server/config/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/controllers/documentation.js b/node_modules/@strapi/plugin-documentation/server/controllers/documentation.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/controllers/index.js b/node_modules/@strapi/plugin-documentation/server/controllers/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/index.js b/node_modules/@strapi/plugin-documentation/server/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/middlewares/index.js b/node_modules/@strapi/plugin-documentation/server/middlewares/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/middlewares/restrict-access.js b/node_modules/@strapi/plugin-documentation/server/middlewares/restrict-access.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/register.js b/node_modules/@strapi/plugin-documentation/server/register.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/routes/index.js b/node_modules/@strapi/plugin-documentation/server/routes/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/__mocks__/mock-content-types.js b/node_modules/@strapi/plugin-documentation/server/services/__mocks__/mock-content-types.js
+new file mode 100755
+index 0000000..a80ef74
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/__mocks__/mock-content-types.js
+@@ -0,0 +1,253 @@
++'use strict';
++
++module.exports = {
++  'plugin::upload.file': {
++    collectionName: 'files',
++    info: { singularName: 'file', pluralName: 'files', displayName: 'File', description: '' },
++    options: {},
++    pluginOptions: {
++      'content-manager': { visible: false },
++      'content-type-builder': { visible: false },
++    },
++    attributes: {
++      name: { type: 'string', configurable: false, required: true },
++      alternativeText: { type: 'string', configurable: false },
++      caption: { type: 'string', configurable: false },
++      width: { type: 'integer', configurable: false },
++      height: { type: 'integer', configurable: false },
++      formats: { type: 'json', configurable: false },
++      hash: { type: 'string', configurable: false, required: true },
++      ext: { type: 'string', configurable: false },
++      mime: { type: 'string', configurable: false, required: true },
++      size: { type: 'decimal', configurable: false, required: true },
++      url: { type: 'string', configurable: false, required: true },
++      previewUrl: { type: 'string', configurable: false },
++      provider: { type: 'string', configurable: false, required: true },
++      provider_metadata: { type: 'json', configurable: false },
++      related: { type: 'relation', relation: 'morphToMany', configurable: false },
++      folder: {
++        type: 'relation',
++        relation: 'manyToOne',
++        target: 'plugin::upload.folder',
++        inversedBy: 'files',
++        private: true,
++      },
++      folderPath: { type: 'string', min: 1, required: true, private: true },
++      createdAt: { type: 'datetime' },
++      updatedAt: { type: 'datetime' },
++      createdBy: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'admin::user',
++        configurable: false,
++        writable: false,
++        visible: false,
++        useJoinTable: false,
++        private: true,
++      },
++      updatedBy: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'admin::user',
++        configurable: false,
++        writable: false,
++        visible: false,
++        useJoinTable: false,
++        private: true,
++      },
++    },
++    indexes: [
++      { name: 'upload_files_folder_path_index', columns: ['folder_path'], type: null },
++      { name: 'upload_files_created_at_index', columns: ['created_at'], type: null },
++      { name: 'upload_files_updated_at_index', columns: ['updated_at'], type: null },
++      { name: 'upload_files_name_index', columns: ['name'], type: null },
++      { name: 'upload_files_size_index', columns: ['size'], type: null },
++      { name: 'upload_files_ext_index', columns: ['ext'], type: null },
++    ],
++    kind: 'collectionType',
++    modelType: 'contentType',
++    modelName: 'file',
++    connection: 'default',
++    uid: 'plugin::upload.file',
++    plugin: 'upload',
++    globalId: 'UploadFile',
++  },
++  'plugin::upload.folder': {
++    collectionName: 'upload_folders',
++    info: { singularName: 'folder', pluralName: 'folders', displayName: 'Folder' },
++    options: {},
++    pluginOptions: {
++      'content-manager': { visible: false },
++      'content-type-builder': { visible: false },
++    },
++    attributes: {
++      name: { type: 'string', min: 1, required: true },
++      pathId: { type: 'integer', unique: true, required: true },
++      parent: {
++        type: 'relation',
++        relation: 'manyToOne',
++        target: 'plugin::upload.folder',
++        inversedBy: 'children',
++      },
++      children: {
++        type: 'relation',
++        relation: 'oneToMany',
++        target: 'plugin::upload.folder',
++        mappedBy: 'parent',
++      },
++      files: {
++        type: 'relation',
++        relation: 'oneToMany',
++        target: 'plugin::upload.file',
++        mappedBy: 'folder',
++      },
++      path: { type: 'string', min: 1, required: true },
++      createdAt: { type: 'datetime' },
++      updatedAt: { type: 'datetime' },
++      createdBy: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'admin::user',
++        configurable: false,
++        writable: false,
++        visible: false,
++        useJoinTable: false,
++        private: true,
++      },
++      updatedBy: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'admin::user',
++        configurable: false,
++        writable: false,
++        visible: false,
++        useJoinTable: false,
++        private: true,
++      },
++    },
++    indexes: [
++      { name: 'upload_folders_path_id_index', columns: ['path_id'], type: 'unique' },
++      { name: 'upload_folders_path_index', columns: ['path'], type: 'unique' },
++    ],
++    kind: 'collectionType',
++    modelType: 'contentType',
++    modelName: 'folder',
++    connection: 'default',
++    uid: 'plugin::upload.folder',
++    plugin: 'upload',
++    globalId: 'UploadFolder',
++  },
++  'api::kitchensink.kitchensink': {
++    kind: 'collectionType',
++    collectionName: 'kitchensinks',
++    info: {
++      displayName: 'Kitchen Sink',
++      singularName: 'kitchensink',
++      pluralName: 'kitchensinks',
++      description: '',
++      name: 'Kitchen Sink',
++    },
++    options: { draftAndPublish: true },
++    pluginOptions: {},
++    attributes: {
++      short_text: { type: 'string' },
++      long_text: { type: 'text' },
++      rich_text: { type: 'richtext' },
++      integer: { type: 'integer' },
++      biginteger: { type: 'biginteger' },
++      decimal: { type: 'decimal' },
++      float: { type: 'float' },
++      date: { type: 'date' },
++      datetime: { type: 'datetime' },
++      time: { type: 'time' },
++      timestamp: { type: 'timestamp' },
++      boolean: { type: 'boolean' },
++      email: { type: 'email' },
++      password: { type: 'password' },
++      enumeration: { type: 'enumeration', enum: ['A', 'B', 'C', 'D', 'E'] },
++      single_media: {
++        type: 'media',
++        multiple: false,
++        required: false,
++        allowedTypes: ['images', 'files', 'videos'],
++      },
++      multiple_media: {
++        type: 'media',
++        multiple: true,
++        required: false,
++        allowedTypes: ['images', 'files', 'videos'],
++      },
++      json: { type: 'json' },
++      single_compo: { type: 'component', repeatable: false, component: 'basic.simple' },
++      repeatable_compo: { type: 'component', repeatable: true, component: 'basic.simple' },
++      dynamiczone: { type: 'dynamiczone', components: ['basic.simple', 'blog.test-como'] },
++      one_way_tag: { type: 'relation', relation: 'oneToOne', target: 'api::tag.tag' },
++      one_to_one_tag: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'api::tag.tag',
++        private: true,
++        inversedBy: 'one_to_one_kitchensink',
++      },
++      one_to_many_tags: {
++        type: 'relation',
++        relation: 'oneToMany',
++        target: 'api::tag.tag',
++        mappedBy: 'many_to_one_kitchensink',
++      },
++      many_to_one_tag: {
++        type: 'relation',
++        relation: 'manyToOne',
++        target: 'api::tag.tag',
++        inversedBy: 'one_to_many_kitchensinks',
++      },
++      many_to_many_tags: {
++        type: 'relation',
++        relation: 'manyToMany',
++        target: 'api::tag.tag',
++        inversedBy: 'many_to_many_kitchensinks',
++      },
++      many_way_tags: { type: 'relation', relation: 'oneToMany', target: 'api::tag.tag' },
++      morph_to_one: { type: 'relation', relation: 'morphToOne' },
++      morph_to_many: { type: 'relation', relation: 'morphToMany' },
++      custom_field: { type: 'string', customField: 'plugin::color-picker.color' },
++      custom_field_with_default_options: {
++        type: 'string',
++        regex: '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$',
++        customField: 'plugin::color-picker.color',
++      },
++      cats: { type: 'dynamiczone', components: ['basic.relation', 'basic.simple'] },
++      createdAt: { type: 'datetime' },
++      updatedAt: { type: 'datetime' },
++      publishedAt: { type: 'datetime', configurable: false, writable: true, visible: false },
++      createdBy: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'admin::user',
++        configurable: false,
++        writable: false,
++        visible: false,
++        useJoinTable: false,
++        private: true,
++      },
++      updatedBy: {
++        type: 'relation',
++        relation: 'oneToOne',
++        target: 'admin::user',
++        configurable: false,
++        writable: false,
++        visible: false,
++        useJoinTable: false,
++        private: true,
++      },
++    },
++    modelType: 'contentType',
++    modelName: 'kitchensink',
++    connection: 'default',
++    uid: 'api::kitchensink.kitchensink',
++    apiName: 'kitchensink',
++    globalId: 'Kitchensink',
++    actions: {},
++    lifecycles: {},
++  },
++};
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/__mocks__/mock-strapi-data.js b/node_modules/@strapi/plugin-documentation/server/services/__mocks__/mock-strapi-data.js
+new file mode 100755
+index 0000000..2bc8ab1
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/__mocks__/mock-strapi-data.js
+@@ -0,0 +1,143 @@
++'use strict';
++
++const contentTypes = require('./mock-content-types');
++
++module.exports = {
++  contentTypes,
++  components: {
++    'basic.simple': {
++      collectionName: 'components_basic_simples',
++      info: { displayName: 'simple', icon: 'ambulance', description: '' },
++      options: {},
++      attributes: { name: { type: 'string', required: true }, test: { type: 'string' } },
++      uid: 'basic.simple',
++      category: 'basic',
++      modelType: 'component',
++      modelName: 'simple',
++      globalId: 'ComponentBasicSimple',
++    },
++    'blog.test-como': {
++      collectionName: 'components_blog_test_comos',
++      info: { displayName: 'test comp', icon: 'air-freshener', description: '' },
++      options: {},
++      attributes: { name: { type: 'string', default: 'toto' } },
++      uid: 'blog.test-como',
++      category: 'blog',
++      modelType: 'component',
++      modelName: 'test-como',
++      globalId: 'ComponentBlogTestComo',
++    },
++    'basic.relation': {
++      collectionName: 'components_basic_relations',
++      info: { displayName: 'Relation' },
++      options: {},
++      attributes: {
++        categories: { type: 'relation', relation: 'oneToMany', target: 'api::category.category' },
++      },
++      uid: 'basic.relation',
++      category: 'basic',
++      modelType: 'component',
++      modelName: 'relation',
++      globalId: 'ComponentBasicRelation',
++    },
++  },
++  plugins: {
++    upload: {
++      contentTypes: {
++        file: contentTypes['plugin::upload.file'],
++        folder: contentTypes['plugin::upload.folder'],
++      },
++      routes: {
++        'content-api': {
++          type: 'content-api',
++          routes: [
++            {
++              method: 'POST',
++              path: '/',
++              handler: 'content-api.upload',
++              config: { auth: { scope: ['plugin::upload.content-api.upload'] } },
++              info: { pluginName: 'upload', type: 'content-api' },
++            },
++            {
++              method: 'GET',
++              path: '/files',
++              handler: 'content-api.find',
++              config: { auth: { scope: ['plugin::upload.content-api.find'] } },
++              info: { pluginName: 'upload', type: 'content-api' },
++            },
++            {
++              method: 'GET',
++              path: '/files/:id',
++              handler: 'content-api.findOne',
++              config: { auth: { scope: ['plugin::upload.content-api.findOne'] } },
++              info: { pluginName: 'upload', type: 'content-api' },
++            },
++            {
++              method: 'DELETE',
++              path: '/files/:id',
++              handler: 'content-api.destroy',
++              config: { auth: { scope: ['plugin::upload.content-api.destroy'] } },
++              info: { pluginName: 'upload', type: 'content-api' },
++            },
++          ],
++          prefix: '/upload',
++        },
++      },
++    },
++    email: {
++      contentTypes: {},
++    },
++    'users-permissions': {
++      contentTypes: {},
++    },
++  },
++  api: {
++    kitchensink: {
++      contentTypes: {
++        kitchensink: contentTypes['api::kitchensink.kitchensink'],
++      },
++      routes: {
++        kitchensink: {
++          routes: [
++            {
++              method: 'GET',
++              path: '/kitchensinks',
++              handler: 'api::kitchensink.kitchensink.find',
++              config: { auth: { scope: ['api::kitchensink.kitchensink.find'] } },
++              info: { apiName: 'kitchensink', type: 'content-api' },
++            },
++            {
++              method: 'GET',
++              path: '/kitchensinks/:id',
++              handler: 'api::kitchensink.kitchensink.findOne',
++              config: { auth: { scope: ['api::kitchensink.kitchensink.findOne'] } },
++              info: { apiName: 'kitchensink', type: 'content-api' },
++            },
++            {
++              method: 'POST',
++              path: '/kitchensinks',
++              handler: 'api::kitchensink.kitchensink.create',
++              config: { auth: { scope: ['api::kitchensink.kitchensink.create'] } },
++              info: { apiName: 'kitchensink', type: 'content-api' },
++            },
++            {
++              method: 'PUT',
++              path: '/kitchensinks/:id',
++              handler: 'api::kitchensink.kitchensink.update',
++              config: { auth: { scope: ['api::kitchensink.kitchensink.update'] } },
++              info: { apiName: 'kitchensink', type: 'content-api' },
++            },
++            {
++              method: 'DELETE',
++              path: '/kitchensinks/:id',
++              handler: 'api::kitchensink.kitchensink.delete',
++              config: { auth: { scope: ['api::kitchensink.kitchensink.delete'] } },
++              info: { apiName: 'kitchensink', type: 'content-api' },
++            },
++          ],
++          type: 'content-api',
++        },
++      },
++    },
++  },
++};
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/__tests__/build-component-schema.test.js b/node_modules/@strapi/plugin-documentation/server/services/__tests__/build-component-schema.test.js
+new file mode 100755
+index 0000000..9ac6ffd
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/__tests__/build-component-schema.test.js
+@@ -0,0 +1,482 @@
++'use strict';
++
++const _ = require('lodash/fp');
++const buildComponentSchema = require('../helpers/build-component-schema');
++
++const strapi = {
++  plugins: {
++    'users-permissions': {
++      contentTypes: {
++        role: {
++          attributes: {
++            name: {
++              type: 'string',
++            },
++          },
++        },
++      },
++      routes: {
++        'content-api': {
++          routes: [],
++        },
++      },
++    },
++  },
++  api: {
++    restaurant: {
++      contentTypes: {
++        restaurant: {
++          attributes: {
++            name: {
++              type: 'string',
++            },
++          },
++        },
++      },
++      routes: {
++        restaurant: { routes: [] },
++      },
++    },
++  },
++  contentType: () => ({ info: {}, attributes: { test: { type: 'string' } } }),
++};
++
++describe('Build Component Schema', () => {
++  beforeEach(() => {
++    // Reset the mocked strapi instance
++    global.strapi = _.cloneDeep(strapi);
++  });
++
++  afterAll(() => {
++    // Teardown the mocked strapi instance
++    global.strapi = {};
++  });
++
++  it('builds the Response schema', () => {
++    const apiMocks = [
++      {
++        name: 'users-permissions',
++        getter: 'plugin',
++        ctNames: ['role'],
++      },
++      { name: 'restaurant', getter: 'api', ctNames: ['restaurant'] },
++    ];
++
++    let schemas = {};
++    for (const mock of apiMocks) {
++      schemas = {
++        ...schemas,
++        ...buildComponentSchema(mock),
++      };
++    }
++
++    const expectedSchemas = {
++      UsersPermissionsRoleResponseDataObject: {
++        type: 'object',
++        properties: {
++          id: {
++            type: 'number',
++          },
++          attributes: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      UsersPermissionsRoleResponse: {
++        properties: {
++          data: {
++            $ref: '#/components/schemas/UsersPermissionsRoleResponseDataObject',
++          },
++          meta: {
++            type: 'object',
++          },
++        },
++      },
++      RestaurantResponseDataObject: {
++        type: 'object',
++        properties: {
++          id: {
++            type: 'number',
++          },
++          attributes: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      RestaurantResponse: {
++        properties: {
++          data: {
++            $ref: '#/components/schemas/RestaurantResponseDataObject',
++          },
++          meta: {
++            type: 'object',
++          },
++        },
++      },
++    };
++
++    expect(schemas).toStrictEqual(expectedSchemas);
++  });
++
++  it('builds the ResponseList schema', () => {
++    global.strapi.plugins['users-permissions'].routes['content-api'].routes = [
++      { method: 'GET', path: '/test', handler: 'test.find' },
++    ];
++    global.strapi.api.restaurant.routes.restaurant.routes = [
++      { method: 'GET', path: '/test', handler: 'test.find' },
++    ];
++
++    const apiMocks = [
++      {
++        name: 'users-permissions',
++        getter: 'plugin',
++        ctNames: ['role'],
++      },
++      { name: 'restaurant', getter: 'api', ctNames: ['restaurant'] },
++    ];
++
++    let schemas = {};
++    for (const mock of apiMocks) {
++      schemas = {
++        ...schemas,
++        ...buildComponentSchema(mock),
++      };
++    }
++
++    const expectedSchemas = {
++      UsersPermissionsRoleListResponseDataItem: {
++        type: 'object',
++        properties: {
++          id: {
++            type: 'number',
++          },
++          attributes: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      UsersPermissionsRoleListResponse: {
++        properties: {
++          data: {
++            type: 'array',
++            items: {
++              $ref: '#/components/schemas/UsersPermissionsRoleListResponseDataItem',
++            },
++          },
++          meta: {
++            type: 'object',
++            properties: {
++              pagination: {
++                properties: {
++                  page: {
++                    type: 'integer',
++                  },
++                  pageSize: {
++                    type: 'integer',
++                    minimum: 25,
++                  },
++                  pageCount: {
++                    type: 'integer',
++                    maximum: 1,
++                  },
++                  total: {
++                    type: 'integer',
++                  },
++                },
++              },
++            },
++          },
++        },
++      },
++      UsersPermissionsRoleResponseDataObject: {
++        type: 'object',
++        properties: {
++          id: {
++            type: 'number',
++          },
++          attributes: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      UsersPermissionsRoleResponse: {
++        properties: {
++          data: {
++            $ref: '#/components/schemas/UsersPermissionsRoleResponseDataObject',
++          },
++          meta: {
++            type: 'object',
++          },
++        },
++      },
++      RestaurantListResponseDataItem: {
++        type: 'object',
++        properties: {
++          id: {
++            type: 'number',
++          },
++          attributes: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      RestaurantListResponse: {
++        properties: {
++          data: {
++            type: 'array',
++            items: {
++              $ref: '#/components/schemas/RestaurantListResponseDataItem',
++            },
++          },
++          meta: {
++            type: 'object',
++            properties: {
++              pagination: {
++                properties: {
++                  page: {
++                    type: 'integer',
++                  },
++                  pageSize: {
++                    type: 'integer',
++                    minimum: 25,
++                  },
++                  pageCount: {
++                    type: 'integer',
++                    maximum: 1,
++                  },
++                  total: {
++                    type: 'integer',
++                  },
++                },
++              },
++            },
++          },
++        },
++      },
++      RestaurantResponseDataObject: {
++        type: 'object',
++        properties: {
++          id: {
++            type: 'number',
++          },
++          attributes: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      RestaurantResponse: {
++        properties: {
++          data: {
++            $ref: '#/components/schemas/RestaurantResponseDataObject',
++          },
++          meta: {
++            type: 'object',
++          },
++        },
++      },
++    };
++
++    expect(schemas).toStrictEqual(expectedSchemas);
++  });
++
++  it('builds the Request schema', () => {
++    global.strapi.plugins['users-permissions'].routes['content-api'].routes = [
++      { method: 'POST', path: '/test', handler: 'test.create' },
++    ];
++    global.strapi.api.restaurant.routes.restaurant.routes = [
++      { method: 'POST', path: '/test', handler: 'test.create' },
++    ];
++
++    const apiMocks = [
++      {
++        name: 'users-permissions',
++        getter: 'plugin',
++        ctNames: ['role'],
++      },
++      { name: 'restaurant', getter: 'api', ctNames: ['restaurant'] },
++    ];
++
++    let schemas = {};
++    for (const mock of apiMocks) {
++      schemas = {
++        ...schemas,
++        ...buildComponentSchema(mock),
++      };
++    }
++    // Just get the request objects
++    const requestObjectsSchemas = Object.entries(schemas).reduce((acc, curr) => {
++      const [key, val] = curr;
++      if (key.endsWith('Request')) {
++        acc[key] = val;
++      }
++
++      return acc;
++    }, {});
++
++    const expectedSchemas = {
++      UsersPermissionsRoleRequest: {
++        type: 'object',
++        required: ['data'],
++        properties: {
++          data: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++      RestaurantRequest: {
++        type: 'object',
++        required: ['data'],
++        properties: {
++          data: {
++            type: 'object',
++            properties: {
++              test: {
++                type: 'string',
++              },
++            },
++          },
++        },
++      },
++    };
++
++    expect(requestObjectsSchemas).toStrictEqual(expectedSchemas);
++  });
++
++  it('builds the LocalizationResponse schema', () => {
++    global.strapi.plugins['users-permissions'].routes['content-api'].routes = [
++      { method: 'GET', path: '/localizations', handler: 'test' },
++    ];
++    global.strapi.api.restaurant.routes.restaurant.routes = [
++      { method: 'GET', path: '/localizations', handler: 'test' },
++    ];
++
++    const apiMocks = [
++      {
++        name: 'users-permissions',
++        getter: 'plugin',
++        ctNames: ['role'],
++      },
++      { name: 'restaurant', getter: 'api', ctNames: ['restaurant'] },
++    ];
++
++    let schemas = {};
++    for (const mock of apiMocks) {
++      schemas = {
++        ...schemas,
++        ...buildComponentSchema(mock),
++      };
++    }
++
++    const schemaNames = Object.keys(schemas);
++    const pluginListLocalizationResponseValue = schemas.UsersPermissionsRoleLocalizationResponse;
++    const apiListLocalizationResponseValue = schemas.RestaurantLocalizationResponse;
++
++    const expectedShape = {
++      type: 'object',
++      properties: {
++        id: { type: 'number' },
++        test: { type: 'string' },
++      },
++    };
++
++    expect(schemaNames.includes('UsersPermissionsRoleLocalizationResponse')).toBe(true);
++    expect(schemaNames.includes('RestaurantLocalizationResponse')).toBe(true);
++    expect(pluginListLocalizationResponseValue).toStrictEqual(expectedShape);
++    expect(apiListLocalizationResponseValue).toStrictEqual(expectedShape);
++  });
++
++  it('builds the LocalizationRequest schema', () => {
++    global.strapi.plugins['users-permissions'].routes['content-api'].routes = [
++      { method: 'POST', path: '/localizations', handler: 'test' },
++    ];
++    global.strapi.api.restaurant.routes.restaurant.routes = [
++      { method: 'POST', path: '/localizations', handler: 'test' },
++    ];
++
++    const apiMocks = [
++      {
++        name: 'users-permissions',
++        getter: 'plugin',
++        ctNames: ['role'],
++      },
++      { name: 'restaurant', getter: 'api', ctNames: ['restaurant'] },
++    ];
++
++    let schemas = {};
++    for (const mock of apiMocks) {
++      schemas = {
++        ...schemas,
++        ...buildComponentSchema(mock),
++      };
++    }
++
++    const schemaNames = Object.keys(schemas);
++    const pluginListResponseLocalizationRequest = schemas.UsersPermissionsRoleLocalizationRequest;
++    const apiListResponseLocalizationRequest = schemas.RestaurantLocalizationRequest;
++
++    const expectedShape = {
++      type: 'object',
++      required: ['locale'],
++      properties: { test: { type: 'string' } },
++    };
++
++    expect(schemaNames.includes('UsersPermissionsRoleLocalizationRequest')).toBe(true);
++    expect(schemaNames.includes('RestaurantLocalizationRequest')).toBe(true);
++    expect(pluginListResponseLocalizationRequest).toStrictEqual(expectedShape);
++    expect(apiListResponseLocalizationRequest).toStrictEqual(expectedShape);
++  });
++
++  it('creates the correct name given multiple content types', () => {
++    const apiMock = {
++      name: 'users-permissions',
++      getter: 'plugin',
++      ctNames: ['permission', 'role', 'user'],
++    };
++
++    const schemas = buildComponentSchema(apiMock);
++    const schemaNames = Object.keys(schemas);
++    expect(schemaNames).toStrictEqual([
++      'UsersPermissionsPermissionResponseDataObject',
++      'UsersPermissionsPermissionResponse',
++      'UsersPermissionsRoleResponseDataObject',
++      'UsersPermissionsRoleResponse',
++      'UsersPermissionsUserResponseDataObject',
++      'UsersPermissionsUserResponse',
++    ]);
++  });
++});
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/__tests__/documentation.test.js b/node_modules/@strapi/plugin-documentation/server/services/__tests__/documentation.test.js
+new file mode 100755
+index 0000000..cb318ea
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/__tests__/documentation.test.js
+@@ -0,0 +1,430 @@
++'use strict';
++
++const _ = require('lodash/fp');
++const fse = require('fs-extra');
++const SwaggerParser = require('@apidevtools/swagger-parser');
++const { api, plugins, components, contentTypes } = require('../__mocks__/mock-strapi-data');
++const documentation = require('../documentation');
++const override = require('../override');
++const defaultConfig = require('../../config/default-plugin-config');
++
++const mockStrapiInstance = {
++  dirs: {
++    app: {
++      api: './',
++      extensions: './',
++    },
++  },
++  contentTypes,
++  components,
++  api,
++  plugins,
++  config: {
++    get: () => defaultConfig,
++  },
++  log: {
++    info: jest.fn(),
++    warn: jest.fn(),
++  },
++};
++
++jest.mock('fs-extra', () => ({
++  ...jest.requireActual('fs-extra'),
++  writeJson: jest.fn(),
++  ensureFile: jest.fn(),
++}));
++
++describe('Documentation service', () => {
++  beforeAll(() => {
++    global.strapi = mockStrapiInstance;
++    global.strapi.contentType = jest.fn((uid) => {
++      // Only deal with mocked data, return empty attributes for unmocked relations
++      if (!global.strapi.contentTypes[uid]) return { attributes: {} };
++
++      return global.strapi.contentTypes[uid];
++    });
++    global.strapi.plugin = jest.fn((name) => global.strapi.plugins[name]);
++
++    global.strapi.plugins.documentation = {
++      service: jest.fn((name) => {
++        const mockServices = {
++          override: override({ strapi: global.strapi }),
++        };
++
++        return mockServices[name];
++      }),
++    };
++  });
++
++  afterAll(() => {
++    // Teardown the mocked strapi instance
++    global.strapi = {};
++  });
++
++  afterEach(() => {
++    // Reset the mocked strapi config
++    global.strapi.config.get = () => defaultConfig;
++  });
++
++  it('generates a valid openapi schema', async () => {
++    const docService = documentation({ strapi: global.strapi });
++    await docService.generateFullDoc();
++    const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++    const mockFinalDoc = lastMockCall[1];
++
++    // The final documenation is read only, clone deep for this test
++    const validatePromise = SwaggerParser.validate(_.cloneDeep(mockFinalDoc));
++
++    await expect(validatePromise).resolves.not.toThrow();
++  });
++
++  describe('Determines the plugins that need documentation', () => {
++    it('generates documentation for the default plugins if the user provided nothing in the config', async () => {
++      const docService = documentation({ strapi: global.strapi });
++
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++
++      expect(mockFinalDoc['x-strapi-config'].plugins).toEqual(['upload', 'users-permissions']);
++    });
++
++    it("generates documentation only for plugins in the user's config", async () => {
++      global.strapi.config.get = () => ({
++        ...defaultConfig,
++        'x-strapi-config': { ...defaultConfig['x-strapi-config'], plugins: ['upload'] },
++      });
++
++      const docService = documentation({ strapi: global.strapi });
++
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++      expect(mockFinalDoc['x-strapi-config'].plugins).toEqual(['upload']);
++    });
++
++    it('does not generate documentation for any plugins', async () => {
++      global.strapi.config.get = () => ({
++        ...defaultConfig,
++        'x-strapi-config': { ...defaultConfig['x-strapi-config'], plugins: [] },
++      });
++
++      const docService = documentation({ strapi: global.strapi });
++
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++      expect(mockFinalDoc['x-strapi-config'].plugins).toEqual([]);
++    });
++  });
++
++  describe('Handles user config and overrides', () => {
++    it('replaces default config with the user config', async () => {
++      const userConfig = {
++        info: {
++          version: '4.0.0',
++          title: 'custom-documentation',
++          description: 'custom description',
++          termsOfService: 'custom terms of service',
++          contact: {
++            name: 'custom-team',
++            email: 'custom-contact-email@something.io',
++            url: 'custom-mywebsite.io',
++          },
++          license: {
++            name: 'custom Apache 2.0',
++            url: 'custom https://www.apache.org/licenses/LICENSE-2.0.html',
++          },
++        },
++        'x-strapi-config': {
++          path: 'custom-documentation',
++          plugins: [],
++        },
++        servers: [{ server: 'custom-server' }],
++        externalDocs: {
++          description: 'custom Find out more',
++          url: 'custom-doc-url',
++        },
++        webhooks: {
++          test: {},
++        },
++        security: [
++          {
++            bearerAuth: ['custom'],
++          },
++        ],
++      };
++
++      global.strapi.config.get = () => ({ ...userConfig });
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++      // The generation data is dynamically added, it cannot be modified by the user
++      const { 'x-generation-date': generationConfig, ...mockFinalDocInfo } = mockFinalDoc.info;
++      expect(mockFinalDocInfo).toEqual(userConfig.info);
++      expect(mockFinalDoc['x-strapi-config']).toEqual(userConfig['x-strapi-config']);
++      expect(mockFinalDoc.externalDocs).toEqual(userConfig.externalDocs);
++      expect(mockFinalDoc.security).toEqual(userConfig.security);
++      expect(mockFinalDoc.webhooks).toEqual(userConfig.webhooks);
++      expect(mockFinalDoc.servers).toEqual(userConfig.servers);
++    });
++
++    it("does not apply an override if the plugin providing the override isn't specified in the x-strapi-config.plugins", async () => {
++      global.strapi.config.get = () => ({
++        ...defaultConfig,
++        'x-strapi-config': { ...defaultConfig['x-strapi-config'], plugins: [] },
++      });
++      const docService = documentation({ strapi: global.strapi });
++      const overrideService = override({ strapi: global.strapi });
++
++      overrideService.registerOverride(
++        {
++          paths: {
++            '/test': {
++              get: {
++                tags: ['Users-Permissions - Users & Roles'],
++                summary: 'Get list of users',
++                responses: {},
++              },
++            },
++          },
++        },
++        { pluginOrigin: 'users-permissions' }
++      );
++
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++      expect(mockFinalDoc.paths['/test']).toBeUndefined();
++    });
++
++    it('overrides (extends) Tags', async () => {
++      const overrideService = override({ strapi: global.strapi });
++      // Simulate override from users-permissions plugin
++      overrideService.registerOverride(
++        {
++          tags: ['users-permissions-tag'],
++        },
++        { pluginOrigin: 'users-permissions' }
++      );
++      // Simulate override from upload plugin
++      overrideService.registerOverride(
++        {
++          tags: ['upload-tag'],
++        },
++        { pluginOrigin: 'upload' }
++      );
++      // Use the override service in the documentation service
++      global.strapi.plugins.documentation = {
++        service: jest.fn((name) => {
++          const mockServices = {
++            override: overrideService,
++          };
++
++          return mockServices[name];
++        }),
++      };
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++
++      expect(mockFinalDoc.tags).toEqual(['users-permissions-tag', 'upload-tag']);
++    });
++
++    it('overrides (replaces existing or adds new) Paths', async () => {
++      const overrideService = override({ strapi: global.strapi });
++      // Simulate override from upload plugin
++      overrideService.registerOverride(
++        {
++          paths: {
++            // This path exists after generating with mock data, replace it
++            '/upload/files': {
++              get: {
++                responses: ['existing-path-test'],
++              },
++            },
++            // This path does not exist after generating with mock data, add it
++            '/upload/new-path': {
++              get: {
++                responses: ['new-path-test'],
++              },
++            },
++          },
++        },
++        { pluginOrigin: 'upload' }
++      );
++      global.strapi.plugins.documentation = {
++        service: jest.fn((name) => {
++          const mockServices = {
++            override: overrideService,
++          };
++
++          return mockServices[name];
++        }),
++      };
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++
++      expect(mockFinalDoc.paths['/upload/files'].get.responses).toEqual(['existing-path-test']);
++      expect(Object.keys(mockFinalDoc.paths['/upload/files'].get)).toEqual(['responses']);
++      expect(mockFinalDoc.paths['/upload/new-path'].get.responses).toEqual(['new-path-test']);
++    });
++
++    it('overrides (replaces existing or adds new) Components', async () => {
++      const overrideService = override({ strapi: global.strapi });
++      // Simulate override from upload plugin
++      overrideService.registerOverride(
++        {
++          components: {
++            schemas: {
++              // This component schema exists after generating with mock data, replace it
++              UploadFileResponse: {
++                properties: {
++                  data: { $ref: 'test-existing-component' },
++                  meta: { type: 'object' },
++                },
++              },
++              // This component schema does not exist after generating with mock data, add it
++              UploadFileMockCompo: {
++                properties: {
++                  data: { $ref: 'test-new-component' },
++                  meta: { type: 'object' },
++                },
++              },
++            },
++          },
++        },
++        { pluginOrigin: 'upload' }
++      );
++      global.strapi.plugins.documentation = {
++        service: jest.fn((name) => {
++          const mockServices = {
++            override: overrideService,
++          };
++
++          return mockServices[name];
++        }),
++      };
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++
++      expect(mockFinalDoc.components.schemas.UploadFileResponse.properties.data.$ref).toEqual(
++        'test-existing-component'
++      );
++      expect(mockFinalDoc.components.schemas.UploadFileMockCompo.properties.data.$ref).toEqual(
++        'test-new-component'
++      );
++    });
++    it('overrides only the specified version', async () => {
++      const overrideService = override({ strapi: global.strapi });
++      // Simulate override from upload plugin
++      overrideService.registerOverride(
++        {
++          // Only override for version 1.0.0
++          info: { version: '1.0.0' },
++          components: {
++            schemas: {
++              // This component schema exists after generating with mock data, replace it
++              ShouldNotBeAdded: {},
++            },
++          },
++        },
++        { pluginOrigin: 'upload' }
++      );
++      // Simulate override from upload plugin
++      overrideService.registerOverride(
++        {
++          // Only override for version 2.0.0
++          info: { version: '2.0.0' },
++          components: {
++            schemas: {
++              // This component schema exists after generating with mock data, replace it
++              ShouldBeAdded: {},
++            },
++          },
++        },
++        { pluginOrigin: 'upload' }
++      );
++      // Simulate override from upload plugin
++      overrideService.registerOverride(
++        {
++          components: {
++            schemas: {
++              // This component schema exists after generating with mock data, replace it
++              ShouldAlsoBeAdded: {},
++            },
++          },
++        },
++        { pluginOrigin: 'upload' }
++      );
++      global.strapi.plugins.documentation = {
++        service: jest.fn((name) => {
++          const mockServices = {
++            override: overrideService,
++          };
++
++          return mockServices[name];
++        }),
++      };
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc('2.0.0');
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++
++      expect(mockFinalDoc.components.schemas.ShouldNotBeAdded).toBeUndefined();
++      expect(mockFinalDoc.components.schemas.ShouldBeAdded).toBeDefined();
++      expect(mockFinalDoc.components.schemas.ShouldAlsoBeAdded).toBeDefined();
++    });
++    it('excludes apis and plugins from generation', async () => {
++      const overrideService = override({ strapi: global.strapi });
++
++      overrideService.excludeFromGeneration('kitchensink');
++
++      global.strapi.plugins.documentation = {
++        service: jest.fn((name) => {
++          const mockServices = {
++            override: overrideService,
++          };
++
++          return mockServices[name];
++        }),
++      };
++
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++
++      expect(
++        Object.keys(mockFinalDoc.paths).find((path) => path.includes('kitchensink'))
++      ).toBeUndefined();
++      expect(
++        Object.keys(mockFinalDoc.components.schemas).find((compo) => compo.includes('Kitchensink'))
++      ).toBeUndefined();
++    });
++    it("applies a user's mutateDocumentation function", async () => {
++      global.strapi.config.get = () => ({
++        ...defaultConfig,
++        'x-strapi-config': {
++          ...defaultConfig['x-strapi-config'],
++          mutateDocumentation(draft) {
++            draft.paths['/kitchensinks'] = { get: { responses: { 200: { description: 'test' } } } };
++          },
++        },
++      });
++      const docService = documentation({ strapi: global.strapi });
++      await docService.generateFullDoc();
++      const lastMockCall = fse.writeJson.mock.calls[fse.writeJson.mock.calls.length - 1];
++      const mockFinalDoc = lastMockCall[1];
++      expect(mockFinalDoc.paths['/kitchensinks']).toEqual({
++        get: { responses: { 200: { description: 'test' } } },
++      });
++    });
++  });
++});
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/documentation.js b/node_modules/@strapi/plugin-documentation/server/services/documentation.js
+index 564b8f5..b0cc279 100755
+--- a/node_modules/@strapi/plugin-documentation/server/services/documentation.js
++++ b/node_modules/@strapi/plugin-documentation/server/services/documentation.js
+@@ -2,37 +2,50 @@
+ 
+ const path = require('path');
+ const fs = require('fs-extra');
+-const _ = require('lodash');
++const { produce } = require('immer');
+ const { getAbsoluteServerUrl } = require('@strapi/utils');
+-
+-const defaultPluginConfig = require('../config/default-plugin-config');
+ const { builApiEndpointPath, buildComponentSchema } = require('./helpers');
+ 
++const defaultOpenApiComponents = require('./utils/default-openapi-components');
++const { getPluginsThatNeedDocumentation } = require('./utils/get-plugins-that-need-documentation');
++
+ module.exports = ({ strapi }) => {
+   const config = strapi.config.get('plugin.documentation');
+-
+-  const registeredDocs = [];
++  const pluginsThatNeedDocumentation = getPluginsThatNeedDocumentation(config);
++  const overrideService = strapi.plugin('documentation').service('override');
+ 
+   return {
+-    registerDoc(doc) {
+-      let registeredDoc = doc;
+-      // parseYaml
+-      if (typeof doc === 'string') {
+-        registeredDoc = require('yaml').parse(registeredDoc);
+-      }
+-      // receive an object we can register it directly
+-      registeredDocs.push(registeredDoc);
++    /**
++     *
++     * @deprecated
++     * registerDoc is deprecated it will be removed in the next major release,
++     * use strapi.plugin('documentation').service('override').registerOverride() instead
++     * @param {object} doc - The openapi specifcation to override
++     * @param {object} options - The options to override the documentation
++     * @param {string} options.pluginOrigin - The name of the plugin that is overriding the documentation
++     * @param {string[]} options.excludeFromGeneration - The name of the plugin that is overriding the documentation
++     */
++    registerDoc(doc, options) {
++      strapi.log.warn(
++        "@strapi/plugin-documentation has deprecated registerDoc, use strapi.plugin('documentation').service('override').registerOverride() instead"
++      );
++      overrideService.registerOverride(doc, options);
+     },
++
+     getDocumentationVersion() {
+-      return _.get(config, 'info.version');
++      return config.info.version;
+     },
+ 
+     getFullDocumentationPath() {
+       return path.join(strapi.dirs.app.extensions, 'documentation', 'documentation');
+     },
+ 
++    /**
++     *
++     * @deprecated
++     * This method will be removed in the next major release
++     */
+     getCustomDocumentationPath() {
+-      // ??
+       return path.join(strapi.dirs.app.extensions, 'documentation', 'config', 'settings.json');
+     },
+ 
+@@ -46,7 +59,8 @@ module.exports = ({ strapi }) => {
+                 path.resolve(this.getFullDocumentationPath(), version, 'full_documentation.json')
+               )
+             );
+-            const generatedDate = _.get(doc, ['info', 'x-generation-date'], null);
++
++            const generatedDate = doc.info['x-generation-date'];
+ 
+             return { version, generatedDate, url: '' };
+           } catch (err) {
+@@ -99,8 +113,7 @@ module.exports = ({ strapi }) => {
+     },
+ 
+     getPluginAndApiInfo() {
+-      const plugins = _.get(config, 'x-strapi-config.plugins');
+-      const pluginsToDocument = plugins.map((plugin) => {
++      const pluginsToDocument = pluginsThatNeedDocumentation.map((plugin) => {
+         return {
+           name: plugin,
+           getter: 'plugin',
+@@ -119,92 +132,118 @@ module.exports = ({ strapi }) => {
+       return [...apisToDocument, ...pluginsToDocument];
+     },
+ 
+-    async getCustomConfig() {
+-      const customConfigPath = this.getCustomDocumentationPath();
+-      const pathExists = await fs.pathExists(customConfigPath);
+-      if (pathExists) {
+-        return fs.readJson(customConfigPath);
+-      }
+-
+-      return {};
+-    },
+-
+     /**
+      * @description - Creates the Swagger json files
+      */
+     async generateFullDoc(version = this.getDocumentationVersion()) {
+-      let paths = {};
+-      let schemas = {};
+       const apis = this.getPluginAndApiInfo();
+-      for (const api of apis) {
+-        const apiName = api.name;
+-        const apiDirPath = path.join(this.getApiDocumentationPath(api), version);
+-
+-        const apiDocPath = path.join(apiDirPath, `${apiName}.json`);
+-
+-        const apiPath = builApiEndpointPath(api);
++      const apisThatNeedGeneratedDocumentation = apis.filter(
++        ({ name }) => !overrideService.excludedFromGeneration.includes(name)
++      );
+ 
+-        if (!apiPath) {
+-          continue;
++      // Initialize the generated documentation with defaults
++      let generatedDocumentation = produce(
++        {
++          ...config,
++          components: defaultOpenApiComponents,
++        },
++        (draft) => {
++          if (draft.servers.length === 0) {
++            // When no servers found set the defaults
++            const serverUrl = getAbsoluteServerUrl(strapi.config);
++            const apiPath = strapi.config.get('api.rest.prefix');
++            draft.servers = [
++              {
++                url: `${serverUrl}${apiPath}`,
++                description: 'Development server',
++              },
++            ];
++          }
++          // Set the generated date
++          draft.info['x-generation-date'] = new Date().toISOString();
++          // Set the plugins that need documentation
++          draft['x-strapi-config'].plugins = pluginsThatNeedDocumentation;
++          // Delete the mutateDocumentation key from the config so it doesn't end up in the spec
++          delete draft['x-strapi-config'].mutateDocumentation;
+         }
++      );
++      // Generate the documentation for each api and update the generatedDocumentation
++      for (const api of apisThatNeedGeneratedDocumentation) {
++        const apiName = api.name;
+ 
++        const newApiPath = builApiEndpointPath(api);
++        const generatedSchemas = buildComponentSchema(api);
++
++        // TODO: To be confirmed, do we still need to write these files...?
++        const apiDirPath = path.join(this.getApiDocumentationPath(api), version);
++        const apiDocPath = path.join(apiDirPath, `${apiName}.json`);
+         await fs.ensureFile(apiDocPath);
+-        await fs.writeJson(apiDocPath, apiPath, { spaces: 2 });
++        await fs.writeJson(apiDocPath, newApiPath, { spaces: 2 });
+ 
+-        const componentSchema = buildComponentSchema(api);
++        generatedDocumentation = produce(generatedDocumentation, (draft) => {
++          if (generatedSchemas) {
++            draft.components = {
++              schemas: { ...draft.components.schemas, ...generatedSchemas },
++            };
++          }
+ 
+-        schemas = {
+-          ...schemas,
+-          ...componentSchema,
+-        };
++          if (newApiPath) {
++            draft.paths = { ...draft.paths, ...newApiPath };
++          }
++        });
++      }
+ 
+-        paths = { ...paths, ...apiPath };
++      // When overrides are present update the generatedDocumentation
++      if (overrideService.registeredOverrides.length > 0) {
++        generatedDocumentation = produce(generatedDocumentation, (draft) => {
++          overrideService.registeredOverrides.forEach((override) => {
++            // Only run the overrrides when no override version is provided,
++            // or when the generated documentation version matches the override version
++            if (!override?.info?.version || override.info.version === version) {
++              if (override.tags) {
++                // Merge override tags with the generated tags
++                draft.tags = draft.tags || [];
++                draft.tags.push(...override.tags);
++              }
++
++              if (override.paths) {
++                // Merge override paths with the generated paths
++                // The override will add a new path or replace the value of an existing path
++                draft.paths = { ...draft.paths, ...override.paths };
++              }
++
++              if (override.components) {
++                Object.entries(override.components).forEach(([overrideKey, overrideValue]) => {
++                  draft.components[overrideKey] = draft.components[overrideKey] || {};
++                  // Merge override components with the generated components,
++                  // The override will add a new component or replace the value of an existing component
++                  draft.components[overrideKey] = {
++                    ...draft.components[overrideKey],
++                    ...overrideValue,
++                  };
++                });
++              }
++            }
++          });
++        });
+       }
+ 
++      // Escape hatch, allow the user to provide a mutateDocumentation function that can alter any part of
++      // the generated documentation before it is written to the file system
++      const userMutatesDocumentation = config['x-strapi-config'].mutateDocumentation;
++      const finalDocumentation = userMutatesDocumentation
++        ? produce(generatedDocumentation, userMutatesDocumentation)
++        : generatedDocumentation;
++
++      // Get the file path for the final documentation
+       const fullDocJsonPath = path.join(
+         this.getFullDocumentationPath(),
+         version,
+         'full_documentation.json'
+       );
+-
+-      const defaultConfig = _.cloneDeep(defaultPluginConfig);
+-
+-      const serverUrl = getAbsoluteServerUrl(strapi.config);
+-      const apiPath = strapi.config.get('api.rest.prefix');
+-
+-      _.set(defaultConfig, 'servers', [
+-        {
+-          url: `${serverUrl}${apiPath}`,
+-          description: 'Development server',
+-        },
+-      ]);
+-      _.set(defaultConfig, ['info', 'x-generation-date'], new Date().toISOString());
+-      _.set(defaultConfig, ['info', 'version'], version);
+-      _.merge(defaultConfig.components, { schemas });
+-
+-      const customConfig = await this.getCustomConfig();
+-      const config = _.merge(defaultConfig, customConfig);
+-
+-      const finalDoc = { ...config, paths };
+-
+-      registeredDocs.forEach((doc) => {
+-        // Add tags
+-        finalDoc.tags = finalDoc.tags || [];
+-        finalDoc.tags.push(...(doc.tags || []));
+-
+-        // Add Paths
+-        _.assign(finalDoc.paths, doc.paths);
+-
+-        // Add components
+-        _.forEach(doc.components || {}, (val, key) => {
+-          finalDoc.components[key] = finalDoc.components[key] || {};
+-
+-          _.assign(finalDoc.components[key], val);
+-        });
+-      });
+-
++      // Write the documentation to the file system
+       await fs.ensureFile(fullDocJsonPath);
+-      await fs.writeJson(fullDocJsonPath, finalDoc, { spaces: 2 });
++      await fs.writeJson(fullDocJsonPath, finalDocumentation, { spaces: 2 });
+     },
+   };
+ };
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/build-api-endpoint-path.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/build-api-endpoint-path.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/build-component-schema.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/build-component-schema.js
+old mode 100644
+new mode 100755
+index 2a4d220..77c7a64
+--- a/node_modules/@strapi/plugin-documentation/server/services/helpers/build-component-schema.js
++++ b/node_modules/@strapi/plugin-documentation/server/services/helpers/build-component-schema.js
+@@ -20,16 +20,17 @@ const { hasFindMethod, isLocalizedPath } = require('./utils/routes');
+ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+   // Store response and request schemas in an object
+   let schemas = {};
+-  let componentSchemas = {};
++  let strapiComponentSchemas = {};
+   // adds a ComponentSchema to the Schemas so it can be used as Ref
+-  const addComponentSchema = (schemaName, schema) => {
+-    if (!Object.keys(schema) || !Object.keys(schema.properties)) {
+-      return false;
+-    }
+-    componentSchemas = {
+-      ...componentSchemas,
++  const didAddStrapiComponentsToSchemas = (schemaName, schema) => {
++    if (!Object.keys(schema) || !Object.keys(schema.properties)) return false;
++
++    // Add the Strapi components to the schema
++    strapiComponentSchemas = {
++      ...strapiComponentSchemas,
+       [schemaName]: schema,
+     };
++
+     return true;
+   };
+   // Get all the route methods
+@@ -38,7 +39,8 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+   const hasLocalizationPath = routeInfo.routes.filter((route) =>
+     isLocalizedPath(route.path)
+   ).length;
+-  // When the route methods contain any post or put requests
++
++  // Build the request schemas when the route has POST or PUT methods
+   if (routeMethods.includes('POST') || routeMethods.includes('PUT')) {
+     const attributesToOmit = [
+       'createdAt',
+@@ -50,7 +52,6 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+       'localizations',
+     ];
+     const attributesForRequest = _.omit(attributes, attributesToOmit);
+-
+     // Get a list of required attribute names
+     const requiredAttributes = Object.entries(attributesForRequest).reduce((acc, attribute) => {
+       const [attributeKey, attributeValue] = attribute;
+@@ -62,6 +63,7 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+       return acc;
+     }, []);
+ 
++    // Build localization requests schemas
+     if (hasLocalizationPath) {
+       schemas = {
+         ...schemas,
+@@ -70,7 +72,7 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+           type: 'object',
+           properties: cleanSchemaAttributes(attributesForRequest, {
+             isRequest: true,
+-            addComponentSchema,
++            didAddStrapiComponentsToSchemas,
+           }),
+         },
+       };
+@@ -84,11 +86,11 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+         required: ['data'],
+         properties: {
+           data: {
+-            required: requiredAttributes,
++            ...(requiredAttributes.length && { required: requiredAttributes }),
+             type: 'object',
+             properties: cleanSchemaAttributes(attributesForRequest, {
+               isRequest: true,
+-              addComponentSchema,
++              didAddStrapiComponentsToSchemas,
+             }),
+           },
+         },
+@@ -96,6 +98,7 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+     };
+   }
+ 
++  // Build the localization response schema
+   if (hasLocalizationPath) {
+     schemas = {
+       ...schemas,
+@@ -103,7 +106,21 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+         type: 'object',
+         properties: {
+           id: { type: 'number' },
+-          ...cleanSchemaAttributes(attributes, { addComponentSchema }),
++          ...cleanSchemaAttributes(attributes, {
++            didAddStrapiComponentsToSchemas,
++          }),
++        },
++      },
++      [`${pascalCase(uniqueName)}ResponseDataObjectLocalized`]: {
++        type: 'object',
++        properties: {
++          id: { type: 'number' },
++          attributes: {
++            type: 'object',
++            properties: cleanSchemaAttributes(attributes, {
++              didAddStrapiComponentsToSchemas,
++            }),
++          },
+         },
+       },
+     };
+@@ -112,6 +129,24 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+   // Check for routes that need to return a list
+   const hasListOfEntities = routeInfo.routes.filter((route) => hasFindMethod(route.handler)).length;
+   if (hasListOfEntities) {
++    // Buld the localized list response schema
++    if (hasLocalizationPath) {
++      schemas = {
++        ...schemas,
++        [`${pascalCase(uniqueName)}ListResponseDataItemLocalized`]: {
++          type: 'object',
++          properties: {
++            id: { type: 'number' },
++            attributes: {
++              type: 'object',
++              properties: cleanSchemaAttributes(attributes, {
++                didAddStrapiComponentsToSchemas,
++              }),
++            },
++          },
++        },
++      };
++    }
+     // Build the list response schema
+     schemas = {
+       ...schemas,
+@@ -122,7 +157,7 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+           attributes: {
+             type: 'object',
+             properties: cleanSchemaAttributes(attributes, {
+-              addComponentSchema,
++              didAddStrapiComponentsToSchemas,
+               componentSchemaRefName: `#/components/schemas/${pascalCase(
+                 uniqueName
+               )}ListResponseDataItemLocalized`,
+@@ -130,16 +165,6 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+           },
+         },
+       },
+-      [`${pascalCase(uniqueName)}ListResponseDataItemLocalized`]: {
+-        type: 'object',
+-        properties: {
+-          id: { type: 'number' },
+-          attributes: {
+-            type: 'object',
+-            properties: cleanSchemaAttributes(attributes, { addComponentSchema }),
+-          },
+-        },
+-      },
+       [`${pascalCase(uniqueName)}ListResponse`]: {
+         properties: {
+           data: {
+@@ -165,7 +190,6 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+       },
+     };
+   }
+-
+   // Build the response schema
+   schemas = {
+     ...schemas,
+@@ -176,7 +200,7 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+         attributes: {
+           type: 'object',
+           properties: cleanSchemaAttributes(attributes, {
+-            addComponentSchema,
++            didAddStrapiComponentsToSchemas,
+             componentSchemaRefName: `#/components/schemas/${pascalCase(
+               uniqueName
+             )}ResponseDataObjectLocalized`,
+@@ -184,16 +208,6 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+         },
+       },
+     },
+-    [`${pascalCase(uniqueName)}ResponseDataObjectLocalized`]: {
+-      type: 'object',
+-      properties: {
+-        id: { type: 'number' },
+-        attributes: {
+-          type: 'object',
+-          properties: cleanSchemaAttributes(attributes, { addComponentSchema }),
+-        },
+-      },
+-    },
+     [`${pascalCase(uniqueName)}Response`]: {
+       properties: {
+         data: {
+@@ -203,7 +217,8 @@ const getAllSchemasForContentType = ({ routeInfo, attributes, uniqueName }) => {
+       },
+     },
+   };
+-  return { ...schemas, ...componentSchemas };
++
++  return { ...schemas, ...strapiComponentSchemas };
+ };
+ 
+ const buildComponentSchema = (api) => {
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/index.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/clean-schema-attributes.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/clean-schema-attributes.js
+old mode 100644
+new mode 100755
+index 2913b59..70ff167
+--- a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/clean-schema-attributes.js
++++ b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/clean-schema-attributes.js
+@@ -7,7 +7,7 @@ const pascalCase = require('./pascal-case');
+  * @description - Converts types found on attributes to OpenAPI acceptable data types
+  *
+  * @param {object} attributes - The attributes found on a contentType
+- * @param {{ typeMap: Map, isRequest: boolean, addComponentSchema: function, componentSchemaRefName: string }} opts
++ * @param {{ typeMap: Map, isRequest: boolean, didAddStrapiComponentsToSchemas: function, componentSchemaRefName: string }} opts
+  * @returns Attributes using OpenAPI acceptable data types
+  */
+ const cleanSchemaAttributes = (
+@@ -15,7 +15,7 @@ const cleanSchemaAttributes = (
+   {
+     typeMap = new Map(),
+     isRequest = false,
+-    addComponentSchema = () => {},
++    didAddStrapiComponentsToSchemas = () => {},
+     componentSchemaRefName = '',
+   } = {}
+ ) => {
+@@ -107,7 +107,7 @@ const cleanSchemaAttributes = (
+         const refComponentSchema = {
+           $ref: `#/components/schemas/${pascalCase(attribute.component)}Component`,
+         };
+-        const componentExists = addComponentSchema(
++        const componentExists = didAddStrapiComponentsToSchemas(
+           `${pascalCase(attribute.component)}Component`,
+           rawComponentSchema
+         );
+@@ -133,12 +133,17 @@ const cleanSchemaAttributes = (
+               ...cleanSchemaAttributes(componentAttributes, {
+                 typeMap,
+                 isRequest,
+-                addComponentSchema,
++                didAddStrapiComponentsToSchemas,
+               }),
+             },
+           };
+-          const refComponentSchema = { $ref: `#/components/schemas/${pascalCase(component)}` };
+-          const componentExists = addComponentSchema(pascalCase(component), rawComponentSchema);
++          const refComponentSchema = {
++            $ref: `#/components/schemas/${pascalCase(component)}Component`,
++          };
++          const componentExists = didAddStrapiComponentsToSchemas(
++            `${pascalCase(component)}Component`,
++            rawComponentSchema
++          );
+           const finalComponentSchema = componentExists ? refComponentSchema : rawComponentSchema;
+           return finalComponentSchema;
+         });
+@@ -168,7 +173,10 @@ const cleanSchemaAttributes = (
+         attributesCopy[prop] = {
+           type: 'object',
+           properties: {
+-            data: getSchemaData(isListOfEntities, cleanSchemaAttributes(imageAttributes)),
++            data: getSchemaData(
++              isListOfEntities,
++              cleanSchemaAttributes(imageAttributes, { typeMap })
++            ),
+           },
+         };
+         break;
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/get-api-responses.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/get-api-responses.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/get-schema-data.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/get-schema-data.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/loop-content-type-names.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/loop-content-type-names.js
+old mode 100644
+new mode 100755
+index aa2f700..00fed9e
+--- a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/loop-content-type-names.js
++++ b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/loop-content-type-names.js
+@@ -15,6 +15,7 @@ const loopContentTypeNames = (api, callback) => {
+   for (const contentTypeName of api.ctNames) {
+     // Get the attributes found on the api's contentType
+     const uid = `${api.getter}::${api.name}.${contentTypeName}`;
++
+     const { attributes, info: contentTypeInfo } = strapi.contentType(uid);
+ 
+     // Get the routes for the current api
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/pascal-case.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/pascal-case.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/query-params.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/query-params.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/routes.js b/node_modules/@strapi/plugin-documentation/server/services/helpers/utils/routes.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/index.js b/node_modules/@strapi/plugin-documentation/server/services/index.js
+old mode 100644
+new mode 100755
+index 21340f7..1891435
+--- a/node_modules/@strapi/plugin-documentation/server/services/index.js
++++ b/node_modules/@strapi/plugin-documentation/server/services/index.js
+@@ -1,7 +1,9 @@
+ 'use strict';
+ 
+ const documentation = require('./documentation');
++const override = require('./override');
+ 
+ module.exports = {
+   documentation,
++  override,
+ };
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/override.js b/node_modules/@strapi/plugin-documentation/server/services/override.js
+new file mode 100755
+index 0000000..a832910
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/override.js
+@@ -0,0 +1,52 @@
++'use strict';
++
++const { getPluginsThatNeedDocumentation } = require('./utils/get-plugins-that-need-documentation');
++
++module.exports = ({ strapi }) => {
++  const registeredOverrides = [];
++  const excludedFromGeneration = [];
++
++  return {
++    registeredOverrides,
++    excludedFromGeneration,
++    /**
++     *
++     * @param {string | string[]} api - The name of the api or and array of apis to exclude from generation
++     */
++    excludeFromGeneration(api) {
++      if (Array.isArray(api)) {
++        excludedFromGeneration.push(...api);
++
++        return;
++      }
++
++      excludedFromGeneration.push(api);
++    },
++    /**
++     * @TODO pluginOrigin should be required in next major release
++     * @param {object} doc - The openapi specifcation to override
++     * @param {object} options - The options to override the documentation
++     * @param {string} options.pluginOrigin - The name of the plugin that is overriding the documentation
++     * @param {string[]} options.excludeFromGeneration - The name of the plugin that is overriding the documentation
++     */
++    registerOverride(override) {
++      const pluginsThatNeedDocumentation = getPluginsThatNeedDocumentation(
++        strapi.config.get('plugin.documentation')
++      );
++      // Don't apply the override if the plugin is not in the list of plugins that need documentation
++      // if (pluginOrigin && !pluginsThatNeedDocumentation.includes(pluginOrigin)) return;
++
++      // if (excludeFromGeneration.length) {
++      //   this.excludeFromGeneration(excludeFromGeneration);
++      // }
++
++      let overrideToRegister = override;
++      // Parse yaml if we receive a string
++      if (typeof override === 'string') {
++        overrideToRegister = require('yaml').parse(overrideToRegister);
++      }
++      // receive an object we can register it directly
++      registeredOverrides.push(overrideToRegister);
++    },
++  };
++};
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/utils/default-openapi-components.js b/node_modules/@strapi/plugin-documentation/server/services/utils/default-openapi-components.js
+new file mode 100755
+index 0000000..8d08e9f
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/utils/default-openapi-components.js
+@@ -0,0 +1,40 @@
++'use strict';
++
++module.exports = {
++  securitySchemes: {
++    bearerAuth: {
++      type: 'http',
++      scheme: 'bearer',
++      bearerFormat: 'JWT',
++    },
++  },
++  schemas: {
++    Error: {
++      type: 'object',
++      required: ['error'],
++      properties: {
++        data: {
++          nullable: true,
++          oneOf: [{ type: 'object' }, { type: 'array', items: { type: 'object' } }],
++        },
++        error: {
++          type: 'object',
++          properties: {
++            status: {
++              type: 'integer',
++            },
++            name: {
++              type: 'string',
++            },
++            message: {
++              type: 'string',
++            },
++            details: {
++              type: 'object',
++            },
++          },
++        },
++      },
++    },
++  },
++};
+diff --git a/node_modules/@strapi/plugin-documentation/server/services/utils/get-plugins-that-need-documentation.js b/node_modules/@strapi/plugin-documentation/server/services/utils/get-plugins-that-need-documentation.js
+new file mode 100755
+index 0000000..c2050e7
+--- /dev/null
++++ b/node_modules/@strapi/plugin-documentation/server/services/utils/get-plugins-that-need-documentation.js
+@@ -0,0 +1,24 @@
++'use strict';
++
++const getPluginsThatNeedDocumentation = (config) => {
++  // Default plugins that need documentation generated
++  const defaultPlugins = ['upload', 'users-permissions'];
++
++  // User specified plugins that need documentation generated
++  const userPluginsConfig = config['x-strapi-config'].plugins;
++
++  if (userPluginsConfig === null) {
++    // The user hasn't specified any plugins to document, use the defaults
++    return defaultPlugins;
++  }
++
++  if (userPluginsConfig.length) {
++    // The user has specified certain plugins to document, use them
++    return userPluginsConfig;
++  }
++
++  // The user has specified that no plugins should be documented
++  return [];
++};
++
++module.exports = { getPluginsThatNeedDocumentation };
+diff --git a/node_modules/@strapi/plugin-documentation/strapi-admin.js b/node_modules/@strapi/plugin-documentation/strapi-admin.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@strapi/plugin-documentation/strapi-server.js b/node_modules/@strapi/plugin-documentation/strapi-server.js
+old mode 100644
+new mode 100755

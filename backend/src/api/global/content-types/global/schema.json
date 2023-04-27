@@ -5,7 +5,8 @@
     "singularName": "global",
     "pluralName": "globals",
     "displayName": "Global",
-    "name": "global"
+    "name": "global",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -18,66 +19,64 @@
     }
   },
   "attributes": {
-    "metadata": {
-      "type": "component",
-      "repeatable": false,
-      "component": "meta.metadata",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "metaTitleSuffix": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "favicon": {
-      "allowedTypes": [
-        "images"
-      ],
+    "logo": {
       "type": "media",
       "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "notificationBanner": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.notification-banner",
+    "address": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "text"
     },
-    "navbar": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.navbar",
+    "phoneNumber": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "string"
     },
-    "footer": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.footer",
+    "hotline": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "string"
+    },
+    "social": {
+      "displayName": "social",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "elements.social"
+    },
+    "companyName": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
