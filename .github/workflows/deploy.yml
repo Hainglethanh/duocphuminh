@@ -31,4 +31,4 @@ jobs:
             cd /var/www/duocphuminh
             npm install
             yarn install-de
-            pm2 start yarn --name duocphuminh -- start
+            npm run start
