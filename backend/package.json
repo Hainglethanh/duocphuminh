@@ -17,7 +17,6 @@
     "lodash.set": "^4.3.2",
     "patch-package": "^6.5.1",
     "postinstall-postinstall": "^2.1.0",
-    "strapi-plugin-icon-picker": "^0.0.3",
     "strapi-plugin-local-image-sharp": "^1.6.0",
     "strapi-plugin-populate-deep": "^2.0.0",
     "strapi-plugin-responsive-image": "^1.0.1",
