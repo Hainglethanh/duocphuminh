@@ -1,6 +1,6 @@
-import { component$, useContext } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { ElementsFeatureComponent } from "~/services";
-import { GlobalContext, getImageUrl } from "~/utils/conts";
+import { getImageUrl } from "~/utils/conts";
 
 const TwoImage = (props: { data: ElementsFeatureComponent }) => {
   const { data } = props;

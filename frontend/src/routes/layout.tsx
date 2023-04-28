@@ -1,10 +1,15 @@
 import { component$, Slot, useContextProvider } from "@builder.io/qwik";
-import { DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 
 import Header from "~/components/header/header";
 import Footer from "~/components/footer/footer";
 import { BlogTypeApi, GlobalApi, ProductCategoryApi } from "~/services";
-import { BlogTypeContext, GlobalContext, ProductTypeContext, ServiceContext } from "~/utils/conts";
+import {
+  BlogTypeContext,
+  GlobalContext,
+  ProductTypeContext,
+} from "~/utils/conts";
 
 // rel="icon"
 // type="image/webp"
@@ -37,7 +42,9 @@ export const useGetBlogCategories = routeLoader$(async () => {
   return response.data;
 });
 export const useGetProductType = routeLoader$(async () => {
-  const response = await new ProductCategoryApi().getProductCategories({ populate: "*" });
+  const response = await new ProductCategoryApi().getProductCategories({
+    populate: "*",
+  });
   return response.data;
 });
 

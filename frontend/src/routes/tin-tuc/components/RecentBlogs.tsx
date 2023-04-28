@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import moment from "moment";
-import { BlogListResponseDataItem } from "~/services";
+import type { BlogListResponseDataItem } from "~/services";
 import { getImageUrl } from "~/utils/conts";
 
 export default component$(
