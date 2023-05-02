@@ -4703,12 +4703,6 @@ export interface PartnerListResponseDataItemAttributes {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {Date}
-     * @memberof PartnerListResponseDataItemAttributes
-     */
-    'publishedAt'?: Date;
-    /**
-     * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof PartnerListResponseDataItemAttributes
      */
@@ -6248,6 +6242,18 @@ export interface ThuocListResponseDataItemAttributes {
     'slug'?: string;
     /**
      * 
+     * @type {boolean}
+     * @memberof ThuocListResponseDataItemAttributes
+     */
+    'isHot'?: boolean;
+    /**
+     * 
+     * @type {ThuocListResponseDataItemAttributesProductType}
+     * @memberof ThuocListResponseDataItemAttributes
+     */
+    'product_type'?: ThuocListResponseDataItemAttributesProductType;
+    /**
+     * 
      * @type {Date}
      * @memberof ThuocListResponseDataItemAttributes
      */
@@ -6291,6 +6297,93 @@ export interface ThuocListResponseDataItemAttributesImages {
      * @memberof ThuocListResponseDataItemAttributesImages
      */
     'data'?: Array<AboutUsLocalizationResponseBannerData>;
+}
+/**
+ * 
+ * @export
+ * @interface ThuocListResponseDataItemAttributesProductType
+ */
+export interface ThuocListResponseDataItemAttributesProductType {
+    /**
+     * 
+     * @type {ThuocListResponseDataItemAttributesProductTypeData}
+     * @memberof ThuocListResponseDataItemAttributesProductType
+     */
+    'data'?: ThuocListResponseDataItemAttributesProductTypeData;
+}
+/**
+ * 
+ * @export
+ * @interface ThuocListResponseDataItemAttributesProductTypeData
+ */
+export interface ThuocListResponseDataItemAttributesProductTypeData {
+    /**
+     * 
+     * @type {number}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeData
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {ThuocListResponseDataItemAttributesProductTypeDataAttributes}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeData
+     */
+    'attributes'?: ThuocListResponseDataItemAttributesProductTypeDataAttributes;
+}
+/**
+ * 
+ * @export
+ * @interface ThuocListResponseDataItemAttributesProductTypeDataAttributes
+ */
+export interface ThuocListResponseDataItemAttributesProductTypeDataAttributes {
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'hot'?: boolean;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'icon'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'slug'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'createdAt'?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'updatedAt'?: Date;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
 }
 /**
  * 
@@ -6401,6 +6494,18 @@ export interface ThuocRequestData {
      * @memberof ThuocRequestData
      */
     'slug'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ThuocRequestData
+     */
+    'isHot'?: boolean;
+    /**
+     * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof ThuocRequestData
+     */
+    'product_type'?: AboutUsLocalizationRequestBanner;
 }
 
 export const ThuocRequestDataStatusEnum = {

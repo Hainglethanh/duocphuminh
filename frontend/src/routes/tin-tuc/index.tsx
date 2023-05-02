@@ -62,14 +62,14 @@ export default component$(() => {
   const blogs = useGetBlogList().value?.data;
   const meta = useGetBlogList().value?.meta;
   const currentSearch = useLocation().url.searchParams.get("s");
-  const currentCategory = useLocation().url.searchParams.get("category");
+  const currentCategory = useLocation().url.searchParams.get("type");
   const currentPage = useLocation().url.searchParams.get("page") || `1`;
   const location = useLocation();
   const category = location.url.searchParams.get("type");
   const blogTypes = useContext(BlogTypeContext);
   const goToPage = (page: number) =>
-    `/blogs/?page=${page}${
-      !_.isEmpty(currentCategory) ? "&category=" + currentCategory : ""
+    `/tin-tuc/?page=${page}${
+      !_.isEmpty(currentCategory) ? "&type=" + currentCategory : ""
     }${!_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""}`;
   const checkActive = (slug: string, index: number) => {
     if (!category) {

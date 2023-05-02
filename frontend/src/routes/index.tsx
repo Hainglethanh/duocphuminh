@@ -98,7 +98,7 @@ const FeaturedProduct = (props: {
                                       ? x.attributes?.images?.data[0].attributes
                                       : ""
                                   )}
-                                  alt=""
+                                  alt={x.attributes?.name}
                                 />
                                 <h4 class="hm-product__content-title hm-product__content-title--mb font-03 color-01 py-4 text-center">
                                   {x.attributes?.name}
@@ -155,7 +155,7 @@ const ProductCategory = (props: {
                         }`}
                       >
                         <a
-                          href={`/dong-san-pham/${x.attributes?.slug}`}
+                          href={`/dong-san-pham/?type=${x.attributes?.slug}`}
                           class="hm-type-product__cate-link text-center"
                         >
                           <div class="hm-type-product__cate-icon mb-3">
