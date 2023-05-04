@@ -32,4 +32,5 @@ jobs:
             yarn install-de
             touch backend/.env
             echo "${{ vars.BACKEND_ENV }}" > backend/.env
+            pm2 delete duocphuminh
             pm2 start yarn --name duocphuminh -- start

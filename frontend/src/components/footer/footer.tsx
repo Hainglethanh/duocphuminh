@@ -22,32 +22,53 @@ export default component$(() => {
               <div class="footer-col">
                 <div class="footer-logo mb-4">
                   <img
-                    alt="Imexpharm Logo White"
+                    alt="Duoc Phu Minh Logo White"
                     class="w-100 white-filter"
                     data-widget="image"
-                    src={getImageUrl(globalData.attributes?.logo?.data?.attributes)}
+                    src={getImageUrl(
+                      globalData.attributes?.logo?.data?.attributes
+                    )}
                   />
                 </div>
-                <h3 class="footer-name-company mb-4">{globalData.attributes?.companyName}</h3>
+                <h3 class="footer-name-company mb-4">
+                  {globalData.attributes?.companyName}
+                </h3>
                 <ul class="footer-info">
                   <li class="footer-address">
                     <span class="icon">
-                      <img alt="" data-widget="image" src="public/images/map-pin.svg" />
+                      <img
+                        alt=""
+                        data-widget="image"
+                        src="public/images/map-pin.svg"
+                      />
                     </span>{" "}
                     <span>{globalData.attributes?.address}</span>
                   </li>
                   <li class="footer-phone">
                     <span class="icon">
-                      <img alt="" data-widget="image" src="public/images/phone.svg" />
+                      <img
+                        alt=""
+                        data-widget="image"
+                        src="public/images/phone.svg"
+                      />
                     </span>{" "}
-                    <a href={`tel:${globalData.attributes?.phoneNumber}`}>{globalData.attributes?.phoneNumber}</a>
+                    <a href={`tel:${globalData.attributes?.phoneNumber}`}>
+                      {globalData.attributes?.phoneNumber}
+                    </a>
                   </li>
                   <li class="footer-phone-call">
                     <span class="icon">
-                      <img alt="" data-widget="image" src="public/images/phone-call.svg" />
+                      <img
+                        alt=""
+                        data-widget="image"
+                        src="public/images/phone-call.svg"
+                      />
                     </span>{" "}
                     <span>
-                      Hotline: <a href={`tel:${globalData.attributes?.hotline}`}>{globalData.attributes?.hotline}</a>
+                      Hotline:{" "}
+                      <a href={`tel:${globalData.attributes?.hotline}`}>
+                        {globalData.attributes?.hotline}
+                      </a>
                     </span>
                   </li>
                   <li />
@@ -57,22 +78,22 @@ export default component$(() => {
             <div class="footer-right">
               <div class="footer-right-content">
                 <div class="footer-col">
-                  <h3 class="footer-title">VỀ IMEXPHARM</h3>
+                  <h3 class="footer-title">VỀ Dược Phú Minh</h3>
                   <ul class="ft-menu">
                     <li class="ft-menu-item">
-                      <a href="ve-imexpharm.html#tong-quan">Tổng quan</a>
+                      <a href="/ve-chung-toi#tong-quan">Tổng quan</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="ve-imexpharm.html#van-hoa">Văn hóa</a>
+                      <a href="/ve-chung-toihtml#van-hoa">Văn hóa</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="ve-imexpharm.html#hanh-trinh">Hành trình</a>
+                      <a href="/ve-chung-toihtml#hanh-trinh">Hành trình</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="ve-imexpharm.html#con-nguoi">Con người</a>
+                      <a href="/ve-chung-toihtml#con-nguoi">Con người</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="ve-imexpharm.html#tiem-luc">Tiềm lực</a>
+                      <a href="/ve-chung-toihtml#tiem-luc">Tiềm lực</a>
                     </li>
                     <li class="ft-menu-item">&nbsp;</li>
                   </ul>
@@ -83,7 +104,9 @@ export default component$(() => {
                     {productTypes.map((x) => {
                       return (
                         <li key={x.id} class="ft-menu-item">
-                          <a href={goToProductType(`${x.attributes?.slug}`)}>{x.attributes?.name}</a>
+                          <a href={goToProductType(`${x.attributes?.slug}`)}>
+                            {x.attributes?.name}
+                          </a>
                         </li>
                       );
                     })}
@@ -95,7 +118,9 @@ export default component$(() => {
                     {blogTypes.map((x) => {
                       return (
                         <li key={x.id} class="ft-menu-item">
-                          <a href={goToCategory(`${x.attributes?.slug}`)}>{x.attributes?.name}</a>
+                          <a href={goToCategory(`${x.attributes?.slug}`)}>
+                            {x.attributes?.name}
+                          </a>
                         </li>
                       );
                     })}
@@ -110,13 +135,19 @@ export default component$(() => {
                   </ul>
                   <ul class="imp-social">
                     <li>
-                      <a data-widget="image" href={globalData.attributes?.social?.facebook}>
+                      <a
+                        data-widget="image"
+                        href={globalData.attributes?.social?.facebook}
+                      >
                         <img alt="" src="public/images/brand-facebook.svg" />
                       </a>
                     </li>
 
                     <li>
-                      <a data-widget="image" href={globalData.attributes?.social?.youtube}>
+                      <a
+                        data-widget="image"
+                        href={globalData.attributes?.social?.youtube}
+                      >
                         <img alt="" src="public/images/brand-youtube.svg" />
                       </a>
                     </li>
@@ -125,7 +156,10 @@ export default component$(() => {
               </div>
             </div>
           </div>
-          <div class="footer-copyright">Copyright © {moment().format("YYYY")} - PhuMinh. All Rights Reserved.</div>
+          <div class="footer-copyright">
+            Copyright © {moment().format("YYYY")} - PhuMinh. All Rights
+            Reserved.
+          </div>
         </div>
       </div>
     </footer>
