@@ -36,6 +36,10 @@ export const head: DocumentHead = ({ resolveValue }) => {
         )}`,
       },
       {
+        property: "og:type",
+        content: `webp`,
+      },
+      {
         name: "og:image:width",
         content: `${1000}`,
       },
