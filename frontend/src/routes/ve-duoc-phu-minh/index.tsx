@@ -1,7 +1,6 @@
-import { component$, useContext, useSignal } from "@builder.io/qwik";
-import { DocumentHead, routeLoader$, useLocation } from "@builder.io/qwik-city";
-import _ from "lodash";
-import moment from "moment";
+import { component$, useSignal } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import Feature from "~/components/feature/feature";
 import { AboutUsApi } from "~/services";
 import { getImageUrl } from "~/utils/conts";

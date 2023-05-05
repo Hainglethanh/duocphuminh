@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { ElementsFeatureComponent } from "~/services";
+import type { ElementsFeatureComponent } from "~/services";
 import { getImageUrl } from "~/utils/conts";
 
 const TwoImage = (props: { data: ElementsFeatureComponent }) => {

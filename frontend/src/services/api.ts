@@ -93,12 +93,6 @@ export interface AboutUsListResponseDataItemAttributes {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {Date}
-     * @memberof AboutUsListResponseDataItemAttributes
-     */
-    'publishedAt'?: Date;
-    /**
-     * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof AboutUsListResponseDataItemAttributes
      */
@@ -265,12 +259,6 @@ export interface AboutUsLocalizationResponse {
      * @memberof AboutUsLocalizationResponse
      */
     'updatedAt'?: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof AboutUsLocalizationResponse
-     */
-    'publishedAt'?: Date;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
@@ -1200,12 +1188,6 @@ export interface AboutUsResponseDataObjectAttributes {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {Date}
-     * @memberof AboutUsResponseDataObjectAttributes
-     */
-    'publishedAt'?: Date;
-    /**
-     * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof AboutUsResponseDataObjectAttributes
      */
@@ -1291,12 +1273,6 @@ export interface AboutUsResponseDataObjectLocalizedAttributes {
      * @memberof AboutUsResponseDataObjectLocalizedAttributes
      */
     'updatedAt'?: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof AboutUsResponseDataObjectLocalizedAttributes
-     */
-    'publishedAt'?: Date;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
