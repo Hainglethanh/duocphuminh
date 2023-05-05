@@ -7,6 +7,7 @@ import Footer from "~/components/footer/footer";
 import { BlogTypeApi, GlobalApi, ProductCategoryApi } from "~/services";
 import {
   BlogTypeContext,
+  getImageUrl,
   GlobalContext,
   ProductTypeContext,
 } from "~/utils/conts";
@@ -15,7 +16,9 @@ import {
 // type="image/webp"
 // href={getImageUrl(globalData.attributes?.logo?.data?.attributes)}
 
-export const head: DocumentHead = () => {
+export const head: DocumentHead = ({ resolveValue }) => {
+  const data = resolveValue(useGetGlobalData);
+
   return {
     links: [
       {
@@ -23,6 +26,22 @@ export const head: DocumentHead = () => {
         rel: "icon",
         type: "image/x-icon",
         href: "/favicon.ico",
+      },
+    ],
+    meta: [
+      {
+        property: "og:image",
+        content: `${getImageUrl(
+          data.data?.attributes?.logo?.data?.attributes
+        )}`,
+      },
+      {
+        name: "og:image:width",
+        content: `${1000}`,
+      },
+      {
+        name: "og:image:height",
+        content: `${1000}`,
       },
     ],
   };
