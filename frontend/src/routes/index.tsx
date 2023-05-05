@@ -181,7 +181,7 @@ const ProductCategory = (props: {
                     );
                   })}
                 </div>
-                <div class="text-center">
+                {/* <div class="text-center">
                   <a
                     href="san-pham.html"
                     class="hm-type-product__btn-seemore hm-btn-seemore--mb imp-btn-01"
@@ -189,7 +189,7 @@ const ProductCategory = (props: {
                     Xem tất cả
                     <i class="far fa-arrow-right" />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
@@ -332,7 +332,7 @@ export default component$(() => {
                           <div class="hm-intro__image">
                             <picture>
                               <img
-                                alt={x.picture?.data?.attributes?.caption}
+                                alt={x.picture?.data?.attributes?.name}
                                 class="w-100 bd-radius-tr-bl-04 e-rte-image e-imginline"
                                 src={getImageUrl(x.picture?.data?.attributes)}
                               />{" "}

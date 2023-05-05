@@ -21,6 +21,7 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="preload"
           as="font"
@@ -63,31 +64,18 @@ export default component$(() => {
         <link rel="stylesheet" href="/public/css/custom43e1.css?v=1.17" />
         <link rel="stylesheet" href="/public/css/common43e1.css?v=1.17" />
         <link rel="stylesheet" href="/public/css/style43e1.css?v=1.17" />
-
+        <link
+          rel="stylesheet"
+          href="/public/css/parts/about-us43e1.css?v=1.17"
+        />
         <link rel="stylesheet" href="/public/css/parts/single43e1.css?v=1.17" />
         <RouterHead />
       </head>
-      <body lang="en">
+      <body lang="vi">
         <RouterOutlet />
         <ServiceWorkerRegister />
         <div id="fb-root"></div>
         <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-        <script src="/public/vendor/jquery/jquery.min.js"></script>
-        <script src="/public/vendor/slick/slick.js"></script>
-        <script src="/public/vendor/jquery-ui/jquery-ui.min.js"></script>
-        <script
-          src="/public/vendor/jquery-ui/datepicker-vi.js"
-          type="text/javascript"
-        ></script>
-        <script src="/public/js/main43e1.js?v=1.17"></script>
-        <script src="/public/js/parts/home43e1.js?v=1.17"></script>
-        <script src="/public/js/facebook.js"></script>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-MSWKKXGFQ7"
-        ></script>
-        <script src="/public/js/google.js"></script>
       </body>
     </QwikCityProvider>
   );

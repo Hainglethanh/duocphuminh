@@ -77,27 +77,27 @@ export default component$(() => {
             </div>
             <div class="footer-right">
               <div class="footer-right-content">
-                <div class="footer-col">
+                {/* <div class="footer-col">
                   <h3 class="footer-title">VỀ Dược Phú Minh</h3>
                   <ul class="ft-menu">
                     <li class="ft-menu-item">
-                      <a href="/ve-chung-toi#tong-quan">Tổng quan</a>
+                      <a href="/ve-duoc-phu-minh#tong-quan">Tổng quan</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="/ve-chung-toihtml#van-hoa">Văn hóa</a>
+                      <a href="/ve-duoc-phu-minhhtml#van-hoa">Văn hóa</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="/ve-chung-toihtml#hanh-trinh">Hành trình</a>
+                      <a href="/ve-duoc-phu-minhhtml#hanh-trinh">Hành trình</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="/ve-chung-toihtml#con-nguoi">Con người</a>
+                      <a href="/ve-duoc-phu-minhhtml#con-nguoi">Con người</a>
                     </li>
                     <li class="ft-menu-item">
-                      <a href="/ve-chung-toihtml#tiem-luc">Tiềm lực</a>
+                      <a href="/ve-duoc-phu-minhhtml#tiem-luc">Tiềm lực</a>
                     </li>
                     <li class="ft-menu-item">&nbsp;</li>
                   </ul>
-                </div>
+                </div> */}
                 <div class="footer-col">
                   <h3 class="footer-title">SẢN PHẨM</h3>
                   <ul class="ft-menu">
@@ -130,7 +130,7 @@ export default component$(() => {
                   <h3 class="footer-title">KẾT NỐI VỚI CHÚNG TÔI</h3>
                   <ul class="ft-menu">
                     <li class="ft-menu-item">
-                      <a href="lien-he.html">Liên hệ</a>
+                      <a href="/lien-he">Liên hệ</a>
                     </li>
                   </ul>
                   <ul class="imp-social">

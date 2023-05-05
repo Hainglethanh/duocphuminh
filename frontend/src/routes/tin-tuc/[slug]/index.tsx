@@ -1,12 +1,9 @@
 import {
-  $,
   Resource,
   component$,
   useContext,
-  useOnDocument,
   useResource$,
   useSignal,
-  useStore,
   useVisibleTask$,
 } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
@@ -22,18 +19,6 @@ import {
   getImageUrl,
   goToCategory,
 } from "~/utils/conts";
-
-export const onDocumentReady = () => {
-  const state = useStore({ ready: false });
-  useOnDocument(
-    "DOMContentLoaded",
-    $(() => {
-      console.log("LOADED");
-      state.ready = true;
-    })
-  );
-  return state;
-};
 
 export const useGetBlog = routeLoader$(async ({ params }) => {
   try {
@@ -85,14 +70,13 @@ export const head: DocumentHead = ({ resolveValue }) => {
 export default component$(() => {
   const blogs = useGetBlog().value;
   const blog = blogs && blogs[0];
-  const ready = useSignal(false);
   const location = useLocation().url;
   const blogTypes = useContext(BlogTypeContext);
   if (!blog) {
     return null;
   }
+  const ready = useSignal(false);
   useVisibleTask$(() => {
-    console.log("AWDSADSADSADSAD ASDASDSA");
     ready.value = true;
   });
   const blogType = () =>
