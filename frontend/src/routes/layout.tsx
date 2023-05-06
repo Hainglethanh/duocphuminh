@@ -24,7 +24,7 @@ import {
 
 export const head: DocumentHead = ({ resolveValue }) => {
   const data = resolveValue(useGetGlobalData);
-
+  const meta = data.data?.attributes?.meta;
   return {
     links: [
       {
@@ -36,9 +36,19 @@ export const head: DocumentHead = ({ resolveValue }) => {
     ],
     meta: [
       {
+        name: "keywords",
+        content: meta?.keywords,
+      },
+      {
+        name: "description",
+        content: meta?.metaDescription,
+      },
+      {
         property: "og:image",
         content: `${getImageUrl(
-          data.data?.attributes?.logo?.data?.attributes
+          data.data?.attributes?.meta?.metaImage
+            ? data.data?.attributes?.meta?.metaImage.data?.attributes
+            : data.data?.attributes?.logo?.data?.attributes
         )}`,
       },
       {
@@ -104,6 +114,9 @@ export default component$(() => {
         </a> */}
       </main>
       <Footer />
+      <script type="application/ld+json">
+        {globalData.value.data?.attributes?.meta?.structuredData}
+      </script>
       {ready && (
         <a
           href={`https://chat.zalo.me/?phone=${globalData.value.data?.attributes?.hotline}`}
@@ -145,6 +158,56 @@ export default component$(() => {
       )}
       {ready && (
         <>
+          <link
+            rel="preload"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/otf"
+            href="/public/css/fonts/GoogleSans/GoogleSans-Regular.otf"
+          />
+          <link
+            rel="preload"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/otf"
+            href="/public/css/fonts/GoogleSans/GoogleSans-Medium.otf"
+          />
+          <link rel="stylesheet" href="/public/css/reset43e1.css?v=1.17" />
+          <link
+            rel="stylesheet"
+            href="/public/vendor/bootstrap/bootstrap.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="/public/vendor/fontawesome-5.15.3/css/all.min.css"
+          />
+
+          <link rel="stylesheet" href="/public/vendor/slick/slick.css" />
+          <link rel="stylesheet" href="/public/vendor/slick/slick-theme.css" />
+          <link
+            rel="stylesheet"
+            href="/public/vendor/jquery-ui/jquery-ui.min.css"
+          />
+          <link rel="stylesheet" href="/public/css/common43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/style43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/parts/home43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/custom43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/common43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/style43e1.css?v=1.17" />
+          <link
+            rel="stylesheet"
+            href="/public/css/parts/about-us43e1.css?v=1.17"
+          />
+          <link
+            rel="stylesheet"
+            href="/public/css/parts/single43e1.css?v=1.17"
+          />
           <script src="/public/vendor/jquery/jquery.min.js"></script>
           <script src="/public/vendor/slick/slick.js"></script>
           <script src="/public/vendor/jquery-ui/jquery-ui.min.js"></script>

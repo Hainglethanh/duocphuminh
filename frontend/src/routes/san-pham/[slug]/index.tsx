@@ -44,7 +44,9 @@ export const head: DocumentHead = ({ resolveValue }) => {
   if (!product) {
     return {};
   }
-  const productImage = product.attributes!.images?.data![0];
+  const productImage = product.attributes?.meta?.metaImage
+    ? product.attributes?.meta?.metaImage.data
+    : product.attributes!.images?.data![0];
   return {
     title: `${product.attributes?.name}`,
     links: [
@@ -55,7 +57,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
     ],
     meta: [
       ...createMeta(
-        product.attributes?.name,
+        product.attributes?.meta?.keywords,
         product.attributes?.name,
         getImageUrl(productImage!.attributes),
         "webp",
@@ -66,7 +68,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
       ),
       {
         name: "description",
-        content: `${product.attributes?.introduce}`,
+        content: `${product.attributes?.meta?.metaDescription}`,
       },
     ],
   };

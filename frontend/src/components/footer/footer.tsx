@@ -39,7 +39,7 @@ export default component$(() => {
                       <img
                         alt=""
                         data-widget="image"
-                        src="public/images/map-pin.svg"
+                        src="/public/images/map-pin.svg"
                       />
                     </span>{" "}
                     <span>{globalData.attributes?.address}</span>
@@ -49,7 +49,7 @@ export default component$(() => {
                       <img
                         alt=""
                         data-widget="image"
-                        src="public/images/phone.svg"
+                        src="/public/images/phone.svg"
                       />
                     </span>{" "}
                     <a href={`tel:${globalData.attributes?.phoneNumber}`}>
@@ -61,7 +61,7 @@ export default component$(() => {
                       <img
                         alt=""
                         data-widget="image"
-                        src="public/images/phone-call.svg"
+                        src="/public/images/phone-call.svg"
                       />
                     </span>{" "}
                     <span>

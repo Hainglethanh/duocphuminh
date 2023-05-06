@@ -27,7 +27,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-05-05T12:18:45.204Z"
+    "x-generation-date": "2023-05-06T16:48:16.874Z"
   },
   "externalDocs": {
     "description": "Find out more",
@@ -102,6 +102,9 @@
               "$ref": "#/components/schemas/SectionsSubPageComponent"
             }
           },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
           "locale": {
             "type": "string"
           }
@@ -132,6 +135,9 @@
                 "items": {
                   "$ref": "#/components/schemas/SectionsSubPageComponent"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "locale": {
                 "type": "string"
@@ -772,6 +778,9 @@
             "items": {
               "$ref": "#/components/schemas/SectionsSubPageComponent"
             }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
           },
           "createdAt": {
             "type": "string",
@@ -1464,6 +1473,9 @@
                 "items": {
                   "$ref": "#/components/schemas/SectionsSubPageComponent"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -2159,6 +2171,9 @@
                   "$ref": "#/components/schemas/SectionsSubPageComponent"
                 }
               },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -2852,6 +2867,9 @@
                 "items": {
                   "$ref": "#/components/schemas/SectionsSubPageComponent"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -3582,6 +3600,9 @@
                   "$ref": "#/components/schemas/SectionsSubPageComponent"
                 }
               },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -3981,6 +4002,166 @@
                 },
                 "subTitle2": {
                   "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "SharedSeoComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "metaDescription": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "string"
+          },
+          "metaRobots": {
+            "type": "string"
+          },
+          "structuredData": {},
+          "metaViewport": {
+            "type": "string"
+          },
+          "metaImage": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "alternativeText": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      },
+                      "width": {
+                        "type": "integer"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "formats": {},
+                      "hash": {
+                        "type": "string"
+                      },
+                      "ext": {
+                        "type": "string"
+                      },
+                      "mime": {
+                        "type": "string"
+                      },
+                      "size": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "previewUrl": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "provider_metadata": {},
+                      "related": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "folder": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "folderPath": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -4932,9 +5113,6 @@
           "slug": {
             "type": "string"
           },
-          "keywords": {
-            "type": "string"
-          },
           "shortDescription": {
             "type": "string"
           },
@@ -4951,6 +5129,9 @@
               ],
               "example": "string or id"
             }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
           },
           "locale": {
             "type": "string"
@@ -5000,9 +5181,6 @@
               "slug": {
                 "type": "string"
               },
-              "keywords": {
-                "type": "string"
-              },
               "shortDescription": {
                 "type": "string"
               },
@@ -5019,6 +5197,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "locale": {
                 "type": "string"
@@ -5741,9 +5922,6 @@
           "slug": {
             "type": "string"
           },
-          "keywords": {
-            "type": "string"
-          },
           "shortDescription": {
             "type": "string"
           },
@@ -5816,6 +5994,9 @@
                 }
               }
             }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
           },
           "createdAt": {
             "type": "string",
@@ -6594,9 +6775,6 @@
               "slug": {
                 "type": "string"
               },
-              "keywords": {
-                "type": "string"
-              },
               "shortDescription": {
                 "type": "string"
               },
@@ -6669,6 +6847,9 @@
                     }
                   }
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -7449,9 +7630,6 @@
               "slug": {
                 "type": "string"
               },
-              "keywords": {
-                "type": "string"
-              },
               "shortDescription": {
                 "type": "string"
               },
@@ -7524,6 +7702,9 @@
                     }
                   }
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -8304,9 +8485,6 @@
               "slug": {
                 "type": "string"
               },
-              "keywords": {
-                "type": "string"
-              },
               "shortDescription": {
                 "type": "string"
               },
@@ -8379,6 +8557,9 @@
                     }
                   }
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -9194,9 +9375,6 @@
               "slug": {
                 "type": "string"
               },
-              "keywords": {
-                "type": "string"
-              },
               "shortDescription": {
                 "type": "string"
               },
@@ -9269,6 +9447,9 @@
                     }
                   }
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -11771,6 +11952,9 @@
           "companyName": {
             "type": "string"
           },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
           "locale": {
             "type": "string"
           }
@@ -11810,6 +11994,9 @@
               },
               "companyName": {
                 "type": "string"
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "locale": {
                 "type": "string"
@@ -12459,6 +12646,9 @@
           },
           "companyName": {
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
           },
           "createdAt": {
             "type": "string",
@@ -13160,6 +13350,9 @@
               },
               "companyName": {
                 "type": "string"
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -13864,6 +14057,9 @@
               "companyName": {
                 "type": "string"
               },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -14566,6 +14762,9 @@
               },
               "companyName": {
                 "type": "string"
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -15305,6 +15504,9 @@
               "companyName": {
                 "type": "string"
               },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -15410,6 +15612,9 @@
               "$ref": "#/components/schemas/ElementsFeatureComponent"
             }
           },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
+          },
           "locale": {
             "type": "string"
           }
@@ -15436,6 +15641,9 @@
                   "$ref": "#/components/schemas/ElementsFeatureComponent"
                 }
               },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
               "locale": {
                 "type": "string"
               }
@@ -15460,6 +15668,9 @@
             "items": {
               "$ref": "#/components/schemas/ElementsFeatureComponent"
             }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/SharedSeoComponent"
           },
           "createdAt": {
             "type": "string",
@@ -15537,6 +15748,9 @@
                 "items": {
                   "$ref": "#/components/schemas/ElementsFeatureComponent"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -15617,6 +15831,9 @@
                   "$ref": "#/components/schemas/ElementsFeatureComponent"
                 }
               },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -15695,6 +15912,9 @@
                 "items": {
                   "$ref": "#/components/schemas/ElementsFeatureComponent"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -15809,6 +16029,9 @@
                 "items": {
                   "$ref": "#/components/schemas/ElementsFeatureComponent"
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -25568,6 +25791,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               }
             }
           }
@@ -26600,6 +26826,9 @@
                     }
                   }
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",
@@ -27707,6 +27936,9 @@
                     }
                   }
                 }
+              },
+              "meta": {
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "createdAt": {
                 "type": "string",

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_meta_keys",
+  "info": {
+    "displayName": "keys"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    }
+  }
+}

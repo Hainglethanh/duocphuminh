@@ -12,7 +12,12 @@ export default component$(() => {
             <div class="hd-ss hd-ss--left">
               <div class="hd-imp-logo">
                 <a href="/">
-                  <img src={getImageUrl(globalData.attributes?.logo?.data?.attributes)} alt="Logo DuocPhuMinh" />
+                  <img
+                    src={getImageUrl(
+                      globalData.attributes?.logo?.data?.attributes
+                    )}
+                    alt="Logo DuocPhuMinh"
+                  />
                 </a>
               </div>
             </div>
@@ -34,14 +39,17 @@ export default component$(() => {
                     <span class="btn-menu-dropdown">
                       <i class="fal fa-angle-down" />
                     </span>
-                    <a target="_self" href="/tin-tuc">
-                      Tin tức
+                    <a target="_self" href="/bai-viet">
+                      Bài viết
                     </a>
                     <ul class="sub-menu">
                       {blogTypeData.map((x) => {
                         return (
                           <li key={x.id} class="menu-item ">
-                            <a target="_self" href={`/tin-tuc/?type=${x.attributes?.slug}`}>
+                            <a
+                              target="_self"
+                              href={`/bai-viet/?type=${x.attributes?.slug}`}
+                            >
                               {x.attributes?.name}
                             </a>
                           </li>

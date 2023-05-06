@@ -47,22 +47,23 @@ export const head: DocumentHead = ({ resolveValue }) => {
   if (!blog) {
     return {};
   }
+  const image = blog.attributes?.meta?.metaImage || blog.attributes?.thumbnail;
   return {
     title: `${blog.attributes?.title}`,
     meta: [
       ...createMeta(
-        blog.attributes?.keywords,
+        blog.attributes?.meta?.keywords,
         blog.attributes?.title,
-        getImageUrl(blog.attributes?.thumbnail?.data?.attributes),
+        getImageUrl(image?.data?.attributes),
         "webp",
         {
-          width: blog.attributes?.thumbnail?.data?.attributes?.width || 960,
-          height: blog.attributes?.thumbnail?.data?.attributes?.height || 500,
+          width: image?.data?.attributes?.width || 960,
+          height: image?.data?.attributes?.height || 500,
         }
       ),
       {
         name: "description",
-        content: `${blog.attributes?.shortDescription}`,
+        content: `${blog.attributes?.meta?.metaDescription}`,
       },
     ],
   };
@@ -134,7 +135,7 @@ export default component$(() => {
                   </li>
                   <span class="imp-breadcrumb-separator"></span>
                   <li>
-                    <a href="../tin-tuc.html"> Tin tức</a>
+                    <a href="../bai-viet.html"> Tin tức</a>
                   </li>
                   <span class="imp-breadcrumb-separator"></span>
                   <li>
@@ -214,7 +215,7 @@ export default component$(() => {
                     return (
                       <div key={x.id} class="news__item imp-grid-01__item">
                         <a
-                          href={`/tin-tuc/${x.attributes?.slug}`}
+                          href={`/bai-viet/${x.attributes?.slug}`}
                           class="news__item-link img-grid-01__item-link"
                         >
                           <div class="news__item-thumb imp-grid-01__item-thumb">

@@ -134,9 +134,9 @@ const ProductCategory = (props: {
               <div class="hm-type-product__wrap">
                 <div class="hm-type-product__bg" />
                 <div class="hm-type-product__header d-flex flex-wrap align-items-center justify-content-between">
-                  <h3 class="font-02 color-02 text-uppercase line-height-03 imp-mb-0">
+                  <h2 class="font-02 color-02 text-uppercase line-height-03 imp-mb-0">
                     Các dòng sản phẩm
-                  </h3>
+                  </h2>
                   <a
                     href="/dong-san-pham"
                     class="hm-type-product__btn-seemore hm-btn-seemore--pc imp-btn-01"
@@ -168,13 +168,13 @@ const ProductCategory = (props: {
                             />
                           </div>
                           {index === 0 ? (
-                            <h4 class="hm-type-product__cate-name font-04 color-white imp-mb-0">
+                            <h3 class="hm-type-product__cate-name font-04 color-white imp-mb-0">
                               {x.attributes?.name}
-                            </h4>
+                            </h3>
                           ) : (
-                            <h4 class="hm-type-product__cate-name font-07 color-white imp-mb-0">
+                            <h3 class="hm-type-product__cate-name font-07 color-white imp-mb-0">
                               {x.attributes?.name}
-                            </h4>
+                            </h3>
                           )}
                         </a>
                       </div>
@@ -209,7 +209,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
             <h3 class="font-02 text-uppercase imp-mb-0">
               <span class="color-02">Bản tin</span>
             </h3>
-            <a href="/tin-tuc" class="imp-btn-01 hm-btn-seemore--pc">
+            <a href="/bai-viet" class="imp-btn-01 hm-btn-seemore--pc">
               Xem tất cả
               <i class="far fa-arrow-right" />
             </a>
@@ -219,7 +219,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
               return (
                 <div key={x.id} class="hm-news__item">
                   <a
-                    href={`/tin-tuc/${x.attributes?.slug}`}
+                    href={`/bai-viet/${x.attributes?.slug}`}
                     class="hm-news__item-link"
                   >
                     <div class="hm-news__img mb-3">
@@ -243,7 +243,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
             })}
           </div>
           <div class="text-center hm-btn-seemore--mb">
-            <a href="/tin-tuc" class="imp-btn-01">
+            <a href="/bai-viet" class="imp-btn-01">
               Xem tất cả
               <i class="far fa-arrow-right" />
             </a>
@@ -311,17 +311,17 @@ export default component$(() => {
                       <div class="hm-intro__row">
                         <div class="hm-intro__col hm-intro__col--left">
                           <div class="hm-intro__inner">
-                            <h3 class="hm-intro__inner-title-sm font-02 color-02 text-uppercase">
+                            <h2 class="hm-intro__inner-title-sm font-02 color-02 text-uppercase">
                               {x.subTitle}
-                            </h3>
-                            <h2 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">
-                              {x.title}
                             </h2>
+                            <h1 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">
+                              {x.title}
+                            </h1>
                             <div class="hm-intro__content font-01 color-05">
                               {x.description}
                             </div>
                             <div class="color-white">
-                              <a class="imp-btn-01" href="ve-imexpharm.html">
+                              <a class="imp-btn-01" href="/ve-duoc-phu-minh/">
                                 Tìm hiểu thêm
                                 <i class="far fa-arrow-right">&nbsp;</i>
                               </a>

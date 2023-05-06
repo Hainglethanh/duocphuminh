@@ -19,6 +19,10 @@ export const RouterHead = component$(() => {
         content="Công ty cổ phần Dược Phú Minh - Niềm tin cho mọi nhà"
       />
       <meta
+        name="description"
+        content="Công ty cổ phần Dược Phú Minh - Niềm tin cho mọi nhà"
+      />
+      <meta
         property="og:url"
         content={loc.url.href.replace("http:", "https:")}
       />

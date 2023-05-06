@@ -81,6 +81,12 @@ export interface AboutUsListResponseDataItemAttributes {
     'subPages'?: Array<SectionsSubPageComponent>;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof AboutUsListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof AboutUsListResponseDataItemAttributes
      */
@@ -212,6 +218,12 @@ export interface AboutUsLocalizationRequest {
     'subPages'?: Array<SectionsSubPageComponent>;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof AboutUsLocalizationRequest
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {string}
      * @memberof AboutUsLocalizationRequest
      */
@@ -247,6 +259,12 @@ export interface AboutUsLocalizationResponse {
      * @memberof AboutUsLocalizationResponse
      */
     'subPages'?: Array<SectionsSubPageComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof AboutUsLocalizationResponse
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -1113,6 +1131,12 @@ export interface AboutUsRequestData {
     'subPages'?: Array<SectionsSubPageComponent>;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof AboutUsRequestData
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {string}
      * @memberof AboutUsRequestData
      */
@@ -1174,6 +1198,12 @@ export interface AboutUsResponseDataObjectAttributes {
      * @memberof AboutUsResponseDataObjectAttributes
      */
     'subPages'?: Array<SectionsSubPageComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof AboutUsResponseDataObjectAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -1261,6 +1291,12 @@ export interface AboutUsResponseDataObjectLocalizedAttributes {
      * @memberof AboutUsResponseDataObjectLocalizedAttributes
      */
     'subPages'?: Array<SectionsSubPageComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof AboutUsResponseDataObjectLocalizedAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -1829,12 +1865,6 @@ export interface BlogListResponseDataItemAttributes {
      * @type {string}
      * @memberof BlogListResponseDataItemAttributes
      */
-    'keywords'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogListResponseDataItemAttributes
-     */
     'shortDescription'?: string;
     /**
      * 
@@ -1842,6 +1872,12 @@ export interface BlogListResponseDataItemAttributes {
      * @memberof BlogListResponseDataItemAttributes
      */
     'tags'?: BlogLocalizationResponseTags;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -1958,12 +1994,6 @@ export interface BlogLocalizationRequest {
      * @type {string}
      * @memberof BlogLocalizationRequest
      */
-    'keywords'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationRequest
-     */
     'shortDescription'?: string;
     /**
      * 
@@ -1971,6 +2001,12 @@ export interface BlogLocalizationRequest {
      * @memberof BlogLocalizationRequest
      */
     'tags'?: Array<AboutUsLocalizationRequestBanner>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogLocalizationRequest
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {string}
@@ -2025,12 +2061,6 @@ export interface BlogLocalizationResponse {
      * @type {string}
      * @memberof BlogLocalizationResponse
      */
-    'keywords'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponse
-     */
     'shortDescription'?: string;
     /**
      * 
@@ -2038,6 +2068,12 @@ export interface BlogLocalizationResponse {
      * @memberof BlogLocalizationResponse
      */
     'tags'?: BlogLocalizationResponseTags;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogLocalizationResponse
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -2574,12 +2610,6 @@ export interface BlogRequestData {
      * @type {string}
      * @memberof BlogRequestData
      */
-    'keywords'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogRequestData
-     */
     'shortDescription'?: string;
     /**
      * 
@@ -2587,6 +2617,12 @@ export interface BlogRequestData {
      * @memberof BlogRequestData
      */
     'tags'?: Array<AboutUsLocalizationRequestBanner>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogRequestData
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {string}
@@ -2673,12 +2709,6 @@ export interface BlogResponseDataObjectAttributes {
      * @type {string}
      * @memberof BlogResponseDataObjectAttributes
      */
-    'keywords'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogResponseDataObjectAttributes
-     */
     'shortDescription'?: string;
     /**
      * 
@@ -2686,6 +2716,12 @@ export interface BlogResponseDataObjectAttributes {
      * @memberof BlogResponseDataObjectAttributes
      */
     'tags'?: BlogLocalizationResponseTags;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogResponseDataObjectAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -2802,12 +2838,6 @@ export interface BlogResponseDataObjectLocalizedAttributes {
      * @type {string}
      * @memberof BlogResponseDataObjectLocalizedAttributes
      */
-    'keywords'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogResponseDataObjectLocalizedAttributes
-     */
     'shortDescription'?: string;
     /**
      * 
@@ -2815,6 +2845,12 @@ export interface BlogResponseDataObjectLocalizedAttributes {
      * @memberof BlogResponseDataObjectLocalizedAttributes
      */
     'tags'?: BlogLocalizationResponseTags;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogResponseDataObjectLocalizedAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -3664,6 +3700,12 @@ export interface GlobalListResponseDataItemAttributes {
     'companyName'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof GlobalListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof GlobalListResponseDataItemAttributes
      */
@@ -3775,6 +3817,12 @@ export interface GlobalLocalizationRequest {
     'companyName'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof GlobalLocalizationRequest
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {string}
      * @memberof GlobalLocalizationRequest
      */
@@ -3828,6 +3876,12 @@ export interface GlobalLocalizationResponse {
      * @memberof GlobalLocalizationResponse
      */
     'companyName'?: string;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof GlobalLocalizationResponse
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -3922,6 +3976,12 @@ export interface GlobalRequestData {
     'companyName'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof GlobalRequestData
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {string}
      * @memberof GlobalRequestData
      */
@@ -4007,6 +4067,12 @@ export interface GlobalResponseDataObjectAttributes {
      * @memberof GlobalResponseDataObjectAttributes
      */
     'companyName'?: string;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof GlobalResponseDataObjectAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -4120,6 +4186,12 @@ export interface GlobalResponseDataObjectLocalizedAttributes {
     'companyName'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof GlobalResponseDataObjectLocalizedAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof GlobalResponseDataObjectLocalizedAttributes
      */
@@ -4213,6 +4285,12 @@ export interface HomePageListResponseDataItemAttributes {
     'features'?: Array<ElementsFeatureComponent>;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof HomePageListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof HomePageListResponseDataItemAttributes
      */
@@ -4300,6 +4378,12 @@ export interface HomePageLocalizationRequest {
     'features'?: Array<ElementsFeatureComponent>;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof HomePageLocalizationRequest
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {string}
      * @memberof HomePageLocalizationRequest
      */
@@ -4329,6 +4413,12 @@ export interface HomePageLocalizationResponse {
      * @memberof HomePageLocalizationResponse
      */
     'features'?: Array<ElementsFeatureComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof HomePageLocalizationResponse
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -4399,6 +4489,12 @@ export interface HomePageRequestData {
     'features'?: Array<ElementsFeatureComponent>;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof HomePageRequestData
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {string}
      * @memberof HomePageRequestData
      */
@@ -4460,6 +4556,12 @@ export interface HomePageResponseDataObjectAttributes {
      * @memberof HomePageResponseDataObjectAttributes
      */
     'features'?: Array<ElementsFeatureComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof HomePageResponseDataObjectAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -4547,6 +4649,12 @@ export interface HomePageResponseDataObjectLocalizedAttributes {
      * @memberof HomePageResponseDataObjectLocalizedAttributes
      */
     'features'?: Array<ElementsFeatureComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof HomePageResponseDataObjectLocalizedAttributes
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {Date}
@@ -5224,6 +5332,55 @@ export interface SectionsSubPageComponentFeaturesInnerImageDataAttributes {
      * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
      */
     'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+}
+/**
+ * 
+ * @export
+ * @interface SharedSeoComponent
+ */
+export interface SharedSeoComponent {
+    /**
+     * 
+     * @type {number}
+     * @memberof SharedSeoComponent
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedSeoComponent
+     */
+    'metaDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedSeoComponent
+     */
+    'keywords'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedSeoComponent
+     */
+    'metaRobots'?: string;
+    /**
+     * 
+     * @type {any}
+     * @memberof SharedSeoComponent
+     */
+    'structuredData'?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedSeoComponent
+     */
+    'metaViewport'?: string;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof SharedSeoComponent
+     */
+    'metaImage'?: SectionsSubPageComponentFeaturesInnerImage;
 }
 /**
  * 
@@ -6230,6 +6387,12 @@ export interface ThuocListResponseDataItemAttributes {
     'product_type'?: ThuocListResponseDataItemAttributesProductType;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof ThuocListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof ThuocListResponseDataItemAttributes
      */
@@ -6482,6 +6645,12 @@ export interface ThuocRequestData {
      * @memberof ThuocRequestData
      */
     'product_type'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof ThuocRequestData
+     */
+    'meta'?: SharedSeoComponent;
 }
 
 export const ThuocRequestDataStatusEnum = {

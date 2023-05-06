@@ -68,7 +68,7 @@ export default component$(() => {
   const category = location.url.searchParams.get("type");
   const blogTypes = useContext(BlogTypeContext);
   const goToPage = (page: number) =>
-    `/tin-tuc/?page=${page}${
+    `/bai-viet/?page=${page}${
       !_.isEmpty(currentCategory) ? "&type=" + currentCategory : ""
     }${!_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""}`;
   const checkActive = (slug: string, index: number) => {
@@ -134,7 +134,7 @@ export default component$(() => {
                   return (
                     <div key={x.id} class="news__item imp-grid-01__item">
                       <a
-                        href={`/tin-tuc/${x.attributes?.slug}`}
+                        href={`/bai-viet/${x.attributes?.slug}`}
                         class="news__item-link img-grid-01__item-link"
                       >
                         <div class="news__item-thumb imp-grid-01__item-thumb">
