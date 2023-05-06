@@ -7,6 +7,19 @@ import type {
 } from "~/services";
 import qs from "qs";
 import type { DocumentMeta } from "@builder.io/qwik-city";
+export const GlobalContext =
+  createContextId<GlobalResponseDataObject>("globalData-context");
+
+export const BlogTypeContext =
+  createContextId<BlogTypeListResponseDataItem[]>("blogType-context");
+
+export const ProductTypeContext = createContextId<
+  ProductCategoryListResponseDataItem[]
+>("productType-context");
+
+export const H1Text =
+  createContextId<ProductCategoryListResponseDataItem[]>("H1Text");
+
 const camelToSnakeCase = (str: string) =>
   str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 
@@ -19,15 +32,6 @@ export const getIcon = (icon: string) => {
 
   return `${iconCategories} ${iconName}`;
 };
-export const GlobalContext =
-  createContextId<GlobalResponseDataObject>("globalData-context");
-
-export const BlogTypeContext =
-  createContextId<BlogTypeListResponseDataItem[]>("blogType-context");
-
-export const ProductTypeContext = createContextId<
-  ProductCategoryListResponseDataItem[]
->("productType-context");
 
 export const getImageUrl = (imageObject: any) => {
   if (!imageObject) {

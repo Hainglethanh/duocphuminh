@@ -27,7 +27,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-05-06T16:48:16.874Z"
+    "x-generation-date": "2023-05-06T17:32:01.218Z"
   },
   "externalDocs": {
     "description": "Find out more",
@@ -4165,6 +4165,9 @@
                 }
               }
             }
+          },
+          "metaTitle": {
+            "type": "string"
           }
         }
       },

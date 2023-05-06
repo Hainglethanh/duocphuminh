@@ -9,7 +9,10 @@ export const RouterHead = component$(() => {
   const loc = useLocation();
   return (
     <>
-      <title>{head.title || "Công ty cổ phần Dược Phú Minh"}</title>
+      <title>
+        {head.title ||
+          "Dược Phú Minh - Giải pháp y tế hàng đầu cho người tiêu dùng"}
+      </title>
       <meta property="og:site_name" content="Dược Phú Minh" />
       <link rel="canonical" href={loc.url.href.replace("http:", "https:")} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

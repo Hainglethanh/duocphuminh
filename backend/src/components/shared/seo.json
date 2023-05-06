@@ -8,8 +8,7 @@
   "attributes": {
     "metaDescription": {
       "type": "text",
-      "required": true,
-      "maxLength": 160,
+      "required": false,
       "minLength": 50
     },
     "keywords": {
@@ -27,14 +26,18 @@
       "type": "string"
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "metaTitle": {
+      "type": "string"
     }
   }
 }

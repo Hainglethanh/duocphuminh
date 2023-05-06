@@ -5381,6 +5381,12 @@ export interface SharedSeoComponent {
      * @memberof SharedSeoComponent
      */
     'metaImage'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedSeoComponent
+     */
+    'metaTitle'?: string;
 }
 /**
  * 

@@ -147,7 +147,7 @@ export default component$(() => {
               </div>
             </div>
             <div class="single__header text-center">
-              <h3 class="font-03 text-center">{blog.attributes?.title}</h3>
+              <h2 class="font-03 text-center">{blog.attributes?.title}</h2>
               <ul class="single__header-meta">
                 <li class="single__header-cate">
                   <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>
