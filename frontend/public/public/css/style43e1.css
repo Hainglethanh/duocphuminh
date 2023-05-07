@@ -871,10 +871,14 @@ i {
   }
 }
 @media (max-width: 1199.99px) {
-  .hd-menu-wrap,
   .hd-nav {
+    position: sticky;
+    top: 48px;
+    width: 100%;
+  }
+  .hd-menu-wrap {
     position: fixed;
-    top: 0;
+    top: 48px;
     width: 100%;
   }
   .hd-menu-contact,
@@ -967,6 +971,7 @@ i {
     display: block;
     width: 100%;
     order: 2;
+    margin-top: 40px;
   }
   .hd-menu::-webkit-scrollbar {
     width: 8px;
