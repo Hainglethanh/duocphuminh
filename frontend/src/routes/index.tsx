@@ -311,12 +311,12 @@ export default component$(() => {
                       <div class="hm-intro__row">
                         <div class="hm-intro__col hm-intro__col--left">
                           <div class="hm-intro__inner">
-                            <h2 class="hm-intro__inner-title-sm font-02 color-02 text-uppercase">
+                            <h3 class="hm-intro__inner-title-sm font-02 color-02 text-uppercase">
                               {x.subTitle}
-                            </h2>
-                            <h1 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">
+                            </h3>
+                            <h2 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">
                               {x.title}
-                            </h1>
+                            </h2>
                             <div class="hm-intro__content font-01 color-05">
                               {x.description}
                             </div>

@@ -88,9 +88,9 @@ export default component$(() => {
               <img src="/uploads/tin%20tuc.jpg" alt="" />
             </div>
             <div class="hd-page__content">
-              <h1 class="hd-page__title text-uppercase font-02 color-white">
+              <h2 class="hd-page__title text-uppercase font-02 color-white">
                 Tin tức
-              </h1>
+              </h2>
             </div>
           </div>
         </div>
