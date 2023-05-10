@@ -3392,6 +3392,37 @@ export interface ElementsHeroComponent {
      * @memberof ElementsHeroComponent
      */
     'picture'?: AboutUsLocalizationResponseBanner;
+    /**
+     * 
+     * @type {ElementsHeroComponentButton}
+     * @memberof ElementsHeroComponent
+     */
+    'button'?: ElementsHeroComponentButton;
+}
+/**
+ * 
+ * @export
+ * @interface ElementsHeroComponentButton
+ */
+export interface ElementsHeroComponentButton {
+    /**
+     * 
+     * @type {number}
+     * @memberof ElementsHeroComponentButton
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ElementsHeroComponentButton
+     */
+    'title'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ElementsHeroComponentButton
+     */
+    'url'?: string;
 }
 /**
  * 

@@ -281,23 +281,6 @@ export default component$(() => {
     );
     return response.data;
   });
-
-  // const services = useContext(ServiceContext);
-  // const testimonials = useTestimonials().value.data;
-  // const solutions = useGetSolutions().value.data;
-  // const globalData = useContext(GlobalContext);
-  // const hero = data?.attributes?.heroBanner;
-  // const featuredServices = data?.attributes?.featured_services?.data;
-  // const aboutUs = data?.attributes?.aboutUs;
-  // const blogsResource = useResource$(async () => {
-  //   const response = await new BlogApi().getBlogs({
-  //     populate: "deep,4",
-  //     sort: "createdAt desc",
-  //     paginationPage: 1,
-  //     paginationPageSize: 3,
-  //   });
-  //   return response.data.data;
-  // });
   return (
     <>
       <main>
@@ -321,8 +304,11 @@ export default component$(() => {
                               {x.description}
                             </div>
                             <div class="color-white">
-                              <a class="imp-btn-01" href="/ve-duoc-phu-minh/">
-                                Tìm hiểu thêm
+                              <a
+                                class="imp-btn-01"
+                                href={x.button?.url || "/ve-duoc-phu-minh/"}
+                              >
+                                {x.button?.title || "Tìm hiểu thêm"}
                                 <i class="far fa-arrow-right">&nbsp;</i>
                               </a>
                             </div>
@@ -347,10 +333,14 @@ export default component$(() => {
             </div>
           </section>
         )}
-        {data?.attributes?.features &&
-          data.attributes.features.map((x) => {
-            return <Feature key={x.id} data={x} />;
-          })}
+        <section class="hm-mission-vision">
+          <div class="imp-container">
+            {data?.attributes?.features &&
+              data.attributes.features.map((x) => {
+                return <Feature key={x.id} data={x} />;
+              })}
+          </div>
+        </section>
 
         <ProductCategory categoriesResource={categoriesResource} />
         <FeaturedProduct productResource={productResource} />
