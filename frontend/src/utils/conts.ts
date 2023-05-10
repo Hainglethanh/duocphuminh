@@ -35,7 +35,7 @@ export const getIcon = (icon: string) => {
 
 export const getImageUrl = (imageObject: any) => {
   if (!imageObject) {
-    return "";
+    return "/placeholder.png";
   }
   if (!imageObject.formats) {
     return imageObject.url;

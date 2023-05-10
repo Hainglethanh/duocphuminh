@@ -44,9 +44,25 @@ export const head: DocumentHead = ({ resolveValue }) => {
   if (!product) {
     return {};
   }
-  const productImage = product.attributes?.meta?.metaImage
+  let productImage = product.attributes?.meta?.metaImage
     ? product.attributes?.meta?.metaImage.data
-    : product.attributes!.images?.data![0];
+    : (product.attributes!.images?.data![0] as any);
+  if (!productImage) {
+    productImage = {
+      attributes: {
+        default: {
+          formats: {
+            default: {
+              url: "/placeholder.png",
+            },
+          },
+        },
+      },
+      with: 400,
+      height: 400,
+      name: "Công ty cổ phần dược phẩm Phú Minh",
+    };
+  }
   return {
     title: `${product.attributes?.name}`,
     links: [

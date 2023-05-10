@@ -3454,6 +3454,12 @@ export interface ElementsSocialComponent {
      * @memberof ElementsSocialComponent
      */
     'tiktok'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ElementsSocialComponent
+     */
+    'zalo'?: string;
 }
 /**
  * @type ErrorData
@@ -3737,6 +3743,12 @@ export interface GlobalListResponseDataItemAttributes {
     'meta'?: SharedSeoComponent;
     /**
      * 
+     * @type {string}
+     * @memberof GlobalListResponseDataItemAttributes
+     */
+    'email'?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof GlobalListResponseDataItemAttributes
      */
@@ -3857,6 +3869,12 @@ export interface GlobalLocalizationRequest {
      * @type {string}
      * @memberof GlobalLocalizationRequest
      */
+    'email'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GlobalLocalizationRequest
+     */
     'locale': string;
 }
 /**
@@ -3913,6 +3931,12 @@ export interface GlobalLocalizationResponse {
      * @memberof GlobalLocalizationResponse
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof GlobalLocalizationResponse
+     */
+    'email'?: string;
     /**
      * 
      * @type {Date}
@@ -4016,6 +4040,12 @@ export interface GlobalRequestData {
      * @type {string}
      * @memberof GlobalRequestData
      */
+    'email'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GlobalRequestData
+     */
     'locale'?: string;
 }
 /**
@@ -4104,6 +4134,12 @@ export interface GlobalResponseDataObjectAttributes {
      * @memberof GlobalResponseDataObjectAttributes
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof GlobalResponseDataObjectAttributes
+     */
+    'email'?: string;
     /**
      * 
      * @type {Date}
@@ -4221,6 +4257,12 @@ export interface GlobalResponseDataObjectLocalizedAttributes {
      * @memberof GlobalResponseDataObjectLocalizedAttributes
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof GlobalResponseDataObjectLocalizedAttributes
+     */
+    'email'?: string;
     /**
      * 
      * @type {Date}

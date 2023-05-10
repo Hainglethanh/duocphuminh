@@ -27,7 +27,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-05-10T07:45:29.546Z"
+    "x-generation-date": "2023-05-10T10:06:59.182Z"
   },
   "externalDocs": {
     "description": "Find out more",
@@ -11958,6 +11958,10 @@
           "meta": {
             "$ref": "#/components/schemas/SharedSeoComponent"
           },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
           "locale": {
             "type": "string"
           }
@@ -12000,6 +12004,10 @@
               },
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
               },
               "locale": {
                 "type": "string"
@@ -12652,6 +12660,10 @@
           },
           "meta": {
             "$ref": "#/components/schemas/SharedSeoComponent"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
           },
           "createdAt": {
             "type": "string",
@@ -13356,6 +13368,10 @@
               },
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
               },
               "createdAt": {
                 "type": "string",
@@ -14063,6 +14079,10 @@
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
               },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -14768,6 +14788,10 @@
               },
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
               },
               "createdAt": {
                 "type": "string",
@@ -15510,6 +15534,10 @@
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
               },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -15593,6 +15621,9 @@
             "type": "string"
           },
           "tiktok": {
+            "type": "string"
+          },
+          "zalo": {
             "type": "string"
           }
         }
