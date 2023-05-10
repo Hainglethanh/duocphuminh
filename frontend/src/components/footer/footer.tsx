@@ -3,15 +3,14 @@ import moment from "moment";
 import {
   BlogTypeContext,
   GlobalContext,
-  ProductTypeContext,
+  // ProductTypeContext,
   getImageUrl,
   goToCategory,
-  goToProductType,
 } from "~/utils/conts";
 
 export default component$(() => {
   const globalData = useContext(GlobalContext);
-  const productTypes = useContext(ProductTypeContext);
+  // const productTypes = useContext(ProductTypeContext);
   const blogTypes = useContext(BlogTypeContext);
   return (
     <footer>
