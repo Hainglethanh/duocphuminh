@@ -166,17 +166,24 @@ const LeftImage = (props: { data: ElementsFeatureComponent }) => {
 
 export default component$((props: { data: ElementsFeatureComponent }) => {
   const { data } = props;
+  let element = <LeftImage data={data} />;
   if (data.image2 && data.name2) {
-    return <TwoImage data={data} />;
+    element = <TwoImage data={data} />;
   }
   if (data.imagePosition === "right") {
-    return <RightImage data={data} />;
+    element = <RightImage data={data} />;
   }
   if (data.imagePosition === "left") {
-    return <LeftImage data={data} />;
+    element = <LeftImage data={data} />;
   }
   if (data.imagePosition === "center") {
-    return <CenterImage data={data} />;
+    element = <CenterImage data={data} />;
   }
-  return <LeftImage data={data} />;
+  return (
+    <>
+      <link rel="stylesheet" href="/public/css/parts/about-us43e1.css?v=1.17" />
+
+      {element}
+    </>
+  );
 });
