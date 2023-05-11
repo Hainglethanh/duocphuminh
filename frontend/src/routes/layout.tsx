@@ -1,22 +1,12 @@
-import {
-  component$,
-  Slot,
-  useContextProvider,
-  useSignal,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { component$, Slot, useContextProvider, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 
 import Header from "~/components/header/header";
 import Footer from "~/components/footer/footer";
 import { BlogTypeApi, GlobalApi, ProductCategoryApi } from "~/services";
-import {
-  BlogTypeContext,
-  getImageUrl,
-  GlobalContext,
-  ProductTypeContext,
-} from "~/utils/conts";
+import { BlogTypeContext, getImageUrl, GlobalContext, ProductTypeContext } from "~/utils/conts";
+import Loading from "~/components/loading/loading";
 
 // rel="icon"
 // type="image/webp"
@@ -105,18 +95,14 @@ export default component$(() => {
     ready.value = true;
   });
   return (
-    <div class="page">
+    <div class={`page ${!ready.value && "fixed-page"}`}>
       <main>
         <Header />
         <Slot />
-        {/* <a href="#!" class="scroll-to-top">
-          <i class="fas fa-angle-up" aria-hidden="true"></i>
-        </a> */}
       </main>
       <Footer />
-      <script type="application/ld+json">
-        {globalData.value.data?.attributes?.meta?.structuredData}
-      </script>
+      {!ready.value && <Loading />}
+      <script type="application/ld+json">{globalData.value.data?.attributes?.meta?.structuredData}</script>
       {ready && (
         <>
           <div id="fb-root"></div>
@@ -134,10 +120,7 @@ export default component$(() => {
               <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut">
                 <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
                   {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 460.1 436.6"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.1 436.6">
                     <path
                       fill="currentColor"
                       class="st0"
@@ -162,20 +145,35 @@ export default component$(() => {
       )}
       {ready && (
         <>
+          <link rel="stylesheet" href="/public/css/reset43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/vendor/bootstrap/bootstrap.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossOrigin="anonymous"
+          />
+          {/* <link rel="stylesheet" href="/public/vendor/fontawesome-5.15.3/css/all.min.css" /> */}
+
+          <link rel="stylesheet" href="/public/vendor/slick/slick.css" />
+          <link rel="stylesheet" href="/public/vendor/slick/slick-theme.css" />
+          {/* <link rel="stylesheet" href="/public/vendor/jquery-ui/jquery-ui.min.css" /> */}
+          <link rel="stylesheet" href="/public/css/common43e1.css?v=1.17" />
+          {/* <link rel="stylesheet" href="/public/css/style43e1.css?v=1.17" /> */}
+          <link rel="stylesheet" href="/public/css/parts/home43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/custom43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/common43e1.css?v=1.17" />
+          <link rel="stylesheet" href="/public/css/style43e1.css?v=1.17" />
+          {/* <link rel="stylesheet" href="/public/css/parts/about-us43e1.css?v=1.17" /> */}
+          <link rel="stylesheet" href="/public/css/parts/single43e1.css?v=1.17" />
           <script src="/public/vendor/jquery/jquery.min.js"></script>
           <script src="/public/vendor/slick/slick.js"></script>
           <script src="/public/vendor/jquery-ui/jquery-ui.min.js"></script>
-          <script
-            src="/public/vendor/jquery-ui/datepicker-vi.js"
-            type="text/javascript"
-          ></script>
+          <script src="/public/vendor/jquery-ui/datepicker-vi.js" type="text/javascript"></script>
           <script src="/public/js/main43e1.js?v=1.17"></script>
           <script src="/public/js/parts/home43e1.js?v=1.17"></script>
           <script src="/public/js/facebook.js"></script>
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-MSWKKXGFQ7"
-          ></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSWKKXGFQ7"></script>
           <script src="/public/js/google.js"></script>
         </>
       )}

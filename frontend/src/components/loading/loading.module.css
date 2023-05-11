@@ -1,43 +1,13 @@
-:root {
-  --primary: #3599cc;
-  --secondary: #18455d;
-}
-.sticky {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 9999;
-}
-.white-filter {
-  -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
-}
-.shadow {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.fixed-page {
-  position: fixed;
-  width: 100%;
-}
-.loading-body{
-  z-index: 999999;
-  padding:0;
-  position: absolute;
-  top: 0;
-  margin:0;
-  width:100%;
-  height: 100vh;
-  background:radial-gradient(#62b04a, #B7E7A8);
-}
-.loading-wrapper{
+.wrapper{
   width:200px;
   height:60px;
   position: absolute;
   left:50%;
   top:50%;
   transform: translate(-50%, -50%);
+  background-color: red;
 }
-.loading-circle{
+.circle{
   width:20px;
   height:20px;
   position: absolute;
@@ -64,16 +34,16 @@
       top:0%;
   }
 }
-.loading-circle:nth-child(2){
+.circle:nth-child(2){
   left:45%;
   animation-delay: .2s;
 }
-.loading-circle:nth-child(3){
+.circle:nth-child(3){
   left:auto;
   right:15%;
   animation-delay: .3s;
 }
-.loading-shadow{
+.shadow{
   width:20px;
   height:4px;
   border-radius: 50%;
@@ -100,16 +70,16 @@
       opacity: .4;
   }
 }
-.loading-shadow:nth-child(4){
+.shadow:nth-child(4){
   left: 45%;
   animation-delay: .2s
 }
-.loading-shadow:nth-child(5){
+.shadow:nth-child(5){
   left:auto;
   right:15%;
   animation-delay: .3s;
 }
-.loading-wrapper span{
+.wrapper span{
   position: absolute;
   top:75px;
   font-family: 'Lato';

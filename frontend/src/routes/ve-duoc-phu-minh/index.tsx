@@ -18,6 +18,12 @@ export const useGetAboutUs = routeLoader$(async () => {
 export const head: DocumentHead = () => {
   return {
     title: `Về Dược Phú Minh`,
+    links: [
+      {
+        rel: "stylesheet",
+        href: "/public/css/parts/about-us43e1.css?v=1.17",
+      },
+    ],
   };
 };
 
@@ -37,9 +43,7 @@ export default component$(() => {
               />
             </div>
             <div class="hd-page__content">
-              <h1 class="hd-page__title text-uppercase font-02 color-white">
-                Về dược phú minh
-              </h1>
+              <h1 class="hd-page__title text-uppercase font-02 color-white">Về dược phú minh</h1>
             </div>
           </div>
         </div>
@@ -53,10 +57,7 @@ export default component$(() => {
                 <ul class="imp-tabs imp-tabs-02 imp-tabs-nav">
                   {subPages.map((x) => {
                     return (
-                      <li
-                        key={x.id}
-                        class={x.id === currentSubPage.value.id ? "active" : ""}
-                      >
+                      <li key={x.id} class={x.id === currentSubPage.value.id ? "active" : ""}>
                         <a
                           onClick$={() => {
                             currentSubPage.value = x;
@@ -73,10 +74,7 @@ export default component$(() => {
           </div>
           <div class="imp-container">
             <div class="about-us__tabs-content imp-tabs-content">
-              <div
-                class="about-us__pane imp-tabs-pane active"
-                id="about-us-overview"
-              >
+              <div class="about-us__pane imp-tabs-pane active" id="about-us-overview">
                 {currentSubPage.value.features?.map((x) => {
                   return <Feature key={x.id} data={x} />;
                 })}
