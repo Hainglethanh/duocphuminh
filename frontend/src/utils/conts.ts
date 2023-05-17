@@ -7,23 +7,17 @@ import type {
 } from "~/services";
 import qs from "qs";
 import type { DocumentMeta } from "@builder.io/qwik-city";
-export const GlobalContext =
-  createContextId<GlobalResponseDataObject>("globalData-context");
+export const GlobalContext = createContextId<GlobalResponseDataObject>("globalData-context");
 
-export const BlogTypeContext =
-  createContextId<BlogTypeListResponseDataItem[]>("blogType-context");
+export const BlogTypeContext = createContextId<BlogTypeListResponseDataItem[]>("blogType-context");
 
-export const ProductTypeContext = createContextId<
-  ProductCategoryListResponseDataItem[]
->("productType-context");
+export const ProductTypeContext = createContextId<ProductCategoryListResponseDataItem[]>("productType-context");
 
-export const H1Text =
-  createContextId<ProductCategoryListResponseDataItem[]>("H1Text");
+export const H1Text = createContextId<ProductCategoryListResponseDataItem[]>("H1Text");
 
-const camelToSnakeCase = (str: string) =>
-  str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+const camelToSnakeCase = (str: string) => str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 
-export const goToCategory = (slug: string) => `/bai-viet/?type=${slug}`;
+export const goToCategory = (slug: string) => `/tin-tuc/?type=${slug}`;
 export const goToProductType = (slug: string) => `/dong-san-pham/?type=${slug}`;
 
 export const getIcon = (icon: string) => {
@@ -40,9 +34,7 @@ export const getImageUrl = (imageObject: any) => {
   if (!imageObject.formats) {
     return imageObject.url;
   }
-  return !_.isEmpty(imageObject.formats.default.url)
-    ? imageObject.formats.default.url
-    : imageObject.url;
+  return !_.isEmpty(imageObject.formats.default.url) ? imageObject.formats.default.url : imageObject.url;
 };
 export const generateQuery = (params: any) => {
   return qs.stringify(params, { encodeValuesOnly: true }) as any;

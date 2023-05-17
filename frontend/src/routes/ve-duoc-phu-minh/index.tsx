@@ -17,7 +17,18 @@ export const useGetAboutUs = routeLoader$(async () => {
 });
 export const head: DocumentHead = () => {
   return {
-    title: `Về Dược Phú Minh`,
+    title: `Về Dược Phú Minh - công ty Dược phẩm quốc tế Phú Minh`,
+    meta: [
+      {
+        name: "keywords",
+        content: "Dược phú Minh, duocphuminh, Công ty dươc phẩm quốc tế Phú Minh, Phú Minh dược phẩm",
+      },
+      {
+        name: "description",
+        content:
+          "Công ty cổ phần dược phẩm Phú Minh cam kết sẽ không ngừng nỗ lực phát triển để ngày một tốt hơn, mang đến người tiêu dùng sức khỏe tốt nhất",
+      },
+    ],
     links: [
       {
         rel: "stylesheet",

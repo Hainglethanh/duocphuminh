@@ -1,18 +1,8 @@
 import type { ResourceReturn } from "@builder.io/qwik";
 import { Resource, component$, useResource$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import type {
-  BlogListResponse,
-  ProductCategoryListResponse,
-  ThuocListResponse,
-} from "~/services";
-import {
-  BlogApi,
-  HomePageApi,
-  PartnerApi,
-  ProductCategoryApi,
-  ThuocApi,
-} from "~/services";
+import type { BlogListResponse, ProductCategoryListResponse, ThuocListResponse } from "~/services";
+import { BlogApi, HomePageApi, PartnerApi, ProductCategoryApi, ThuocApi } from "~/services";
 import _ from "lodash";
 import { generateAxiosConfig, getImageUrl } from "~/utils/conts";
 import moment from "moment";
@@ -43,9 +33,7 @@ export const useGetBlogs = routeLoader$(async () => {
 //   return response.data;
 // });
 
-const FeaturedProduct = (props: {
-  productResource: ResourceReturn<ThuocListResponse>;
-}) => {
+const FeaturedProduct = (props: { productResource: ResourceReturn<ThuocListResponse> }) => {
   const { productResource } = props;
   return (
     <Resource
@@ -56,9 +44,7 @@ const FeaturedProduct = (props: {
             <div class="imp-container">
               <div class="hm-product__wrap">
                 <div class="hm-product__header text-center pt-4">
-                  <h3 class="hm-product__title font-02 color-02 text-uppercase imp-mb-0">
-                    Sản phẩm nổi bật
-                  </h3>
+                  <h3 class="hm-product__title font-02 color-02 text-uppercase imp-mb-0">Sản phẩm nổi bật</h3>
                 </div>
                 <div class="hm-product__list slider-01">
                   {products.data?.map((x) => {
@@ -78,10 +64,7 @@ const FeaturedProduct = (props: {
                                   length: 100,
                                 })}
                               </div>
-                              <a
-                                href={`/san-pham/${x.attributes?.slug}`}
-                                class="imp-btn-01 font-01"
-                              >
+                              <a href={`/san-pham/${x.attributes?.slug}`} class="imp-btn-01 font-01">
                                 Chi tiết
                               </a>
                             </div>
@@ -92,9 +75,7 @@ const FeaturedProduct = (props: {
                                 <img
                                   class="w-100"
                                   src={getImageUrl(
-                                    x.attributes?.images &&
-                                      x.attributes?.images.data &&
-                                      x.attributes?.images?.data[0]
+                                    x.attributes?.images && x.attributes?.images.data && x.attributes?.images?.data[0]
                                       ? x.attributes?.images?.data[0].attributes
                                       : ""
                                   )}
@@ -120,9 +101,7 @@ const FeaturedProduct = (props: {
   );
 };
 
-const ProductCategory = (props: {
-  categoriesResource: ResourceReturn<ProductCategoryListResponse>;
-}) => {
+const ProductCategory = (props: { categoriesResource: ResourceReturn<ProductCategoryListResponse> }) => {
   const { categoriesResource } = props;
   return (
     <Resource
@@ -134,13 +113,8 @@ const ProductCategory = (props: {
               <div class="hm-type-product__wrap">
                 <div class="hm-type-product__bg" />
                 <div class="hm-type-product__header d-flex flex-wrap align-items-center justify-content-between">
-                  <h2 class="font-02 color-02 text-uppercase line-height-03 imp-mb-0">
-                    Các dòng sản phẩm
-                  </h2>
-                  <a
-                    href="/dong-san-pham"
-                    class="hm-type-product__btn-seemore hm-btn-seemore--pc imp-btn-01"
-                  >
+                  <h2 class="font-02 color-02 text-uppercase line-height-03 imp-mb-0">Các dòng sản phẩm</h2>
+                  <a href="/dong-san-pham" class="hm-type-product__btn-seemore hm-btn-seemore--pc imp-btn-01">
                     Xem tất cả
                     <i class="far fa-arrow-right" />
                   </a>
@@ -148,12 +122,7 @@ const ProductCategory = (props: {
                 <div class="hm-type-product__categories">
                   {categories.data?.map((x, index) => {
                     return (
-                      <div
-                        key={x.id}
-                        class={`hm-type-product__cate hm-type-product__cate--${
-                          index + 1
-                        }`}
-                      >
+                      <div key={x.id} class={`hm-type-product__cate hm-type-product__cate--${index + 1}`}>
                         <a
                           href={`/dong-san-pham/?type=${x.attributes?.slug}`}
                           class="hm-type-product__cate-link text-center"
@@ -161,9 +130,7 @@ const ProductCategory = (props: {
                           <div class="hm-type-product__cate-icon mb-3">
                             <img
                               class="w-100"
-                              src={getImageUrl(
-                                x.attributes?.icon?.data?.attributes
-                              )}
+                              src={getImageUrl(x.attributes?.icon?.data?.attributes)}
                               alt={`icon ${x.attributes?.name}`}
                             />
                           </div>
@@ -209,7 +176,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
             <h3 class="font-02 text-uppercase imp-mb-0">
               <span class="color-02">Bản tin</span>
             </h3>
-            <a href="/bai-viet" class="imp-btn-01 hm-btn-seemore--pc">
+            <a href="/tin-tuc" class="imp-btn-01 hm-btn-seemore--pc">
               Xem tất cả
               <i class="far fa-arrow-right" />
             </a>
@@ -218,22 +185,15 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
             {blogs.data?.map((x) => {
               return (
                 <div key={x.id} class="hm-news__item">
-                  <a
-                    href={`/bai-viet/${x.attributes?.slug}`}
-                    class="hm-news__item-link"
-                  >
+                  <a href={`/tin-tuc/${x.attributes?.slug}`} class="hm-news__item-link">
                     <div class="hm-news__img mb-3">
                       <img
                         class="w-100 bd-radius-01"
-                        src={getImageUrl(
-                          x.attributes?.thumbnail?.data?.attributes
-                        )}
+                        src={getImageUrl(x.attributes?.thumbnail?.data?.attributes)}
                         alt=""
                       />
                     </div>
-                    <h4 class="font-05 color-black imp-mb-0">
-                      {x.attributes?.title}
-                    </h4>
+                    <h4 class="font-05 color-black imp-mb-0">{x.attributes?.title}</h4>
                     <div class="hm-news__item-date font-01-1 color-04">
                       {moment(x.attributes?.createdAt).format("ll")}
                     </div>
@@ -243,7 +203,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
             })}
           </div>
           <div class="text-center hm-btn-seemore--mb">
-            <a href="/bai-viet" class="imp-btn-01">
+            <a href="/tin-tuc" class="imp-btn-01">
               Xem tất cả
               <i class="far fa-arrow-right" />
             </a>
@@ -294,20 +254,11 @@ export default component$(() => {
                       <div class="hm-intro__row">
                         <div class="hm-intro__col hm-intro__col--left">
                           <div class="hm-intro__inner">
-                            <h3 class="hm-intro__inner-title-sm font-02 color-02 text-uppercase">
-                              {x.subTitle}
-                            </h3>
-                            <h2 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">
-                              {x.title}
-                            </h2>
-                            <div class="hm-intro__content font-01 color-05">
-                              {x.description}
-                            </div>
+                            <h3 class="hm-intro__inner-title-sm font-02 color-02 text-uppercase">{x.subTitle}</h3>
+                            <h2 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">{x.title}</h2>
+                            <div class="hm-intro__content font-01 color-05">{x.description}</div>
                             <div class="color-white">
-                              <a
-                                class="imp-btn-01"
-                                href={x.button?.url || "/ve-duoc-phu-minh/"}
-                              >
+                              <a class="imp-btn-01" href={x.button?.url || "/ve-duoc-phu-minh/"}>
                                 {x.button?.title || "Tìm hiểu thêm"}
                                 <i class="far fa-arrow-right">&nbsp;</i>
                               </a>
@@ -348,25 +299,17 @@ export default component$(() => {
         <section class="hm-partner imp-mb-01">
           <div class="imp-container">
             <div class="hm-partner__header">
-              <h3 class="hm-partner__header-title font-02 color-02 text-uppercase imp-mb-0">
-                Đối tác
-              </h3>
+              <h3 class="hm-partner__header-title font-02 color-02 text-uppercase imp-mb-0">Đối tác</h3>
             </div>
             <div class="hm-partner__list slider-03">
               {partners.value.data?.map((x) => {
                 return (
                   <div key={x.id} class="hm-partner__item">
-                    <a
-                      href={
-                        !_.isEmpty(x.attributes?.url) ? x.attributes?.url : "#"
-                      }
-                    >
+                    <a href={!_.isEmpty(x.attributes?.url) ? x.attributes?.url : "#"}>
                       <div class="hm-partner__item-logo">
                         <img
                           class="w-100"
-                          src={getImageUrl(
-                            x.attributes?.logo?.data?.attributes
-                          )}
+                          src={getImageUrl(x.attributes?.logo?.data?.attributes)}
                           alt={x.attributes?.name}
                         />
                       </div>
