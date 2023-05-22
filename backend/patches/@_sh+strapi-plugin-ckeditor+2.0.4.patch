@@ -1,0 +1,111 @@
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/LICENSE b/node_modules/@_sh/strapi-plugin-ckeditor/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/README.md b/node_modules/@_sh/strapi-plugin-ckeditor/README.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/CKEditorIcon.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/CKEditorIcon.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/base.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/base.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/blockBaloon.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/blockBaloon.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/toolbar.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/toolbar.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/toolbarBaloon.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configs/toolbarBaloon.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configuration.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/configuration.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/StrapiMediaLib.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/StrapiMediaLib.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/StrapiUploadAdapter.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/StrapiUploadAdapter.js
+old mode 100644
+new mode 100755
+index fbc1a43..23e2735
+--- a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/StrapiUploadAdapter.js
++++ b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/StrapiUploadAdapter.js
+@@ -148,7 +148,7 @@ class Adapter {
+         let keys = Object.keys(formats).sort(
+           (a, b) => formats[a].width - formats[b].width
+         );
+-        keys.map((k) => (urls[formats[k].width] = backendUrl + formats[k].url));
++        keys.map((k) => (urls[formats[k].width] = provider !== 'local' ? url : backendUrl + formats[k].url));
+         resolve({ alt: alternativeText || name, urls: urls });
+       } else {
+         resolve(
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/plugins/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/styling.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/styling.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/additional.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/additional.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/common.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/common.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/dark.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/dark.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/light.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/light.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/MediaLib/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/MediaLib/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/utils/getEditorConfig.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/utils/getEditorConfig.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/utils/pluginId.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/utils/pluginId.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/controllers/config.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/controllers/config.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/controllers/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/controllers/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/register.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/register.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/routes/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/routes/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/services/config.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/services/config.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/server/services/index.js b/node_modules/@_sh/strapi-plugin-ckeditor/server/services/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/strapi-admin.js b/node_modules/@_sh/strapi-plugin-ckeditor/strapi-admin.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/strapi-server.js b/node_modules/@_sh/strapi-plugin-ckeditor/strapi-server.js
+old mode 100644
+new mode 100755

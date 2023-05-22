@@ -152,7 +152,7 @@ export default component$(() => {
                         data-widget="image"
                         href={globalData.attributes?.social?.facebook}
                       >
-                        <img alt="" src="public/images/brand-facebook.svg" />
+                        <img alt="" src="/public/images/brand-facebook.svg" />
                       </a>
                     </li>
 
@@ -161,7 +161,7 @@ export default component$(() => {
                         data-widget="image"
                         href={globalData.attributes?.social?.youtube}
                       >
-                        <img alt="" src="public/images/brand-youtube.svg" />
+                        <img alt="" src="/public/images/brand-youtube.svg" />
                       </a>
                     </li>
                     <li>
@@ -172,7 +172,7 @@ export default component$(() => {
                         <img
                           alt=""
                           class={"white-filter"}
-                          src="public/images/tiktok-svgrepo-com.svg"
+                          src="/public/images/tiktok-svgrepo-com.svg"
                         />
                       </a>
                     </li>
@@ -184,7 +184,7 @@ export default component$(() => {
                         <img
                           alt=""
                           class={"white-filter"}
-                          src="public/images/icons8-zalo.svg"
+                          src="/public/images/icons8-zalo.svg"
                         />
                       </a>
                     </li>
