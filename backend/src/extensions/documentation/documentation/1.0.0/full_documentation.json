@@ -27,7 +27,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-05-19T07:08:29.830Z"
+    "x-generation-date": "2023-05-24T17:39:33.435Z"
   },
   "externalDocs": {
     "description": "Find out more",
@@ -25842,6 +25842,9 @@
               },
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "test": {
+                "type": "string"
               }
             }
           }
@@ -26877,6 +26880,9 @@
               },
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "test": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -27987,6 +27993,9 @@
               },
               "meta": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
+              },
+              "test": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",

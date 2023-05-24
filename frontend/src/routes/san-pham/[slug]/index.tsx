@@ -98,7 +98,6 @@ export default component$(() => {
   if (!product) {
     return null;
   }
-
   const productType = () =>
     productTypes.find(
       (x) =>
@@ -205,7 +204,7 @@ export default component$(() => {
                         </div>
                         <div class="col-md-9 col-7">
                           <div class="single-product__content-desc">
-                            <a>{product.attributes?.material}</a>
+                            <p>{product.attributes?.material}</p>
                           </div>
                         </div>
                       </div>
@@ -219,7 +218,7 @@ export default component$(() => {
                         </div>
                         <div class="col-md-9 col-7">
                           <div class="single-product__content-desc">
-                            <a>{product.attributes?.uses}</a>
+                            <p>{product.attributes?.uses}</p>
                           </div>
                         </div>
                       </div>

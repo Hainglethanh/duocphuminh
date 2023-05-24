@@ -6,16 +6,18 @@ module.exports = ({ env }) => [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": ["'self'", "https:"],
-          "img-src": [
+          "script-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "https:"],
+          "connect-src": [
             "'self'",
-            "data:",
+            "*.tinymce.com",
+            "*.tiny.cloud",
             "blob:",
-            `https://${env("AWS_BUCKET_NAME")}.s3.${env(
-              "AWS_REGION"
-            )}.amazonaws.com`,
+            "*.strapi.io",
           ],
+          "img-src": ["*"],
+
           "media-src": [
+            "*",
             "'self'",
             "data:",
             "blob:",
@@ -28,6 +30,7 @@ module.exports = ({ env }) => [
       },
     },
   },
+
   "strapi::cors",
   "strapi::poweredBy",
   "strapi::logger",
