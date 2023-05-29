@@ -1850,10 +1850,10 @@ export interface BlogListResponseDataItemAttributes {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {BlogLocalizationResponseThumbnail}
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
      * @memberof BlogListResponseDataItemAttributes
      */
-    'thumbnail'?: BlogLocalizationResponseThumbnail;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {string}
@@ -2046,10 +2046,10 @@ export interface BlogLocalizationResponse {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {BlogLocalizationResponseThumbnail}
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
      * @memberof BlogLocalizationResponse
      */
-    'thumbnail'?: BlogLocalizationResponseThumbnail;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {string}
@@ -2169,6 +2169,12 @@ export interface BlogLocalizationResponseBlogTypeDataAttributes {
     'slug'?: string;
     /**
      * 
+     * @type {BlogLocalizationResponseBlogTypeDataAttributesMeta}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributes
+     */
+    'meta'?: BlogLocalizationResponseBlogTypeDataAttributesMeta;
+    /**
+     * 
      * @type {Date}
      * @memberof BlogLocalizationResponseBlogTypeDataAttributes
      */
@@ -2181,10 +2187,10 @@ export interface BlogLocalizationResponseBlogTypeDataAttributes {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy}
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof BlogLocalizationResponseBlogTypeDataAttributes
      */
-    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy;
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
@@ -2203,6 +2209,61 @@ export interface BlogLocalizationResponseBlogTypeDataAttributes {
      * @memberof BlogLocalizationResponseBlogTypeDataAttributes
      */
     'locale'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface BlogLocalizationResponseBlogTypeDataAttributesMeta
+ */
+export interface BlogLocalizationResponseBlogTypeDataAttributesMeta {
+    /**
+     * 
+     * @type {number}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'metaDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'keywords'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'metaRobots'?: string;
+    /**
+     * 
+     * @type {any}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'structuredData'?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'metaViewport'?: string;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBanner}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'metaImage'?: AboutUsLocalizationResponseBanner;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributesMeta
+     */
+    'metaTitle'?: string;
 }
 /**
  * 
@@ -2278,283 +2339,6 @@ export interface BlogLocalizationResponseTagsDataInnerAttributes {
      * @memberof BlogLocalizationResponseTagsDataInnerAttributes
      */
     'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnail
- */
-export interface BlogLocalizationResponseThumbnail {
-    /**
-     * 
-     * @type {BlogLocalizationResponseThumbnailData}
-     * @memberof BlogLocalizationResponseThumbnail
-     */
-    'data'?: BlogLocalizationResponseThumbnailData;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnailData
- */
-export interface BlogLocalizationResponseThumbnailData {
-    /**
-     * 
-     * @type {number}
-     * @memberof BlogLocalizationResponseThumbnailData
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {BlogLocalizationResponseThumbnailDataAttributes}
-     * @memberof BlogLocalizationResponseThumbnailData
-     */
-    'attributes'?: BlogLocalizationResponseThumbnailDataAttributes;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnailDataAttributes
- */
-export interface BlogLocalizationResponseThumbnailDataAttributes {
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'alternativeText'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'caption'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'width'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'height'?: number;
-    /**
-     * 
-     * @type {any}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'formats'?: any;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'hash'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'ext'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'mime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'size'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'url'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'previewUrl'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'provider'?: string;
-    /**
-     * 
-     * @type {any}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'provider_metadata'?: any;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesRelated}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'related'?: AboutUsLocalizationResponseBannerDataAttributesRelated;
-    /**
-     * 
-     * @type {BlogLocalizationResponseThumbnailDataAttributesFolder}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'folder'?: BlogLocalizationResponseThumbnailDataAttributesFolder;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'folderPath'?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'createdAt'?: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'updatedAt'?: Date;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributes
-     */
-    'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnailDataAttributesFolder
- */
-export interface BlogLocalizationResponseThumbnailDataAttributesFolder {
-    /**
-     * 
-     * @type {BlogLocalizationResponseThumbnailDataAttributesFolderData}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolder
-     */
-    'data'?: BlogLocalizationResponseThumbnailDataAttributesFolderData;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnailDataAttributesFolderData
- */
-export interface BlogLocalizationResponseThumbnailDataAttributesFolderData {
-    /**
-     * 
-     * @type {number}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderData
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderData
-     */
-    'attributes'?: BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
- */
-export interface BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes {
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'pathId'?: number;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'parent'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesRelated}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'children'?: AboutUsLocalizationResponseBannerDataAttributesRelated;
-    /**
-     * 
-     * @type {BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributesFiles}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'files'?: BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributesFiles;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'path'?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'createdAt'?: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'updatedAt'?: Date;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
-    /**
-     * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributes
-     */
-    'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
-}
-/**
- * 
- * @export
- * @interface BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributesFiles
- */
-export interface BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributesFiles {
-    /**
-     * 
-     * @type {Array<SectionsSubPageComponentFeaturesInnerImageData>}
-     * @memberof BlogLocalizationResponseThumbnailDataAttributesFolderDataAttributesFiles
-     */
-    'data'?: Array<SectionsSubPageComponentFeaturesInnerImageData>;
 }
 /**
  * 
@@ -2694,10 +2478,10 @@ export interface BlogResponseDataObjectAttributes {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {BlogLocalizationResponseThumbnail}
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
      * @memberof BlogResponseDataObjectAttributes
      */
-    'thumbnail'?: BlogLocalizationResponseThumbnail;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {string}
@@ -2823,10 +2607,10 @@ export interface BlogResponseDataObjectLocalizedAttributes {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {BlogLocalizationResponseThumbnail}
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
      * @memberof BlogResponseDataObjectLocalizedAttributes
      */
-    'thumbnail'?: BlogLocalizationResponseThumbnail;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {string}
@@ -2952,6 +2736,12 @@ export interface BlogTypeListResponseDataItemAttributes {
     'slug'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogTypeListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof BlogTypeListResponseDataItemAttributes
      */
@@ -2964,10 +2754,10 @@ export interface BlogTypeListResponseDataItemAttributes {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy}
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof BlogTypeListResponseDataItemAttributes
      */
-    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy;
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
@@ -3014,10 +2804,10 @@ export interface BlogTypeListResponseDataItemLocalized {
     'id'?: number;
     /**
      * 
-     * @type {BlogLocalizationResponseBlogTypeDataAttributes}
+     * @type {BlogTypeResponseDataObjectLocalizedAttributes}
      * @memberof BlogTypeListResponseDataItemLocalized
      */
-    'attributes'?: BlogLocalizationResponseBlogTypeDataAttributes;
+    'attributes'?: BlogTypeResponseDataObjectLocalizedAttributes;
 }
 /**
  * 
@@ -3037,6 +2827,12 @@ export interface BlogTypeLocalizationRequest {
      * @memberof BlogTypeLocalizationRequest
      */
     'slug'?: string;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogTypeLocalizationRequest
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {string}
@@ -3070,6 +2866,12 @@ export interface BlogTypeLocalizationResponse {
     'slug'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogTypeLocalizationResponse
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof BlogTypeLocalizationResponse
      */
@@ -3082,10 +2884,10 @@ export interface BlogTypeLocalizationResponse {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy}
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof BlogTypeLocalizationResponse
      */
-    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy;
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
@@ -3136,6 +2938,12 @@ export interface BlogTypeRequestData {
      * @memberof BlogTypeRequestData
      */
     'slug'?: string;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogTypeRequestData
+     */
+    'meta'?: SharedSeoComponent;
     /**
      * 
      * @type {string}
@@ -3201,6 +3009,12 @@ export interface BlogTypeResponseDataObjectAttributes {
     'slug'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogTypeResponseDataObjectAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof BlogTypeResponseDataObjectAttributes
      */
@@ -3213,10 +3027,10 @@ export interface BlogTypeResponseDataObjectAttributes {
     'updatedAt'?: Date;
     /**
      * 
-     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy}
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
      * @memberof BlogTypeResponseDataObjectAttributes
      */
-    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesFilesDataInnerAttributesCreatedBy;
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
@@ -3263,10 +3077,71 @@ export interface BlogTypeResponseDataObjectLocalized {
     'id'?: number;
     /**
      * 
-     * @type {BlogLocalizationResponseBlogTypeDataAttributes}
+     * @type {BlogTypeResponseDataObjectLocalizedAttributes}
      * @memberof BlogTypeResponseDataObjectLocalized
      */
-    'attributes'?: BlogLocalizationResponseBlogTypeDataAttributes;
+    'attributes'?: BlogTypeResponseDataObjectLocalizedAttributes;
+}
+/**
+ * 
+ * @export
+ * @interface BlogTypeResponseDataObjectLocalizedAttributes
+ */
+export interface BlogTypeResponseDataObjectLocalizedAttributes {
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'slug'?: string;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'createdAt'?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'updatedAt'?: Date;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseLocalizations}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'localizations'?: AboutUsLocalizationResponseLocalizations;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'locale'?: string;
 }
 /**
  * 
@@ -5017,6 +4892,12 @@ export interface ProductCategoryListResponseDataItemAttributes {
     'slug'?: string;
     /**
      * 
+     * @type {SharedSeoComponent}
+     * @memberof ProductCategoryListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
      * @type {Date}
      * @memberof ProductCategoryListResponseDataItemAttributes
      */
@@ -5083,6 +4964,12 @@ export interface ProductCategoryRequestData {
      * @memberof ProductCategoryRequestData
      */
     'slug'?: string;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof ProductCategoryRequestData
+     */
+    'meta'?: SharedSeoComponent;
 }
 /**
  * 
@@ -6472,6 +6359,12 @@ export interface ThuocListResponseDataItemAttributes {
     'meta'?: SharedSeoComponent;
     /**
      * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributes
+     */
+    'test'?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof ThuocListResponseDataItemAttributes
      */
@@ -6580,6 +6473,12 @@ export interface ThuocListResponseDataItemAttributesProductTypeDataAttributes {
     'slug'?: string;
     /**
      * 
+     * @type {ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
+     */
+    'meta'?: ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta;
+    /**
+     * 
      * @type {Date}
      * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
      */
@@ -6602,6 +6501,61 @@ export interface ThuocListResponseDataItemAttributesProductTypeDataAttributes {
      * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
      */
     'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+}
+/**
+ * 
+ * @export
+ * @interface ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+ */
+export interface ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta {
+    /**
+     * 
+     * @type {number}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'metaDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'keywords'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'metaRobots'?: string;
+    /**
+     * 
+     * @type {any}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'structuredData'?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'metaViewport'?: string;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'metaImage'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
+     */
+    'metaTitle'?: string;
 }
 /**
  * 
@@ -6730,6 +6684,12 @@ export interface ThuocRequestData {
      * @memberof ThuocRequestData
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof ThuocRequestData
+     */
+    'test'?: string;
 }
 
 export const ThuocRequestDataStatusEnum = {

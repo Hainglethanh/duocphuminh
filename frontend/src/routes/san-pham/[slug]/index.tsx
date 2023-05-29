@@ -155,11 +155,7 @@ export default component$(() => {
                 </li>
                 <span class="imp-breadcrumb-separator"></span>
                 <li>
-                  <a
-                    href={`/dong-san-pham/?type=${
-                      productType()?.attributes?.slug
-                    }`}
-                  >
+                  <a href={`/dong-san-pham/${productType()?.attributes?.slug}`}>
                     {productType()?.attributes?.name}
                   </a>
                 </li>

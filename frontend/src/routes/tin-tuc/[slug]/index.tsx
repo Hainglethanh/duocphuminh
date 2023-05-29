@@ -1,220 +1,277 @@
-import { Resource, component$, useContext, useResource$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { routeLoader$, useLocation } from "@builder.io/qwik-city";
+import { component$, useContext } from "@builder.io/qwik";
+import { DocumentHead, routeLoader$, useLocation } from "@builder.io/qwik-city";
 import _ from "lodash";
 import moment from "moment";
-import type { BlogListResponseDataItem } from "~/services";
-import { BlogApi } from "~/services";
-import { BlogTypeContext, createMeta, generateAxiosConfig, getImageUrl, goToCategory } from "~/utils/conts";
+import { BlogApi, BlogTypeApi } from "~/services";
+import {
+  BlogTypeContext,
+  generateAxiosConfig,
+  getImageUrl,
+  goToCategory,
+} from "~/utils/conts";
 
-export const useGetBlog = routeLoader$(async ({ params }) => {
-  try {
-    const slug = params["slug"];
-    const response = await new BlogApi().getBlogs(
-      {
-        populate: "deep,5",
+export const useGetBlogType = routeLoader$(async ({ params }) => {
+  let slug = params["slug"];
+  const hasSlug = !_.isEmpty(slug);
+  if (!hasSlug) {
+    const blogTypes = await new BlogTypeApi().getBlogTypes({
+      populate: "*",
+      paginationPageSize: 1,
+    });
+    slug = `${blogTypes.data.data![0].attributes?.slug}`;
+  }
+  const response = await new BlogTypeApi().getBlogTypes(
+    {
+      populate: "deep,5",
+      paginationPageSize: 1,
+    },
+    generateAxiosConfig({
+      slug: {
+        $eq: slug,
       },
+    })
+  );
+  return response.data;
+});
 
-      generateAxiosConfig({
-        filters: {
+export const useGetBlogList = routeLoader$(async ({ url, params }) => {
+  try {
+    const searchParams = url.searchParams;
+    let slug = params["slug"];
+    const hasSlug = !_.isEmpty(slug);
+    const page = searchParams.get("page") || `1`;
+    const search = searchParams.get("s");
+    if (!hasSlug) {
+      const blogTypes = await new BlogTypeApi().getBlogTypes({
+        populate: "*",
+        paginationPageSize: 1,
+      });
+      slug = `${blogTypes.data.data![0].attributes?.slug}`;
+    }
+    let filters: any = {};
+    if (hasSlug) {
+      filters = {
+        ...filters,
+        blog_type: hasSlug && {
           slug: {
             $eq: slug,
           },
         },
+      };
+    }
+    if (search) {
+      filters = {
+        ...filters,
+        title: search && {
+          $contains: search,
+        },
+      };
+    }
+    const response = await new BlogApi().getBlogs(
+      {
+        populate: "deep,5",
+        paginationPageSize: 16,
+        paginationPage: parseInt(page),
+      },
+      generateAxiosConfig({
+        filters,
       })
     );
-    return response.data.data;
+    return response.data;
   } catch (error) {
     console.log("EEER", error);
   }
 });
 export const head: DocumentHead = ({ resolveValue }) => {
-  const data = resolveValue(useGetBlog);
-  const blog = data ? data[0] : undefined;
-  if (!blog) {
-    return {};
-  }
-  const image = blog.attributes?.meta?.metaImage || blog.attributes?.thumbnail;
-  return {
-    title: `${blog.attributes?.title}`,
-    meta: [
-      ...createMeta(
-        blog.attributes?.meta?.keywords,
-        blog.attributes?.title,
-        getImageUrl(image?.data?.attributes),
-        "webp",
+  const data = resolveValue(useGetBlogType);
+  if (data.data && data.data[0] && data.data[0].attributes?.meta) {
+    const blogTypeMeta = data.data[0].attributes.meta;
+    return {
+      title:
+        blogTypeMeta.metaTitle ||
+        `Tin tức tổng hợp về sức khỏe - Mẹo sống khỏe hàng ngày`,
+      meta: [
         {
-          width: image?.data?.attributes?.width || 960,
-          height: image?.data?.attributes?.height || 500,
-        }
-      ),
+          name: "keywords",
+          content:
+            blogTypeMeta.keywords ||
+            "Mẹo sống khỏe, tin tức tổng hợp về sức khỏe, tin tức sức khỏe, sức khỏe gia đình, tin sức khỏe hàng ngày, tin tức bệnh học, tin tuc benh hoc, bản tin sức khỏe, mẹ và bé, tin tức mẹ và bé, tin tức mẹo vặt",
+        },
+        {
+          name: "description",
+          content:
+            blogTypeMeta.metaDescription ||
+            "Mẹo sống khỏe, bản tin sức khỏe hàng ngày mới nhất. Cẩm nang sức khỏe gia đình, mẹ và bé. Tổng hợp cách phòng bệnh cho trẻ nhỏ và gia đình",
+        },
+      ],
+    };
+  }
+  return {
+    title: `Tin tức tổng hợp về sức khỏe - Mẹo sống khỏe hàng ngày`,
+    meta: [
+      {
+        name: "keywords",
+        content:
+          "Mẹo sống khỏe, tin tức tổng hợp về sức khỏe, tin tức sức khỏe, sức khỏe gia đình, tin sức khỏe hàng ngày, tin tức bệnh học, tin tuc benh hoc, bản tin sức khỏe, mẹ và bé, tin tức mẹ và bé, tin tức mẹo vặt",
+      },
       {
         name: "description",
-        content: `${blog.attributes?.meta?.metaDescription}`,
+        content:
+          "Mẹo sống khỏe, bản tin sức khỏe hàng ngày mới nhất. Cẩm nang sức khỏe gia đình, mẹ và bé. Tổng hợp cách phòng bệnh cho trẻ nhỏ và gia đình",
       },
     ],
   };
 };
-export default component$(() => {
-  const blogs = useGetBlog().value;
-  const blog = blogs && blogs[0];
-  const location = useLocation().url;
-  const blogTypes = useContext(BlogTypeContext);
-  if (!blog) {
-    return null;
-  }
-  const ready = useSignal(false);
-  useVisibleTask$(() => {
-    ready.value = true;
-  });
-  const blogType = () =>
-    blogTypes.find((x) => blog.attributes?.blog_type?.data?.attributes?.slug === x.attributes?.slug);
 
-  const otherBlogs = useResource$<BlogListResponseDataItem[] | undefined>(async ({ track }) => {
-    track(() => blog); // Requires explicit tracking of inputs
-    try {
-      const response = await new BlogApi().getBlogs(
-        {
-          populate: "deep,5",
-          paginationPageSize: 2,
-        },
-        generateAxiosConfig({
-          filters: {
-            $and: [
-              {
-                id: {
-                  $ne: blog.id,
-                },
-              },
-              {
-                blog_type: {
-                  id: {
-                    $eq: blog.attributes?.blog_type?.data?.id,
-                  },
-                },
-              },
-            ],
-          },
-        })
-      );
-      return response.data.data as BlogListResponseDataItem[] | undefined;
-    } catch (error) {
-      console.log("@ASSDA", error);
+export default component$(() => {
+  const blogs = useGetBlogList().value?.data;
+  const meta = useGetBlogList().value?.meta;
+  const currentSearch = useLocation().url.searchParams.get("s");
+  const currentCategory = useLocation().params["slug"];
+  const currentPage = useLocation().url.searchParams.get("page") || `1`;
+  const blogTypes = useContext(BlogTypeContext);
+  const goToPage = (page: number) =>
+    `/tin-tuc/?page=${page}${
+      !_.isEmpty(currentCategory) ? "&type=" + currentCategory : ""
+    }${!_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""}`;
+  const checkActive = (slug: string, index: number) => {
+    if (!currentCategory) {
+      return index === 0;
     }
-  });
+    return currentCategory === slug;
+  };
+  const getCurrentBlogType = () =>
+    blogTypes.find((x) => x.attributes?.slug === currentCategory);
   return (
-    <>
-      <main>
-        <div class="single">
-          <div class="imp-container">
-            <div class="imp-breadcrumb-container imp-tabs-container">
-              <span class="imp-tabs-blur"></span>
-              <div class="imp-breadcrumb-wrap imp-tabs-wrap">
-                <ul class="imp-breadcrumb imp-tabs-nav">
-                  <li>
-                    <a href="../index.html">Trang chủ</a>
-                  </li>
-                  <span class="imp-breadcrumb-separator"></span>
-                  <li>
-                    <a href="../tin-tuc.html"> Tin tức</a>
-                  </li>
-                  <span class="imp-breadcrumb-separator"></span>
-                  <li>
-                    <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>{blogType()?.attributes?.name}</a>
-                  </li>
-                </ul>
-              </div>
+    <div class="w-100">
+      <div class="hd-page">
+        <div class="hd-page__wrap">
+          <div class="hd-page__inner">
+            <div class="hd-page__image">
+              <img src="/uploads/tin%20tuc.jpg" alt="" />
             </div>
-            <div class="single__header text-center">
-              <h2 class="font-03 text-center">{blog.attributes?.title}</h2>
-              <ul class="single__header-meta">
-                <li class="single__header-cate">
-                  <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>{blogType()?.attributes?.name}</a>
-                </li>
-                <li class="single__header-date">
-                  <span> 14/04/2023 </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="imp-container-sm">
-            <div class="single__main">
-              <div dangerouslySetInnerHTML={blog.attributes?.content}></div>
-            </div>
-            {ready && (
-              <>
-                <script
-                  async
-                  defer
-                  crossOrigin="anonymous"
-                  src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=209820738328251&autoLogAppEvents=1"
-                  nonce="0Kf18FRs"
-                ></script>
-                <div id="fb-root"></div>
-              </>
-            )}
-            <div class={"imp-container pt-5"}>
-              <div class="hm-type-product__wrap">
-                <div class="hm-type-product__bg" />
-                <div class="hm-ss-header hm-news__header d-flex flex-wrap align-items-center justify-content-between">
-                  <h3 class="font-04 text-uppercase imp-mb-0">
-                    <span class="color-02">Bình luận</span>
-                  </h3>
-                </div>
-                {ready && (
-                  <div
-                    class="fb-comments"
-                    data-href={location.href}
-                    data-width="100%"
-                    data-order-by="time"
-                    data-numposts="5"
-                  ></div>
-                )}
-              </div>
+            <div class="hd-page__content">
+              <h2 class="hd-page__title text-uppercase font-02 color-white">
+                Tin tức
+              </h2>
             </div>
           </div>
         </div>
-      </main>
-      <Resource
-        value={otherBlogs}
-        onResolved={(others) => {
-          if (_.isEmpty(others)) {
-            return <></>;
-          }
-          return (
-            <div class="single__related">
-              <div class="imp-container">
-                <div class="single__related-header">
-                  <h3 class="font-03 color-01">Tin liên quan</h3>
-                </div>
-                <div class="imp-grid-01">
-                  {others?.map((x) => {
+      </div>
+      <main>
+        <div class={"news"}>
+          <div class="news__tabs">
+            <div class="imp-tabs-container">
+              <span class="imp-tabs-blur"></span>
+              <div class="imp-tabs-wrap imp-tabs-wrap--primary">
+                <ul class="imp-tabs imp-tabs-nav">
+                  {blogTypes.map((x, index) => {
                     return (
-                      <div key={x.id} class="news__item imp-grid-01__item">
-                        <a href={`/tin-tuc/${x.attributes?.slug}`} class="news__item-link img-grid-01__item-link">
-                          <div class="news__item-thumb imp-grid-01__item-thumb">
-                            <img
-                              class="img-fill"
-                              src={getImageUrl(x.attributes?.thumbnail?.data?.attributes)}
-                              alt={x.attributes?.title}
-                            />
-                          </div>
-                          <div class="news__item-content">
-                            <h3 class="news__item-name line-clamp-01 font-05 color-black">{x.attributes?.title}</h3>
-                            <div class="news__item-date font-01-1 color-04">
-                              {moment(x.attributes?.createdAt).format("DD/MM/YYYY")}
-                            </div>
-                          </div>
+                      <li
+                        key={x.id}
+                        class={
+                          checkActive(`${x.attributes?.slug}`, index)
+                            ? "active"
+                            : ""
+                        }
+                      >
+                        <a href={goToCategory(`${x.attributes?.slug}`)}>
+                          {x.attributes?.name}
                         </a>
-                      </div>
+                      </li>
                     );
                   })}
-                </div>
+                </ul>
               </div>
             </div>
-          );
-        }}
-      />
-    </>
+          </div>
+          <div class="news__header text-center">
+            <h3 class="font-02 color-02 text-uppercase">
+              {getCurrentBlogType()?.attributes?.name}
+            </h3>
+          </div>
+          {blogs && (
+            <div class="imp-container">
+              <div class="news__list imp-grid-01">
+                {blogs.map((x) => {
+                  return (
+                    <div key={x.id} class="news__item imp-grid-01__item">
+                      <a
+                        href={`/tin-tuc/${
+                          getCurrentBlogType()?.attributes?.slug
+                        }/${x.attributes?.slug}`}
+                        class="news__item-link img-grid-01__item-link"
+                      >
+                        <div class="news__item-thumb imp-grid-01__item-thumb">
+                          <img
+                            class="img-fill"
+                            src={getImageUrl(
+                              x.attributes?.thumbnail?.data?.attributes
+                            )}
+                            alt={x.attributes?.title}
+                          />
+                        </div>
+                        <div class="news__item-content">
+                          <h3 class="news__item-name line-clamp-01 font-05 color-black">
+                            {x.attributes?.title}
+                          </h3>
+                          <div class="news__item-date font-01-1 color-04">
+                            {moment(x.attributes?.createdAt).format(
+                              "DD/MM/YYYY"
+                            )}
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+              {/* <!-- Pagination --> */}
+              <div class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x69;&#x6E;&#x65;&#x72;">
+                <ul class="&#x69;&#x6D;&#x70;&#x2D;&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;">
+                  {parseInt(currentPage || "1") > 1 && (
+                    <li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x50;&#x72;&#x65;&#x76;&#x69;&#x6F;&#x75;&#x73;&#x20;&#x64;&#x69;&#x73;&#x61;&#x62;&#x6C;&#x65;&#x64;&#x20;&#x69;&#x6D;&#x70;&#x2D;&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x5F;&#x5F;&#x70;&#x72;&#x65;&#x76;&#x20;">
+                      <a
+                        href={goToPage(parseInt(currentPage || "1") - 1)}
+                        rel="&#x70;&#x72;&#x65;&#x76;"
+                      >
+                        <i class="fal fa-chevron-left"></i>
+                      </a>
+                    </li>
+                  )}
+                  {_.range(1, (meta?.pagination?.pageCount || 1) + 1).map(
+                    (x) => {
+                      return (
+                        <li
+                          key={x}
+                          class={
+                            currentPage === `${x}`
+                              ? "imp-pagination__current"
+                              : ""
+                          }
+                        >
+                          <a href={goToPage(x)}>{x}</a>
+                        </li>
+                      );
+                    }
+                  )}
+                  {parseInt(currentPage || "1") <
+                    (meta?.pagination?.pageCount || 1) && (
+                    <li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x4E;&#x65;&#x78;&#x74;&#x20;&#x69;&#x6D;&#x70;&#x2D;&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x5F;&#x5F;&#x6E;&#x65;&#x78;&#x74;&#x20;">
+                      <a
+                        href={goToPage(parseInt(currentPage || "1") + 1)}
+                        rel="&#x6E;&#x65;&#x78;&#x74;"
+                      >
+                        <i class="fal fa-chevron-right"></i>
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+    </div>
   );
 });
