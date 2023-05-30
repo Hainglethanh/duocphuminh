@@ -142,7 +142,7 @@ export default component$(() => {
               </li>
               <li>
                 <a
-                  href={`https://chat.zalo.me/?phone=${globalData.value.data?.attributes?.hotline}`}
+                  href={`${globalData.value.data?.attributes?.social?.zalo}`}
                   style={{ backgroundColor: "#f6422d" }}
                   class="float"
                 >
