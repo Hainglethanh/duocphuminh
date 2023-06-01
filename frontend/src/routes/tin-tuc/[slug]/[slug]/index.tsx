@@ -27,7 +27,6 @@ export const useGetBlog = routeLoader$(async ({ params }) => {
       {
         populate: "deep,5",
       },
-
       generateAxiosConfig({
         filters: {
           slug: {
@@ -49,7 +48,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
   }
   const image = blog.attributes?.meta?.metaImage || blog.attributes?.thumbnail;
   return {
-    title: `${blog.attributes?.title}`,
+    title: `${blog.attributes?.meta?.metaTitle || blog.attributes?.title}`,
     meta: [
       ...createMeta(
         blog.attributes?.meta?.keywords,
@@ -218,7 +217,7 @@ export default component$(() => {
                           href={`/tin-tuc/${x.attributes?.blog_type?.data?.attributes?.slug}/${x.attributes?.slug}`}
                           class="news__item-link img-grid-01__item-link"
                         >
-                          <div class="news__item-thumb imp-grid-01__item-thumb">
+                          <div class="news__item-thumb imp-grid-01__item-thumb img-news">
                             <img
                               class="img-fill"
                               src={getImageUrl(

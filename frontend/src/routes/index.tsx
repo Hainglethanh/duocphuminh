@@ -219,7 +219,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
               return (
                 <div key={x.id} class="hm-news__item">
                   <a
-                    href={`/tin-tuc/${x.attributes?.slug}`}
+                    href={`/tin-tuc/${x.attributes?.blog_type?.data?.attributes?.slug}/${x.attributes?.slug}`}
                     class="hm-news__item-link"
                   >
                     <div class="hm-news__img mb-3 img-news">

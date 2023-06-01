@@ -13,6 +13,7 @@ import {
 export const useGetBlogType = routeLoader$(async ({ params }) => {
   let slug = params["slug"];
   const hasSlug = !_.isEmpty(slug);
+
   if (!hasSlug) {
     const blogTypes = await new BlogTypeApi().getBlogTypes({
       populate: "*",
@@ -20,14 +21,17 @@ export const useGetBlogType = routeLoader$(async ({ params }) => {
     });
     slug = `${blogTypes.data.data![0].attributes?.slug}`;
   }
+
   const response = await new BlogTypeApi().getBlogTypes(
     {
       populate: "deep,5",
       paginationPageSize: 1,
     },
     generateAxiosConfig({
-      slug: {
-        $eq: slug,
+      filters: {
+        slug: {
+          $eq: slug,
+        },
       },
     })
   );
@@ -87,9 +91,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
   if (data.data && data.data[0] && data.data[0].attributes?.meta) {
     const blogTypeMeta = data.data[0].attributes.meta;
     return {
-      title:
-        blogTypeMeta.metaTitle ||
-        `Tin tức tổng hợp về sức khỏe - Mẹo sống khỏe hàng ngày`,
+      title: blogTypeMeta.metaTitle,
       meta: [
         {
           name: "keywords",
