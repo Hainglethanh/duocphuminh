@@ -202,7 +202,7 @@ export default component$(() => {
                         }/${x.attributes?.slug}`}
                         class="news__item-link img-grid-01__item-link"
                       >
-                        <div class="news__item-thumb imp-grid-01__item-thumb">
+                        <div class="news__item-thumb imp-grid-01__item-thumb img-news">
                           <img
                             class="img-fill"
                             src={getImageUrl(

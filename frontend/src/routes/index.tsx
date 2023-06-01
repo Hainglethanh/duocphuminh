@@ -222,7 +222,7 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
                     href={`/tin-tuc/${x.attributes?.slug}`}
                     class="hm-news__item-link"
                   >
-                    <div class="hm-news__img mb-3">
+                    <div class="hm-news__img mb-3 img-news">
                       <img
                         class="w-100 bd-radius-01"
                         src={getImageUrl(
