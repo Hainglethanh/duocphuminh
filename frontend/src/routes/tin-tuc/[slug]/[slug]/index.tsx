@@ -93,7 +93,7 @@ export default component$(() => {
         const response = await new BlogApi().getBlogs(
           {
             populate: "deep,5",
-            paginationPageSize: 2,
+            paginationPageSize: 4,
           },
           generateAxiosConfig({
             filters: {
