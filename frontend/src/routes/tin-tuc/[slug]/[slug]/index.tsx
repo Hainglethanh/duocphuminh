@@ -37,6 +37,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
   if (!image?.attributes) {
     image = blog.attributes?.thumbnail?.data;
   }
+  console.log("@ASDSAD", getImageUrl(image?.attributes));
   return {
     title: `${blog.attributes?.meta?.metaTitle || blog.attributes?.title}`,
     meta: [

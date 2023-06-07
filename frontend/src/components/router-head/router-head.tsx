@@ -8,21 +8,16 @@ import _ from "lodash";
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
+  const meta = _.uniqBy(head.meta, (x) => `${x.name}_${x.property}`);
   return (
     <>
-      <title>
-        {head.title ||
-          "Dược Phú Minh - Giải pháp y tế hàng đầu cho người tiêu dùng"}
-      </title>
+      <title>{head.title || "Dược Phú Minh - Giải pháp y tế hàng đầu cho người tiêu dùng"}</title>
       <meta property="og:site_name" content="Dược Phú Minh" />
       <link rel="canonical" href={loc.url.href.replace("http:", "https:")} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="Công ty cổ phần Dược Phú Minh" />
-      <meta
-        property="og:url"
-        content={loc.url.href.replace("http:", "https:")}
-      />
-      {_.uniqBy(head.meta, (x) => x.name).map((m) => (
+      <meta property="og:url" content={loc.url.href.replace("http:", "https:")} />
+      {meta.map((m) => (
         <meta key={m.key} {...m} />
       ))}
 
