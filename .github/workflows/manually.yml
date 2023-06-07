@@ -1,0 +1,41 @@
+name: Deploy DuocPhuMinh
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'The branch to build'
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: main
+    steps:
+      - uses: actions/checkout@v1
+      - name: Copy repository contents via scp
+        uses: appleboy/scp-action@master
+        with:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+          source: "."
+          rm: true
+          target: "/var/www/duocphuminh"
+
+      - name: Executing remote command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+          script: |
+            cd /var/www/duocphuminh
+            npm install
+            yarn install-de
+            touch backend/.env
+            echo "${{ vars.BACKEND_ENV }}" > backend/.env
+            npx kill-port 1337 3000
+            pm2 delete duocphuminh
+            pm2 start yarn --name duocphuminh -- start
