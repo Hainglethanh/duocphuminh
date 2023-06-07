@@ -1,24 +1,11 @@
-import {
-  Resource,
-  component$,
-  useContext,
-  useResource$,
-  useSignal,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { Resource, component$, useContext, useResource$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$, useLocation } from "@builder.io/qwik-city";
 import _ from "lodash";
 import moment from "moment";
 import type { BlogListResponseDataItem } from "~/services";
 import { BlogApi } from "~/services";
-import {
-  BlogTypeContext,
-  createMeta,
-  generateAxiosConfig,
-  getImageUrl,
-  goToCategory,
-} from "~/utils/conts";
+import { BlogTypeContext, createMeta, generateAxiosConfig, getImageUrl, goToCategory } from "~/utils/conts";
 
 export const useGetBlog = routeLoader$(async ({ params }) => {
   try {
@@ -46,20 +33,17 @@ export const head: DocumentHead = ({ resolveValue }) => {
   if (!blog) {
     return {};
   }
-  const image = blog.attributes?.meta?.metaImage || blog.attributes?.thumbnail;
+  let image = blog.attributes?.meta?.metaImage?.data;
+  if (!image?.attributes) {
+    image = blog.attributes?.thumbnail?.data;
+  }
   return {
     title: `${blog.attributes?.meta?.metaTitle || blog.attributes?.title}`,
     meta: [
-      ...createMeta(
-        blog.attributes?.meta?.keywords,
-        blog.attributes?.title,
-        getImageUrl(image?.data?.attributes),
-        "webp",
-        {
-          width: image?.data?.attributes?.width || 960,
-          height: image?.data?.attributes?.height || 500,
-        }
-      ),
+      ...createMeta(blog.attributes?.meta?.keywords, blog.attributes?.title, getImageUrl(image?.attributes), "webp", {
+        width: image?.attributes?.width || 960,
+        height: image?.attributes?.height || 500,
+      }),
       {
         name: "description",
         content: `${blog.attributes?.meta?.metaDescription}`,
@@ -80,46 +64,40 @@ export default component$(() => {
     ready.value = true;
   });
   const blogType = () =>
-    blogTypes.find(
-      (x) =>
-        blog.attributes?.blog_type?.data?.attributes?.slug ===
-        x.attributes?.slug
-    );
+    blogTypes.find((x) => blog.attributes?.blog_type?.data?.attributes?.slug === x.attributes?.slug);
 
-  const otherBlogs = useResource$<BlogListResponseDataItem[] | undefined>(
-    async ({ track }) => {
-      track(() => blog); // Requires explicit tracking of inputs
-      try {
-        const response = await new BlogApi().getBlogs(
-          {
-            populate: "deep,5",
-            paginationPageSize: 4,
-          },
-          generateAxiosConfig({
-            filters: {
-              $and: [
-                {
+  const otherBlogs = useResource$<BlogListResponseDataItem[] | undefined>(async ({ track }) => {
+    track(() => blog); // Requires explicit tracking of inputs
+    try {
+      const response = await new BlogApi().getBlogs(
+        {
+          populate: "deep,5",
+          paginationPageSize: 4,
+        },
+        generateAxiosConfig({
+          filters: {
+            $and: [
+              {
+                id: {
+                  $ne: blog.id,
+                },
+              },
+              {
+                blog_type: {
                   id: {
-                    $ne: blog.id,
+                    $eq: blog.attributes?.blog_type?.data?.id,
                   },
                 },
-                {
-                  blog_type: {
-                    id: {
-                      $eq: blog.attributes?.blog_type?.data?.id,
-                    },
-                  },
-                },
-              ],
-            },
-          })
-        );
-        return response.data.data as BlogListResponseDataItem[] | undefined;
-      } catch (error) {
-        console.log("@ASSDA", error);
-      }
+              },
+            ],
+          },
+        })
+      );
+      return response.data.data as BlogListResponseDataItem[] | undefined;
+    } catch (error) {
+      console.log("@ASSDA", error);
     }
-  );
+  });
   return (
     <>
       <main>
@@ -138,9 +116,7 @@ export default component$(() => {
                   </li>
                   <span class="imp-breadcrumb-separator"></span>
                   <li>
-                    <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>
-                      {blogType()?.attributes?.name}
-                    </a>
+                    <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>{blogType()?.attributes?.name}</a>
                   </li>
                 </ul>
               </div>
@@ -149,9 +125,7 @@ export default component$(() => {
               <h2 class="font-03 text-center">{blog.attributes?.title}</h2>
               <ul class="single__header-meta">
                 <li class="single__header-cate">
-                  <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>
-                    {blogType()?.attributes?.name}
-                  </a>
+                  <a href={goToCategory(`${blogType()?.attributes?.slug}`)}>{blogType()?.attributes?.name}</a>
                 </li>
                 <li class="single__header-date">
                   <span> 14/04/2023 </span>
@@ -220,20 +194,14 @@ export default component$(() => {
                           <div class="news__item-thumb imp-grid-01__item-thumb img-news">
                             <img
                               class="img-fill"
-                              src={getImageUrl(
-                                x.attributes?.thumbnail?.data?.attributes
-                              )}
+                              src={getImageUrl(x.attributes?.thumbnail?.data?.attributes)}
                               alt={x.attributes?.title}
                             />
                           </div>
                           <div class="news__item-content">
-                            <h3 class="news__item-name line-clamp-01 font-05 color-black">
-                              {x.attributes?.title}
-                            </h3>
+                            <h3 class="news__item-name line-clamp-01 font-05 color-black">{x.attributes?.title}</h3>
                             <div class="news__item-date font-01-1 color-04">
-                              {moment(x.attributes?.createdAt).format(
-                                "DD/MM/YYYY"
-                              )}
+                              {moment(x.attributes?.createdAt).format("DD/MM/YYYY")}
                             </div>
                           </div>
                         </a>
