@@ -159,13 +159,15 @@ export default component$(() => {
                   </a>
                 </li>
                 <li class="single__header-date">
-                  <span> 14/04/2023 </span>
+                  <span>
+                    {moment(blog.attributes?.createdAt).format("DD/MM/YYYY")}
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
           <div class="imp-container-sm">
-            <div class="single__main">
+            <div class="single__main content_ckEdit">
               <div dangerouslySetInnerHTML={blog.attributes?.content}></div>
             </div>
             {ready && (
