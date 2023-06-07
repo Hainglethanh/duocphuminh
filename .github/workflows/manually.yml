@@ -1,4 +1,4 @@
-name: Deploy DuocPhuMinh
+name: Deploy DuocPhuMinh Manually
 
 on:
   workflow_dispatch:
