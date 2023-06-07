@@ -32,6 +32,6 @@ jobs:
             yarn install-de
             touch backend/.env
             echo "${{ vars.BACKEND_ENV }}" > backend/.env
-            pm2 delete duocphuminh
             npx kill-port 1337 3000
+            pm2 delete duocphuminh
             pm2 start yarn --name duocphuminh -- start
