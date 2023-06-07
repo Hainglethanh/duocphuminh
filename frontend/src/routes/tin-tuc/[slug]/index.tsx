@@ -1,5 +1,6 @@
 import { component$, useContext } from "@builder.io/qwik";
-import { DocumentHead, routeLoader$, useLocation } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$, useLocation } from "@builder.io/qwik-city";
 import _ from "lodash";
 import moment from "moment";
 import { BlogApi, BlogTypeApi } from "~/services";
