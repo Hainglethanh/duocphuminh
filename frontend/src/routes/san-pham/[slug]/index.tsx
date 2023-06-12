@@ -358,7 +358,7 @@ export default component$(() => {
                         <li key={x.id} class="product">
                           <a
                             class="product__link"
-                            href="../vi/san-pham/zanimex-250.html"
+                            href={`/san-pham/${x.attributes?.slug}`}
                           >
                             <div class="product__image">
                               <img
