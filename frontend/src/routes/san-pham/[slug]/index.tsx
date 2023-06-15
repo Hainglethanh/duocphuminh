@@ -320,21 +320,23 @@ export default component$(() => {
               </div>
               <div class="imp-tabs-content">
                 <div
-                  class={`imp-tabs-pane ${
+                  class={`imp-tabs-pane content_ckEdit ${
                     tab.value === "description" && "active"
                   }`}
                   id="single-product-desc"
                   dangerouslySetInnerHTML={product.attributes?.description}
                 ></div>
                 <div
-                  class={`imp-tabs-pane ${
+                  class={`imp-tabs-pane content_ckEdit ${
                     tab.value === "indication" && "active"
                   }`}
                   id="single-product-assign"
                   dangerouslySetInnerHTML={product.attributes?.indication}
                 ></div>
                 <div
-                  class={`imp-tabs-pane ${tab.value === "guide" && "active"}`}
+                  class={`imp-tabs-pane content_ckEdit ${
+                    tab.value === "guide" && "active"
+                  }`}
                   id="single-product-guide"
                   dangerouslySetInnerHTML={product.attributes?.guide}
                 ></div>
@@ -375,20 +377,10 @@ export default component$(() => {
                             </div>
                             <div class="product__content">
                               <h3 class="product__name font-05">
-                                ZANIMEX&#xAE; 250
+                                {x.attributes?.name}
                               </h3>
                               <div class="product__desc">
-                                S&#x110;K: VD-20746-14. S&#x1EA3;n xu&#x1EA5;t
-                                theo ti&#xEA;u chu&#x1EA9;n GMP - EU. M&#x1ED7;i
-                                vi&#xEA;n n&#xE9;n bao phim ch&#x1EE9;a:
-                                Th&#xE0;nh ph&#x1EA7;n d&#x1B0;&#x1EE3;c
-                                ch&#x1EA5;t: Cefuroxim (d&#x1B0;&#x1EDB;i
-                                d&#x1EA1;ng cefuroxim axetil) 250 mg. Th&#xE0;nh
-                                ph&#x1EA7;n t&#xE1; d&#x1B0;&#x1EE3;c: Aerosil,
-                                Natri starch glycolat, Natri carboxymethyl
-                                cellulose, Natri lauryl sulfat, Tablettose 80,
-                                Magnesi stearat, Hydroxypropyl methyl cellulose,
-                                Macrogol 6000, Plasdon, Talc, Titan dioxid.
+                                {x.attributes?.introduce}
                               </div>
                             </div>
                           </a>

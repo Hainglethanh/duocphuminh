@@ -25,7 +25,7 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
-
+        <link href="https://fonts.cdnfonts.com/css/georgia" rel="stylesheet" />
         <link
           rel="preload"
           as="font"

@@ -258,7 +258,7 @@ export default component$(() => {
                             <h2 class="hm-intro__inner-title-lg font-06 color-01 text-uppercase">{x.title}</h2>
                             <div class="hm-intro__content font-01 color-05">{x.description}</div>
                             <div class="color-white">
-                              <a class="imp-btn-01" href={x.button?.url || "/ve-duoc-phu-minh/"}>
+                              <a class="imp-btn-01" href={x.button?.url || "/ve-duoc-phu-minh"}>
                                 {x.button?.title || "Tìm hiểu thêm"}
                                 <i class="far fa-arrow-right">&nbsp;</i>
                               </a>

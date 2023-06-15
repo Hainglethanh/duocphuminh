@@ -146,3 +146,10 @@ p {
   padding-top: 0 !important;
   aspect-ratio: 16/9;
 }
+.content_ckEdit * {
+  font-size: inherit;
+  font-family: Georgia;
+}
+.font-blog {
+  font-family: Georgia !important;
+}
