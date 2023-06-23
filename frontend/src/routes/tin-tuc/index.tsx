@@ -3,32 +3,19 @@ import { DocumentHead, routeLoader$, useLocation } from "@builder.io/qwik-city";
 import _ from "lodash";
 import moment from "moment";
 import { BlogApi, BlogTypeApi } from "~/services";
-import { BlogTypeContext, generateAxiosConfig, getImageUrl, goToCategory } from "~/utils/conts";
+import {
+  BlogTypeContext,
+  generateAxiosConfig,
+  getImageUrl,
+  goToCategory,
+} from "~/utils/conts";
 
 export const useGetBlogList = routeLoader$(async ({ url }) => {
   try {
     const searchParams = url.searchParams;
     const page = searchParams.get("page") || "1";
-    let category = searchParams.get("type");
     const search = searchParams.get("s");
-    if (!category) {
-      const blogTypes = await new BlogTypeApi().getBlogTypes({
-        populate: "*",
-        paginationPageSize: 1,
-      });
-      category = `${blogTypes.data.data![0].attributes?.slug}`;
-    }
     let filters: any = {};
-    if (category) {
-      filters = {
-        ...filters,
-        blog_type: category && {
-          slug: {
-            $eq: category,
-          },
-        },
-      };
-    }
     if (search) {
       filters = {
         ...filters,
@@ -80,16 +67,14 @@ export default component$(() => {
   const category = location.url.searchParams.get("type");
   const blogTypes = useContext(BlogTypeContext);
   const goToPage = (page: number) =>
-    `/tin-tuc/${!_.isEmpty(currentCategory) ? currentCategory : ""}?page=${page}${
-      !_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""
-    }`;
-  const checkActive = (slug: string, index: number) => {
-    if (!category) {
-      return index === 0;
-    }
+    `/tin-tuc/${
+      !_.isEmpty(currentCategory) ? currentCategory : ""
+    }?page=${page}${!_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""}`;
+  const checkActive = (slug: string) => {
     return category === slug;
   };
-  const getCurrentBlogType = () => blogTypes.find((x) => x.attributes?.slug === category);
+  const getCurrentBlogType = () =>
+    blogTypes.find((x) => x.attributes?.slug === category);
   return (
     <div class="w-100">
       <div class="hd-page">
@@ -99,7 +84,9 @@ export default component$(() => {
               <img src="/uploads/tin%20tuc.jpg" alt="" />
             </div>
             <div class="hd-page__content">
-              <h2 class="hd-page__title text-uppercase font-02 color-white">Tin tức</h2>
+              <h2 class="hd-page__title text-uppercase font-02 color-white">
+                Tin tức
+              </h2>
             </div>
           </div>
         </div>
@@ -111,10 +98,20 @@ export default component$(() => {
               <span class="imp-tabs-blur"></span>
               <div class="imp-tabs-wrap imp-tabs-wrap--primary">
                 <ul class="imp-tabs imp-tabs-nav">
-                  {blogTypes.map((x, index) => {
+                  <li key={"All"} class={!getCurrentBlogType() ? "active" : ""}>
+                    <a href={"/tin-tuc"}>{"Tất cả"}</a>
+                  </li>
+                  {blogTypes.map((x) => {
                     return (
-                      <li key={x.id} class={checkActive(`${x.attributes?.slug}`, index) ? "active" : ""}>
-                        <a href={goToCategory(`${x.attributes?.slug}`)}>{x.attributes?.name}</a>
+                      <li
+                        key={x.id}
+                        class={
+                          checkActive(`${x.attributes?.slug}`) ? "active" : ""
+                        }
+                      >
+                        <a href={goToCategory(`${x.attributes?.slug}`)}>
+                          {x.attributes?.name}
+                        </a>
                       </li>
                     );
                   })}
@@ -123,7 +120,9 @@ export default component$(() => {
             </div>
           </div>
           <div class="news__header text-center">
-            <h3 class="font-02 color-02 text-uppercase">{getCurrentBlogType()?.attributes?.name}</h3>
+            <h3 class="font-02 color-02 text-uppercase">
+              {getCurrentBlogType()?.attributes?.name}
+            </h3>
           </div>
           {blogs && (
             <div class="imp-container">
@@ -131,18 +130,27 @@ export default component$(() => {
                 {blogs.map((x) => {
                   return (
                     <div key={x.id} class="news__item imp-grid-01__item">
-                      <a href={`/tin-tuc/${x.attributes?.slug}`} class="news__item-link img-grid-01__item-link">
+                      <a
+                        href={`/tin-tuc/${x.attributes?.blog_type?.data?.attributes?.slug}/${x.attributes?.slug}`}
+                        class="news__item-link img-grid-01__item-link"
+                      >
                         <div class="news__item-thumb imp-grid-01__item-thumb">
                           <img
                             class="img-fill"
-                            src={getImageUrl(x.attributes?.thumbnail?.data?.attributes)}
+                            src={getImageUrl(
+                              x.attributes?.thumbnail?.data?.attributes
+                            )}
                             alt={x.attributes?.title}
                           />
                         </div>
                         <div class="news__item-content">
-                          <h3 class="news__item-name line-clamp-01 font-05 color-black">{x.attributes?.title}</h3>
+                          <h3 class="news__item-name line-clamp-01 font-05 color-black">
+                            {x.attributes?.title}
+                          </h3>
                           <div class="news__item-date font-01-1 color-04">
-                            {moment(x.attributes?.createdAt).format("DD/MM/YYYY")}
+                            {moment(x.attributes?.createdAt).format(
+                              "DD/MM/YYYY"
+                            )}
                           </div>
                         </div>
                       </a>
@@ -155,21 +163,37 @@ export default component$(() => {
                 <ul class="&#x69;&#x6D;&#x70;&#x2D;&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;">
                   {parseInt(currentPage || "1") > 1 && (
                     <li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x50;&#x72;&#x65;&#x76;&#x69;&#x6F;&#x75;&#x73;&#x20;&#x64;&#x69;&#x73;&#x61;&#x62;&#x6C;&#x65;&#x64;&#x20;&#x69;&#x6D;&#x70;&#x2D;&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x5F;&#x5F;&#x70;&#x72;&#x65;&#x76;&#x20;">
-                      <a href={goToPage(parseInt(currentPage || "1") - 1)} rel="&#x70;&#x72;&#x65;&#x76;">
+                      <a
+                        href={goToPage(parseInt(currentPage || "1") - 1)}
+                        rel="&#x70;&#x72;&#x65;&#x76;"
+                      >
                         <i class="fal fa-chevron-left"></i>
                       </a>
                     </li>
                   )}
-                  {_.range(1, (meta?.pagination?.pageCount || 1) + 1).map((x) => {
-                    return (
-                      <li key={x} class={currentPage === `${x}` ? "imp-pagination__current" : ""}>
-                        <a href={goToPage(x)}>{x}</a>
-                      </li>
-                    );
-                  })}
-                  {parseInt(currentPage || "1") < (meta?.pagination?.pageCount || 1) && (
+                  {_.range(1, (meta?.pagination?.pageCount || 1) + 1).map(
+                    (x) => {
+                      return (
+                        <li
+                          key={x}
+                          class={
+                            currentPage === `${x}`
+                              ? "imp-pagination__current"
+                              : ""
+                          }
+                        >
+                          <a href={goToPage(x)}>{x}</a>
+                        </li>
+                      );
+                    }
+                  )}
+                  {parseInt(currentPage || "1") <
+                    (meta?.pagination?.pageCount || 1) && (
                     <li class="&#x50;&#x61;&#x67;&#x65;&#x64;&#x4C;&#x69;&#x73;&#x74;&#x2D;&#x73;&#x6B;&#x69;&#x70;&#x54;&#x6F;&#x4E;&#x65;&#x78;&#x74;&#x20;&#x69;&#x6D;&#x70;&#x2D;&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x5F;&#x5F;&#x6E;&#x65;&#x78;&#x74;&#x20;">
-                      <a href={goToPage(parseInt(currentPage || "1") + 1)} rel="&#x6E;&#x65;&#x78;&#x74;">
+                      <a
+                        href={goToPage(parseInt(currentPage || "1") + 1)}
+                        rel="&#x6E;&#x65;&#x78;&#x74;"
+                      >
                         <i class="fal fa-chevron-right"></i>
                       </a>
                     </li>
