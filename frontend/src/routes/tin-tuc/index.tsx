@@ -2,7 +2,7 @@ import { component$, useContext } from "@builder.io/qwik";
 import { DocumentHead, routeLoader$, useLocation } from "@builder.io/qwik-city";
 import _ from "lodash";
 import moment from "moment";
-import { BlogApi, BlogTypeApi } from "~/services";
+import { BlogApi } from "~/services";
 import {
   BlogTypeContext,
   generateAxiosConfig,
