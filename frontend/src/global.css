@@ -147,9 +147,9 @@ p {
   aspect-ratio: 16/9;
 }
 .content_ckEdit * {
-  font-size: inherit;
-  font-family: Georgia;
+  /* font-size: inherit; */
+  /* font-family: Georgia; */
 }
 .font-blog {
-  font-family: Georgia !important;
+  /* font-family: Georgia !important; */
 }

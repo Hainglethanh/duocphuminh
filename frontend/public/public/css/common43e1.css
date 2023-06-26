@@ -49,13 +49,13 @@ body {
   src: url(fonts/GoogleSansTTF/GoogleSans-Bold.ttf);
 }
 :root {
-  --font-primary-light: GoogleSans-Light;
-  --font-primary-regular: GoogleSans-Regular;
-  --font-primary-medium: GoogleSans-Medium;
-  --font-primary-bold: GoogleSans-Bold;
-  --font-primary-italic: GoogleSans-Italic;
-  --font-secondary-light: OpenSans-Light;
-  --font-secondary-regular: GoogleSans-Regular;
+  --font-primary-light: 'Merriweather', serif;
+  --font-primary-regular: 'Merriweather', serif;
+  --font-primary-medium: 'Merriweather', serif;
+  --font-primary-bold: 'Merriweather', serif;
+  --font-primary-italic: 'Merriweather', serif;
+  --font-secondary-light: 'Merriweather', serif;
+  --font-secondary-regular: 'Merriweather', serif;
   --font-size-01: 14px;
   --font-size-02: 16px;
   --font-size-03: 18px;
