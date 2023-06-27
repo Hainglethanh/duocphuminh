@@ -204,7 +204,7 @@ export default component$(() => {
                   return (
                     <div key={x.id} class="news__item imp-grid-01__item">
                       <a
-                        href={`/tin-tuc/${x.attributes?.blog_type?.data?.attributes}/${x.attributes?.slug}`}
+                        href={`/tin-tuc/${x.attributes?.blog_type?.data?.attributes?.slug}/${x.attributes?.slug}`}
                         class="news__item-link img-grid-01__item-link"
                       >
                         <div class="news__item-thumb imp-grid-01__item-thumb img-news">
