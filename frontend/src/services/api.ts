@@ -3273,6 +3273,12 @@ export interface ElementsHeroComponent {
      * @memberof ElementsHeroComponent
      */
     'button'?: ElementsHeroComponentButton;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof ElementsHeroComponent
+     */
+    'mobilePicture'?: SectionsSubPageComponentFeaturesInnerImage;
 }
 /**
  * 

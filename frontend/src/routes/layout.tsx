@@ -15,6 +15,7 @@ import {
   BlogTypeContext,
   getImageUrl,
   GlobalContext,
+  MobileContext,
   ProductTypeContext,
 } from "~/utils/conts";
 import Loading from "~/components/loading/loading";
@@ -102,9 +103,21 @@ export default component$(() => {
     useContextProvider(ProductTypeContext, productTypeData.value.data);
   }
   const ready = useSignal(false);
+  const isMobile = useSignal(false);
   useVisibleTask$(() => {
     ready.value = true;
+    if (window) {
+      if (window.innerWidth <= 960) {
+        isMobile.value = true;
+      }
+    }
   });
+  if (ready) {
+    useContextProvider(MobileContext, { isMobile: isMobile.value });
+  } else {
+    useContextProvider(MobileContext, {});
+  }
+
   return (
     <div class={`page ${!ready.value && "fixed-page"}`}>
       <main>

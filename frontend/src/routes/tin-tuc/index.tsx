@@ -67,7 +67,7 @@ export default component$(() => {
   const category = location.url.searchParams.get("type");
   const blogTypes = useContext(BlogTypeContext);
   const goToPage = (page: number) =>
-    `/tin-tuc/${
+    `/tin-tuc${
       !_.isEmpty(currentCategory) ? currentCategory : ""
     }?page=${page}${!_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""}`;
   const checkActive = (slug: string) => {

@@ -153,3 +153,26 @@ p {
 .font-blog {
   /* font-family: Georgia !important; */
 }
+p.callout {
+  --border-color: #62b04a;
+  padding: 1.2em 2em;
+  border: 1px solid var(--border-color);
+  border-left: 10px solid var(--border-color);
+  background: #fff9fb;
+  border-radius: 5px;
+  margin: 1.5em 2em;
+  box-shadow: 5px 5px 0 #ffe6ef;
+}
+
+.mobile-img-banner {
+  display: none !important;
+}
+
+@media only screen and (max-width: 960px) {
+  .web-img-banner {
+    display: none !important;
+  }
+  .mobile-img-banner {
+    display: block !important;
+  }
+}

@@ -127,7 +127,7 @@ export default component$(() => {
   const currentPage = useLocation().url.searchParams.get("page") || `1`;
   const productTypes = useContext(ProductTypeContext);
   const goToPage = (page: number) =>
-    `/dong-san-pham/${
+    `/dong-san-pham${
       !_.isEmpty(currentCategory) ? currentCategory : ""
     }?page=${page}${!_.isEmpty(currentSearch) ? "&s=" + currentSearch : ""}`;
 

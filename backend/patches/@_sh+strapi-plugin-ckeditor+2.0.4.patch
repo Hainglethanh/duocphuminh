@@ -55,6 +55,25 @@ new mode 100755
 diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/additional.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/additional.js
 old mode 100644
 new mode 100755
+index c724d0f..ecfadca
+--- a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/additional.js
++++ b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/additional.js
+@@ -80,13 +80,13 @@ export const additional = css`
+ }
+ 
+ .ck-content p.callout {
+-	--border-color: #e91e1e;
++	--border-color: #62b04a;
+ 	padding: 1.2em 2em;
+ 	border: 1px solid var(--border-color);
+ 	border-left: 10px solid var(--border-color);
+ 	background: #fff9fb;
+ 	border-radius: 5px;
+-	margin: 1.5em 2em;
++	margin: 1em 1em;
+ 	box-shadow: 5px 5px 0 #ffe6ef;
+ }
+ 
 diff --git a/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/common.js b/node_modules/@_sh/strapi-plugin-ckeditor/admin/src/components/Input/CKEditor/theme/common.js
 old mode 100644
 new mode 100755
