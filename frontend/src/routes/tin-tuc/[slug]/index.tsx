@@ -6,6 +6,7 @@ import moment from "moment";
 import { BlogApi, BlogTypeApi } from "~/services";
 import {
   BlogTypeContext,
+  GlobalContext,
   generateAxiosConfig,
   getImageUrl,
   goToCategory,
@@ -130,6 +131,7 @@ export const head: DocumentHead = ({ resolveValue }) => {
 export default component$(() => {
   const blogs = useGetBlogList().value?.data;
   const meta = useGetBlogList().value?.meta;
+  const global = useContext(GlobalContext);
   const currentSearch = useLocation().url.searchParams.get("s");
   const currentCategory = useLocation().params["slug"];
   const currentPage = useLocation().url.searchParams.get("page") || `1`;
@@ -146,17 +148,22 @@ export default component$(() => {
   };
   const getCurrentBlogType = () =>
     blogTypes.find((x) => x.attributes?.slug === currentCategory);
+  const banner = getImageUrl(
+    !_.isEmpty(getCurrentBlogType()?.attributes?.banner?.data?.attributes)
+      ? getCurrentBlogType()?.attributes?.banner?.data?.attributes
+      : global.attributes?.newBanner?.data?.attributes
+  );
   return (
     <div class="w-100">
       <div class="hd-page">
         <div class="hd-page__wrap">
           <div class="hd-page__inner">
             <div class="hd-page__image">
-              <img src="/uploads/tin%20tuc.jpg" alt="" />
+              <img src={banner} alt="" />
             </div>
             <div class="hd-page__content">
               <h2 class="hd-page__title text-uppercase font-02 color-white">
-                Tin tức
+                {getCurrentBlogType()?.attributes?.name}
               </h2>
             </div>
           </div>

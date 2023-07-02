@@ -5,6 +5,7 @@ import moment from "moment";
 import { BlogApi } from "~/services";
 import {
   BlogTypeContext,
+  GlobalContext,
   generateAxiosConfig,
   getImageUrl,
   goToCategory,
@@ -60,12 +61,16 @@ export const head: DocumentHead = () => {
 export default component$(() => {
   const blogs = useGetBlogList().value?.data;
   const meta = useGetBlogList().value?.meta;
+  const global = useContext(GlobalContext);
   const currentSearch = useLocation().url.searchParams.get("s");
   const currentCategory = useLocation().url.searchParams.get("type");
   const currentPage = useLocation().url.searchParams.get("page") || `1`;
   const location = useLocation();
   const category = location.url.searchParams.get("type");
   const blogTypes = useContext(BlogTypeContext);
+  const banner = global.attributes?.newBanner
+    ? getImageUrl(global.attributes.newBanner.data?.attributes)
+    : "/uploads/tin%20tuc.jpg";
   const goToPage = (page: number) =>
     `/tin-tuc${
       !_.isEmpty(currentCategory) ? currentCategory : ""
@@ -81,7 +86,7 @@ export default component$(() => {
         <div class="hd-page__wrap">
           <div class="hd-page__inner">
             <div class="hd-page__image">
-              <img src="/uploads/tin%20tuc.jpg" alt="" />
+              <img src={banner} alt="" />
             </div>
             <div class="hd-page__content">
               <h2 class="hd-page__title text-uppercase font-02 color-white">

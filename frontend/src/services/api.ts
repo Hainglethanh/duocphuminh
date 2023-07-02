@@ -2175,6 +2175,12 @@ export interface BlogLocalizationResponseBlogTypeDataAttributes {
     'meta'?: BlogLocalizationResponseBlogTypeDataAttributesMeta;
     /**
      * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof BlogLocalizationResponseBlogTypeDataAttributes
+     */
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
      * @type {Date}
      * @memberof BlogLocalizationResponseBlogTypeDataAttributes
      */
@@ -2742,6 +2748,12 @@ export interface BlogTypeListResponseDataItemAttributes {
     'meta'?: SharedSeoComponent;
     /**
      * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof BlogTypeListResponseDataItemAttributes
+     */
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
      * @type {Date}
      * @memberof BlogTypeListResponseDataItemAttributes
      */
@@ -2835,6 +2847,12 @@ export interface BlogTypeLocalizationRequest {
     'meta'?: SharedSeoComponent;
     /**
      * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof BlogTypeLocalizationRequest
+     */
+    'banner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
      * @type {string}
      * @memberof BlogTypeLocalizationRequest
      */
@@ -2870,6 +2888,12 @@ export interface BlogTypeLocalizationResponse {
      * @memberof BlogTypeLocalizationResponse
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof BlogTypeLocalizationResponse
+     */
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {Date}
@@ -2946,6 +2970,12 @@ export interface BlogTypeRequestData {
     'meta'?: SharedSeoComponent;
     /**
      * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof BlogTypeRequestData
+     */
+    'banner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
      * @type {string}
      * @memberof BlogTypeRequestData
      */
@@ -3013,6 +3043,12 @@ export interface BlogTypeResponseDataObjectAttributes {
      * @memberof BlogTypeResponseDataObjectAttributes
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof BlogTypeResponseDataObjectAttributes
+     */
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {Date}
@@ -3106,6 +3142,12 @@ export interface BlogTypeResponseDataObjectLocalizedAttributes {
      * @memberof BlogTypeResponseDataObjectLocalizedAttributes
      */
     'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof BlogTypeResponseDataObjectLocalizedAttributes
+     */
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {Date}
@@ -3630,6 +3672,24 @@ export interface GlobalListResponseDataItemAttributes {
     'email'?: string;
     /**
      * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalListResponseDataItemAttributes
+     */
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalListResponseDataItemAttributes
+     */
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalListResponseDataItemAttributes
+     */
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
      * @type {Date}
      * @memberof GlobalListResponseDataItemAttributes
      */
@@ -3753,6 +3813,24 @@ export interface GlobalLocalizationRequest {
     'email'?: string;
     /**
      * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof GlobalLocalizationRequest
+     */
+    'newBanner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof GlobalLocalizationRequest
+     */
+    'productBanner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof GlobalLocalizationRequest
+     */
+    'faqBanner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
      * @type {string}
      * @memberof GlobalLocalizationRequest
      */
@@ -3818,6 +3896,24 @@ export interface GlobalLocalizationResponse {
      * @memberof GlobalLocalizationResponse
      */
     'email'?: string;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalLocalizationResponse
+     */
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalLocalizationResponse
+     */
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalLocalizationResponse
+     */
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {Date}
@@ -3924,6 +4020,24 @@ export interface GlobalRequestData {
     'email'?: string;
     /**
      * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof GlobalRequestData
+     */
+    'newBanner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof GlobalRequestData
+     */
+    'productBanner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof GlobalRequestData
+     */
+    'faqBanner'?: AboutUsLocalizationRequestBanner;
+    /**
+     * 
      * @type {string}
      * @memberof GlobalRequestData
      */
@@ -4021,6 +4135,24 @@ export interface GlobalResponseDataObjectAttributes {
      * @memberof GlobalResponseDataObjectAttributes
      */
     'email'?: string;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalResponseDataObjectAttributes
+     */
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalResponseDataObjectAttributes
+     */
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalResponseDataObjectAttributes
+     */
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {Date}
@@ -4144,6 +4276,24 @@ export interface GlobalResponseDataObjectLocalizedAttributes {
      * @memberof GlobalResponseDataObjectLocalizedAttributes
      */
     'email'?: string;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalResponseDataObjectLocalizedAttributes
+     */
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalResponseDataObjectLocalizedAttributes
+     */
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @memberof GlobalResponseDataObjectLocalizedAttributes
+     */
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
     /**
      * 
      * @type {Date}

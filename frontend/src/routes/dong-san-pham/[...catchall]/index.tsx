@@ -4,6 +4,7 @@ import { routeLoader$, useLocation } from "@builder.io/qwik-city";
 import _ from "lodash";
 import { ProductCategoryApi, ThuocApi } from "~/services";
 import {
+  GlobalContext,
   ProductTypeContext,
   generateAxiosConfig,
   getImageUrl,
@@ -126,6 +127,7 @@ export default component$(() => {
   const currentCategory = useLocation().url.searchParams.get("type");
   const currentPage = useLocation().url.searchParams.get("page") || `1`;
   const productTypes = useContext(ProductTypeContext);
+  const globalData = useContext(GlobalContext);
   const goToPage = (page: number) =>
     `/dong-san-pham${
       !_.isEmpty(currentCategory) ? currentCategory : ""
@@ -133,16 +135,19 @@ export default component$(() => {
 
   const getCurrentProductType = () =>
     productTypes.find((x) => x.attributes?.slug === currentCategory);
+  const banner = !_.isEmpty(
+    globalData.attributes?.productBanner?.data?.attributes
+  )
+    ? getImageUrl(globalData.attributes?.productBanner?.data?.attributes)
+    : "/uploads/4b6125ce-9f54-43cb-80d4-886d75b565d1.png";
+
   return (
     <div class="w-100">
       <div class="hd-page">
         <div class="hd-page__wrap">
           <div class="hd-page__inner">
             <div class="hd-page__image">
-              <img
-                src="/uploads/4b6125ce-9f54-43cb-80d4-886d75b565d1.png"
-                alt=""
-              />
+              <img src={banner} alt="" />
             </div>
             <div class="hd-page__content">
               <h1 class="hd-page__title text-uppercase font-02 color-white">
