@@ -84,13 +84,11 @@ export default component$(() => {
                       </a>
                     </li>
                     <li class="menu-item">
-                      <a target="_blank" href="/">
-                        Liên hệ/Phân phối
-                      </a>
+                      <a href="/lien-he">Liên hệ</a>
                     </li>
 
                     <li class="menu-item mobile-menu">
-                      <a href="/">Liên hệ</a>
+                      <a href="/lien-he">Liên hệ</a>
                     </li>
                   </ul>
                   {/* <form
