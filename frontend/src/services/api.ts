@@ -1850,10 +1850,10 @@ export interface BlogListResponseDataItemAttributes {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogListResponseDataItemAttributes
      */
-    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -2046,10 +2046,10 @@ export interface BlogLocalizationResponse {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogLocalizationResponse
      */
-    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -2175,10 +2175,10 @@ export interface BlogLocalizationResponseBlogTypeDataAttributes {
     'meta'?: BlogLocalizationResponseBlogTypeDataAttributesMeta;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogLocalizationResponseBlogTypeDataAttributes
      */
-    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -2484,10 +2484,10 @@ export interface BlogResponseDataObjectAttributes {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogResponseDataObjectAttributes
      */
-    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -2613,10 +2613,10 @@ export interface BlogResponseDataObjectLocalizedAttributes {
     'blog_type'?: BlogLocalizationResponseBlogType;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogResponseDataObjectLocalizedAttributes
      */
-    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage;
+    'thumbnail'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -2748,10 +2748,10 @@ export interface BlogTypeListResponseDataItemAttributes {
     'meta'?: SharedSeoComponent;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogTypeListResponseDataItemAttributes
      */
-    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -2890,10 +2890,10 @@ export interface BlogTypeLocalizationResponse {
     'meta'?: SharedSeoComponent;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogTypeLocalizationResponse
      */
-    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -3045,10 +3045,10 @@ export interface BlogTypeResponseDataObjectAttributes {
     'meta'?: SharedSeoComponent;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogTypeResponseDataObjectAttributes
      */
-    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -3144,10 +3144,10 @@ export interface BlogTypeResponseDataObjectLocalizedAttributes {
     'meta'?: SharedSeoComponent;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof BlogTypeResponseDataObjectLocalizedAttributes
      */
-    'banner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -3188,6 +3188,169 @@ export interface BlogTypeResponseDataObjectLocalizedAttributes {
 /**
  * 
  * @export
+ * @interface ContactListResponse
+ */
+export interface ContactListResponse {
+    /**
+     * 
+     * @type {Array<ContactListResponseDataItem>}
+     * @memberof ContactListResponse
+     */
+    'data'?: Array<ContactListResponseDataItem>;
+    /**
+     * 
+     * @type {AboutUsListResponseMeta}
+     * @memberof ContactListResponse
+     */
+    'meta'?: AboutUsListResponseMeta;
+}
+/**
+ * 
+ * @export
+ * @interface ContactListResponseDataItem
+ */
+export interface ContactListResponseDataItem {
+    /**
+     * 
+     * @type {number}
+     * @memberof ContactListResponseDataItem
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {ContactListResponseDataItemAttributes}
+     * @memberof ContactListResponseDataItem
+     */
+    'attributes'?: ContactListResponseDataItemAttributes;
+}
+/**
+ * 
+ * @export
+ * @interface ContactListResponseDataItemAttributes
+ */
+export interface ContactListResponseDataItemAttributes {
+    /**
+     * 
+     * @type {Array<SectionsSubPageComponent>}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'subPages'?: Array<SectionsSubPageComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'banner'?: SectionsSubPageComponentFeaturesInnerImage2;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'createdAt'?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'updatedAt'?: Date;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+    /**
+     * 
+     * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
+     * @memberof ContactListResponseDataItemAttributes
+     */
+    'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
+}
+/**
+ * 
+ * @export
+ * @interface ContactRequest
+ */
+export interface ContactRequest {
+    /**
+     * 
+     * @type {ContactRequestData}
+     * @memberof ContactRequest
+     */
+    'data': ContactRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface ContactRequestData
+ */
+export interface ContactRequestData {
+    /**
+     * 
+     * @type {Array<SectionsSubPageComponent>}
+     * @memberof ContactRequestData
+     */
+    'subPages'?: Array<SectionsSubPageComponent>;
+    /**
+     * 
+     * @type {SharedSeoComponent}
+     * @memberof ContactRequestData
+     */
+    'meta'?: SharedSeoComponent;
+    /**
+     * 
+     * @type {AboutUsLocalizationRequestBanner}
+     * @memberof ContactRequestData
+     */
+    'banner'?: AboutUsLocalizationRequestBanner;
+}
+/**
+ * 
+ * @export
+ * @interface ContactResponse
+ */
+export interface ContactResponse {
+    /**
+     * 
+     * @type {ContactResponseDataObject}
+     * @memberof ContactResponse
+     */
+    'data'?: ContactResponseDataObject;
+    /**
+     * 
+     * @type {object}
+     * @memberof ContactResponse
+     */
+    'meta'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface ContactResponseDataObject
+ */
+export interface ContactResponseDataObject {
+    /**
+     * 
+     * @type {number}
+     * @memberof ContactResponseDataObject
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {ContactListResponseDataItemAttributes}
+     * @memberof ContactResponseDataObject
+     */
+    'attributes'?: ContactListResponseDataItemAttributes;
+}
+/**
+ * 
+ * @export
  * @interface ElementsFeatureComponent
  */
 export interface ElementsFeatureComponent {
@@ -3223,16 +3386,16 @@ export interface ElementsFeatureComponent {
     'imagePosition'?: ElementsFeatureComponentImagePositionEnum;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof ElementsFeatureComponent
      */
-    'image'?: SectionsSubPageComponentFeaturesInnerImage;
+    'image'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof ElementsFeatureComponent
      */
-    'image2'?: SectionsSubPageComponentFeaturesInnerImage;
+    'image2'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -3317,10 +3480,10 @@ export interface ElementsHeroComponent {
     'button'?: ElementsHeroComponentButton;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof ElementsHeroComponent
      */
-    'mobilePicture'?: SectionsSubPageComponentFeaturesInnerImage;
+    'mobilePicture'?: SectionsSubPageComponentFeaturesInnerImage2;
 }
 /**
  * 
@@ -3672,22 +3835,22 @@ export interface GlobalListResponseDataItemAttributes {
     'email'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalListResponseDataItemAttributes
      */
-    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalListResponseDataItemAttributes
      */
-    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalListResponseDataItemAttributes
      */
-    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -3898,22 +4061,22 @@ export interface GlobalLocalizationResponse {
     'email'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalLocalizationResponse
      */
-    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalLocalizationResponse
      */
-    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalLocalizationResponse
      */
-    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -4137,22 +4300,22 @@ export interface GlobalResponseDataObjectAttributes {
     'email'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalResponseDataObjectAttributes
      */
-    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalResponseDataObjectAttributes
      */
-    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalResponseDataObjectAttributes
      */
-    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -4278,22 +4441,22 @@ export interface GlobalResponseDataObjectLocalizedAttributes {
     'email'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalResponseDataObjectLocalizedAttributes
      */
-    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'newBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalResponseDataObjectLocalizedAttributes
      */
-    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'productBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof GlobalResponseDataObjectLocalizedAttributes
      */
-    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage;
+    'faqBanner'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {Date}
@@ -5234,16 +5397,16 @@ export interface SectionsSubPageComponentFeaturesInner {
     'imagePosition'?: SectionsSubPageComponentFeaturesInnerImagePositionEnum;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {AboutUsLocalizationResponseBanner}
      * @memberof SectionsSubPageComponentFeaturesInner
      */
-    'image'?: SectionsSubPageComponentFeaturesInnerImage;
+    'image'?: AboutUsLocalizationResponseBanner;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof SectionsSubPageComponentFeaturesInner
      */
-    'image2'?: SectionsSubPageComponentFeaturesInnerImage;
+    'image2'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -5287,165 +5450,165 @@ export type SectionsSubPageComponentFeaturesInnerImagePositionEnum = typeof Sect
 /**
  * 
  * @export
- * @interface SectionsSubPageComponentFeaturesInnerImage
+ * @interface SectionsSubPageComponentFeaturesInnerImage2
  */
-export interface SectionsSubPageComponentFeaturesInnerImage {
+export interface SectionsSubPageComponentFeaturesInnerImage2 {
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImageData}
-     * @memberof SectionsSubPageComponentFeaturesInnerImage
+     * @type {SectionsSubPageComponentFeaturesInnerImage2Data}
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2
      */
-    'data'?: SectionsSubPageComponentFeaturesInnerImageData;
+    'data'?: SectionsSubPageComponentFeaturesInnerImage2Data;
 }
 /**
  * 
  * @export
- * @interface SectionsSubPageComponentFeaturesInnerImageData
+ * @interface SectionsSubPageComponentFeaturesInnerImage2Data
  */
-export interface SectionsSubPageComponentFeaturesInnerImageData {
+export interface SectionsSubPageComponentFeaturesInnerImage2Data {
     /**
      * 
      * @type {number}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageData
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2Data
      */
     'id'?: number;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImageDataAttributes}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageData
+     * @type {SectionsSubPageComponentFeaturesInnerImage2DataAttributes}
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2Data
      */
-    'attributes'?: SectionsSubPageComponentFeaturesInnerImageDataAttributes;
+    'attributes'?: SectionsSubPageComponentFeaturesInnerImage2DataAttributes;
 }
 /**
  * 
  * @export
- * @interface SectionsSubPageComponentFeaturesInnerImageDataAttributes
+ * @interface SectionsSubPageComponentFeaturesInnerImage2DataAttributes
  */
-export interface SectionsSubPageComponentFeaturesInnerImageDataAttributes {
+export interface SectionsSubPageComponentFeaturesInnerImage2DataAttributes {
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'name'?: string;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'alternativeText'?: string;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'caption'?: string;
     /**
      * 
      * @type {number}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'width'?: number;
     /**
      * 
      * @type {number}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'height'?: number;
     /**
      * 
      * @type {any}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'formats'?: any;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'hash'?: string;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'ext'?: string;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'mime'?: string;
     /**
      * 
      * @type {number}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'size'?: number;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'url'?: string;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'previewUrl'?: string;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'provider'?: string;
     /**
      * 
      * @type {any}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'provider_metadata'?: any;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesRelated}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'related'?: AboutUsLocalizationResponseBannerDataAttributesRelated;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'folder'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
     /**
      * 
      * @type {string}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'folderPath'?: string;
     /**
      * 
      * @type {Date}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'createdAt'?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'updatedAt'?: Date;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'createdBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
     /**
      * 
      * @type {AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent}
-     * @memberof SectionsSubPageComponentFeaturesInnerImageDataAttributes
+     * @memberof SectionsSubPageComponentFeaturesInnerImage2DataAttributes
      */
     'updatedBy'?: AboutUsLocalizationResponseBannerDataAttributesFolderDataAttributesParent;
 }
@@ -5493,10 +5656,10 @@ export interface SharedSeoComponent {
     'metaViewport'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof SharedSeoComponent
      */
-    'metaImage'?: SectionsSubPageComponentFeaturesInnerImage;
+    'metaImage'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -5885,25 +6048,25 @@ export interface TestimonialListResponseDataItemAttributes {
      * @type {string}
      * @memberof TestimonialListResponseDataItemAttributes
      */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialListResponseDataItemAttributes
-     */
-    'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialListResponseDataItemAttributes
-     */
     'comment'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TestimonialListResponseDataItemAttributes
+     */
+    'datetime'?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonialListResponseDataItemAttributes
+     */
+    'name'?: string;
     /**
      * 
      * @type {AboutUsLocalizationResponseBanner}
      * @memberof TestimonialListResponseDataItemAttributes
      */
-    'avatar'?: AboutUsLocalizationResponseBanner;
+    'image'?: AboutUsLocalizationResponseBanner;
     /**
      * 
      * @type {Date}
@@ -5990,25 +6153,25 @@ export interface TestimonialLocalizationRequest {
      * @type {string}
      * @memberof TestimonialLocalizationRequest
      */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialLocalizationRequest
-     */
-    'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialLocalizationRequest
-     */
     'comment'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TestimonialLocalizationRequest
+     */
+    'datetime'?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonialLocalizationRequest
+     */
+    'name'?: string;
     /**
      * 
      * @type {AboutUsLocalizationRequestBanner}
      * @memberof TestimonialLocalizationRequest
      */
-    'avatar'?: AboutUsLocalizationRequestBanner;
+    'image'?: AboutUsLocalizationRequestBanner;
     /**
      * 
      * @type {string}
@@ -6033,25 +6196,25 @@ export interface TestimonialLocalizationResponse {
      * @type {string}
      * @memberof TestimonialLocalizationResponse
      */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialLocalizationResponse
-     */
-    'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialLocalizationResponse
-     */
     'comment'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TestimonialLocalizationResponse
+     */
+    'datetime'?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonialLocalizationResponse
+     */
+    'name'?: string;
     /**
      * 
      * @type {AboutUsLocalizationResponseBanner}
      * @memberof TestimonialLocalizationResponse
      */
-    'avatar'?: AboutUsLocalizationResponseBanner;
+    'image'?: AboutUsLocalizationResponseBanner;
     /**
      * 
      * @type {Date}
@@ -6119,25 +6282,25 @@ export interface TestimonialRequestData {
      * @type {string}
      * @memberof TestimonialRequestData
      */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialRequestData
-     */
-    'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialRequestData
-     */
     'comment'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TestimonialRequestData
+     */
+    'datetime'?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonialRequestData
+     */
+    'name'?: string;
     /**
      * 
      * @type {AboutUsLocalizationRequestBanner}
      * @memberof TestimonialRequestData
      */
-    'avatar'?: AboutUsLocalizationRequestBanner;
+    'image'?: AboutUsLocalizationRequestBanner;
     /**
      * 
      * @type {string}
@@ -6194,25 +6357,25 @@ export interface TestimonialResponseDataObjectAttributes {
      * @type {string}
      * @memberof TestimonialResponseDataObjectAttributes
      */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialResponseDataObjectAttributes
-     */
-    'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialResponseDataObjectAttributes
-     */
     'comment'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TestimonialResponseDataObjectAttributes
+     */
+    'datetime'?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonialResponseDataObjectAttributes
+     */
+    'name'?: string;
     /**
      * 
      * @type {AboutUsLocalizationResponseBanner}
      * @memberof TestimonialResponseDataObjectAttributes
      */
-    'avatar'?: AboutUsLocalizationResponseBanner;
+    'image'?: AboutUsLocalizationResponseBanner;
     /**
      * 
      * @type {Date}
@@ -6299,25 +6462,25 @@ export interface TestimonialResponseDataObjectLocalizedAttributes {
      * @type {string}
      * @memberof TestimonialResponseDataObjectLocalizedAttributes
      */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialResponseDataObjectLocalizedAttributes
-     */
-    'title'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof TestimonialResponseDataObjectLocalizedAttributes
-     */
     'comment'?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof TestimonialResponseDataObjectLocalizedAttributes
+     */
+    'datetime'?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonialResponseDataObjectLocalizedAttributes
+     */
+    'name'?: string;
     /**
      * 
      * @type {AboutUsLocalizationResponseBanner}
      * @memberof TestimonialResponseDataObjectLocalizedAttributes
      */
-    'avatar'?: AboutUsLocalizationResponseBanner;
+    'image'?: AboutUsLocalizationResponseBanner;
     /**
      * 
      * @type {Date}
@@ -6479,10 +6642,10 @@ export interface ThuocListResponseDataItemAttributes {
     'guide'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof ThuocListResponseDataItemAttributes
      */
-    'prescription'?: SectionsSubPageComponentFeaturesInnerImage;
+    'prescription'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -6617,10 +6780,10 @@ export interface ThuocListResponseDataItemAttributesProductTypeDataAttributes {
     'hot'?: boolean;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributes
      */
-    'icon'?: SectionsSubPageComponentFeaturesInnerImage;
+    'icon'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -6702,10 +6865,10 @@ export interface ThuocListResponseDataItemAttributesProductTypeDataAttributesMet
     'metaViewport'?: string;
     /**
      * 
-     * @type {SectionsSubPageComponentFeaturesInnerImage}
+     * @type {SectionsSubPageComponentFeaturesInnerImage2}
      * @memberof ThuocListResponseDataItemAttributesProductTypeDataAttributesMeta
      */
-    'metaImage'?: SectionsSubPageComponentFeaturesInnerImage;
+    'metaImage'?: SectionsSubPageComponentFeaturesInnerImage2;
     /**
      * 
      * @type {string}
@@ -11154,6 +11317,374 @@ export class BlogTypeApi extends BaseAPI {
      */
     public putBlogTypesId(requestParameters: BlogTypeApiPutBlogTypesIdRequest, options?: AxiosRequestConfig) {
         return BlogTypeApiFp(this.configuration).putBlogTypesId(requestParameters.id, requestParameters.blogTypeRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * ContactApi - axios parameter creator
+ * @export
+ */
+export const ContactApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteContact: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/contact`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {object} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getContact: async (sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: object, locale?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/contact`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (paginationWithCount !== undefined) {
+                localVarQueryParameter['pagination[withCount]'] = paginationWithCount;
+            }
+
+            if (paginationPage !== undefined) {
+                localVarQueryParameter['pagination[page]'] = paginationPage;
+            }
+
+            if (paginationPageSize !== undefined) {
+                localVarQueryParameter['pagination[pageSize]'] = paginationPageSize;
+            }
+
+            if (paginationStart !== undefined) {
+                localVarQueryParameter['pagination[start]'] = paginationStart;
+            }
+
+            if (paginationLimit !== undefined) {
+                localVarQueryParameter['pagination[limit]'] = paginationLimit;
+            }
+
+            if (fields !== undefined) {
+                localVarQueryParameter['fields'] = fields;
+            }
+
+            if (populate !== undefined) {
+                localVarQueryParameter['populate'] = populate;
+            }
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {ContactRequest} contactRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putContact: async (contactRequest: ContactRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'contactRequest' is not null or undefined
+            assertParamExists('putContact', 'contactRequest', contactRequest)
+            const localVarPath = `/contact`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(contactRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * ContactApi - functional programming interface
+ * @export
+ */
+export const ContactApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ContactApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteContact(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteContact(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {object} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getContact(sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: object, locale?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContactResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getContact(sort, paginationWithCount, paginationPage, paginationPageSize, paginationStart, paginationLimit, fields, populate, filters, locale, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @param {ContactRequest} contactRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async putContact(contactRequest: ContactRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContactResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.putContact(contactRequest, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * ContactApi - factory interface
+ * @export
+ */
+export const ContactApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ContactApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteContact(options?: AxiosRequestConfig): AxiosPromise<number> {
+            return localVarFp.deleteContact(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {ContactApiGetContactRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getContact(requestParameters: ContactApiGetContactRequest = {}, options?: AxiosRequestConfig): AxiosPromise<ContactResponse> {
+            return localVarFp.getContact(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {ContactApiPutContactRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putContact(requestParameters: ContactApiPutContactRequest, options?: AxiosRequestConfig): AxiosPromise<ContactResponse> {
+            return localVarFp.putContact(requestParameters.contactRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for getContact operation in ContactApi.
+ * @export
+ * @interface ContactApiGetContactRequest
+ */
+export interface ContactApiGetContactRequest {
+    /**
+     * Sort by attributes ascending (asc) or descending (desc)
+     * @type {string}
+     * @memberof ContactApiGetContact
+     */
+    readonly sort?: string
+
+    /**
+     * Return page/pageSize (default: true)
+     * @type {boolean}
+     * @memberof ContactApiGetContact
+     */
+    readonly paginationWithCount?: boolean
+
+    /**
+     * Page number (default: 0)
+     * @type {number}
+     * @memberof ContactApiGetContact
+     */
+    readonly paginationPage?: number
+
+    /**
+     * Page size (default: 25)
+     * @type {number}
+     * @memberof ContactApiGetContact
+     */
+    readonly paginationPageSize?: number
+
+    /**
+     * Offset value (default: 0)
+     * @type {number}
+     * @memberof ContactApiGetContact
+     */
+    readonly paginationStart?: number
+
+    /**
+     * Number of entities to return (default: 25)
+     * @type {number}
+     * @memberof ContactApiGetContact
+     */
+    readonly paginationLimit?: number
+
+    /**
+     * Fields to return (ex: title,author)
+     * @type {string}
+     * @memberof ContactApiGetContact
+     */
+    readonly fields?: string
+
+    /**
+     * Relations to return
+     * @type {string}
+     * @memberof ContactApiGetContact
+     */
+    readonly populate?: string
+
+    /**
+     * Filters to apply
+     * @type {object}
+     * @memberof ContactApiGetContact
+     */
+    readonly filters?: object
+
+    /**
+     * Locale to apply
+     * @type {string}
+     * @memberof ContactApiGetContact
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for putContact operation in ContactApi.
+ * @export
+ * @interface ContactApiPutContactRequest
+ */
+export interface ContactApiPutContactRequest {
+    /**
+     * 
+     * @type {ContactRequest}
+     * @memberof ContactApiPutContact
+     */
+    readonly contactRequest: ContactRequest
+}
+
+/**
+ * ContactApi - object-oriented interface
+ * @export
+ * @class ContactApi
+ * @extends {BaseAPI}
+ */
+export class ContactApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ContactApi
+     */
+    public deleteContact(options?: AxiosRequestConfig) {
+        return ContactApiFp(this.configuration).deleteContact(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {ContactApiGetContactRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ContactApi
+     */
+    public getContact(requestParameters: ContactApiGetContactRequest = {}, options?: AxiosRequestConfig) {
+        return ContactApiFp(this.configuration).getContact(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {ContactApiPutContactRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ContactApi
+     */
+    public putContact(requestParameters: ContactApiPutContactRequest, options?: AxiosRequestConfig) {
+        return ContactApiFp(this.configuration).putContact(requestParameters.contactRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

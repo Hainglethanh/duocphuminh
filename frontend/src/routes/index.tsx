@@ -3,7 +3,9 @@ import { Resource, component$, useResource$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type {
   BlogListResponse,
+  PartnerListResponse,
   ProductCategoryListResponse,
+  TestimonialListResponse,
   ThuocListResponse,
 } from "~/services";
 import {
@@ -11,6 +13,7 @@ import {
   HomePageApi,
   PartnerApi,
   ProductCategoryApi,
+  TestimonialApi,
   ThuocApi,
 } from "~/services";
 import _ from "lodash";
@@ -36,12 +39,56 @@ export const useGetBlogs = routeLoader$(async () => {
   });
   return response.data;
 });
-// export const useTestimonials = routeLoader$(async () => {
-//   const response = await new TestimonialApi().getTestimonials({
-//     populate: "deep,4",
-//   });
-//   return response.data;
-// });
+export const useTestimonials = routeLoader$(async () => {
+  const response = await new TestimonialApi().getTestimonials({
+    populate: "deep,5",
+  });
+  return response.data;
+});
+
+const Feedback = (props: { feedBack: TestimonialListResponse }) => {
+  const { feedBack } = props;
+  if (_.isEmpty(feedBack.data)) {
+    return null;
+  }
+  return (
+    <section id="phan-hoi" class="hm-social-news">
+      <div class="imp-container">
+        <div class="hm-ss-header hm-social-news__header">
+          <h3 class="font-02 color-02 text-uppercase">
+            Phản hồi của khách hàng
+          </h3>
+        </div>
+        <div class="hm-social-news__list slider-02">
+          {feedBack.data?.map((x) => {
+            return (
+              <div key={x.id} class="hm-social-news__item">
+                <div class="hm-social-news__item-img">
+                  <img
+                    class="w-100"
+                    src={getImageUrl(x.attributes?.image?.data?.attributes)}
+                    alt=""
+                  />
+                </div>
+                <div class="hm-social-news__content">
+                  <div class="hm-social-news__item-link" tabIndex={0}>
+                    {x.attributes?.name}
+                  </div>
+                  <div class="hm-social-news__desc font-01-1 mb-3">
+                    {x.attributes?.comment}
+                  </div>
+                  <div class="text-right font-01-2 color-04">
+                    {moment(x.attributes?.datetime).format("DD/MM/YYYY")}{" "}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const FeaturedProduct = (props: {
   productResource: ResourceReturn<ThuocListResponse>;
@@ -254,10 +301,48 @@ const Blogs = (props: { blogs: BlogListResponse }) => {
   );
 };
 
+const Partner = (props: { partners: PartnerListResponse }) => {
+  const { partners } = props;
+  if (_.isEmpty(partners.data)) {
+    return null;
+  }
+  return (
+    <section class="hm-partner imp-mb-01">
+      <div class="imp-container">
+        <div class="hm-partner__header">
+          <h3 class="hm-partner__header-title font-02 color-02 text-uppercase imp-mb-0">
+            Đối tác
+          </h3>
+        </div>
+        <div class="hm-partner__list slider-03">
+          {partners.data?.map((x) => {
+            return (
+              <div key={x.id} class="hm-partner__item">
+                <a
+                  href={!_.isEmpty(x.attributes?.url) ? x.attributes?.url : "#"}
+                >
+                  <div class="hm-partner__item-logo">
+                    <img
+                      class="w-100"
+                      src={getImageUrl(x.attributes?.logo?.data?.attributes)}
+                      alt={x.attributes?.name}
+                    />
+                  </div>
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default component$(() => {
   const data = useGetHomePage().value.data;
   const blogs = useGetBlogs();
   const partners = useGetPartners();
+  const feedBack = useTestimonials();
   const categoriesResource = useResource$(async () => {
     const response = await new ProductCategoryApi().getProductCategories({
       paginationPageSize: 9,
@@ -353,38 +438,8 @@ export default component$(() => {
         <ProductCategory categoriesResource={categoriesResource} />
         <FeaturedProduct productResource={productResource} />
         <Blogs blogs={blogs.value} />
-        <section class="hm-partner imp-mb-01">
-          <div class="imp-container">
-            <div class="hm-partner__header">
-              <h3 class="hm-partner__header-title font-02 color-02 text-uppercase imp-mb-0">
-                Đối tác
-              </h3>
-            </div>
-            <div class="hm-partner__list slider-03">
-              {partners.value.data?.map((x) => {
-                return (
-                  <div key={x.id} class="hm-partner__item">
-                    <a
-                      href={
-                        !_.isEmpty(x.attributes?.url) ? x.attributes?.url : "#"
-                      }
-                    >
-                      <div class="hm-partner__item-logo">
-                        <img
-                          class="w-100"
-                          src={getImageUrl(
-                            x.attributes?.logo?.data?.attributes
-                          )}
-                          alt={x.attributes?.name}
-                        />
-                      </div>
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        <Partner partners={partners.value} />
+        <Feedback feedBack={feedBack.value} />
       </main>
     </>
   );

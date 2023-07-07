@@ -15,6 +15,9 @@ module.exports = ({ env }) => ({
     enabled: true,
     resolve: "./src/plugins/strapi-plugin-icon-picker",
   },
+  "duplicate-button": {
+    enabled: true,
+  },
   upload: {
     config: {
       provider: "aws-s3",
@@ -54,6 +57,10 @@ module.exports = ({ env }) => ({
             "200"
           ].content["application/json"].schema["$ref"] =
             "#/components/schemas/AboutUsResponse";
+          generatedDocumentationDraft.paths["/contact"].get.responses[
+            "200"
+          ].content["application/json"].schema["$ref"] =
+            "#/components/schemas/ContactResponse";
           generatedDocumentationDraft.paths["/home-page"].get.responses[
             "200"
           ].content["application/json"].schema["$ref"] =
