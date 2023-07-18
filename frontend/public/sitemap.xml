@@ -1,201 +1,243 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!--	created with www.mysitemapgenerator.com	-->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 	<url>
 		<loc>https://duocphuminh.com/</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>1.0</priority>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/ve-duoc-phu-minh</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://duocphuminh.com/tin-tuc</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?type=suc-khoe</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/tin-tuc/song-khoe</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?type=thong-tin</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/tin-tuc/thong-tin</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?type=me-va-be</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/tin-tuc/me-va-be</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?type=chuyen-gia</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/tin-tuc/chuyen-gia</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://duocphuminh.com/dong-san-pham</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=thuoc-bo-mat</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/lien-he</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=tim-mach</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/tang-de-khang-an-ngon</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=he-ho-hap</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/san-pham/bao-nhi-khang-an-ngon-plus-kich-thich-an-ngon-cho-tre</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=khang-sinh-tiem</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=khang-sinh-uong</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=giam-dau-khang-viem-and-ha-sot</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=nao</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=khang-di-ung</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/san-pham/super-max-go-chai-30v</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.6</priority>
+		<loc>https://duocphuminh.com/san-pham/bao-nhi-khang-immuno</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>
-			https://duocphuminh.com/tin-tuc/here-is-no-one-who-loves-pain-itself-who-seeks-after-it-and-wants</loc>
-		<lastmod>2023-05-06T19:14:04+01:00</lastmod>
-		<priority>0.6</priority>
+			https://duocphuminh.com/tin-tuc/song-khoe/tre-em-bieng-an-do-thieu-kem-nguyen-nhan-va-cach-xu-ly</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/</loc>
-		<lastmod>2023-05-06T19:14:06+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/thuoc-bo-mat</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?page=1</loc>
-		<lastmod>2023-05-06T19:14:07+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/tim-mach</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?page=1&amp;type=suc-khoe</loc>
-		<lastmod>2023-05-06T19:14:07+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/he-ho-hap</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?page=1&amp;type=thong-tin</loc>
-		<lastmod>2023-05-06T19:14:08+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/khang-sinh-tiem</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?page=1&amp;type=me-va-be</loc>
-		<lastmod>2023-05-06T19:14:08+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/khang-sinh-uong</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/</loc>
-		<lastmod>2023-05-06T19:14:09+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/nao</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1</loc>
-		<lastmod>2023-05-06T19:14:09+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=thuoc-bo-mat</loc>
-		<lastmod>2023-05-06T19:14:10+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/tin-tuc/?page=1&amp;type=chuyen-gia</loc>
-		<lastmod>2023-05-06T19:14:10+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=tim-mach</loc>
-		<lastmod>2023-05-06T19:14:10+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=he-ho-hap</loc>
-		<lastmod>2023-05-06T19:14:10+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=khang-sinh-tiem</loc>
-		<lastmod>2023-05-06T19:14:11+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=khang-sinh-uong</loc>
-		<lastmod>2023-05-06T19:14:11+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=giam-dau-khang-viem-and-ha-sot</loc>
-		<lastmod>2023-05-06T19:14:11+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=nao</loc>
-		<lastmod>2023-05-06T19:14:11+01:00</lastmod>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://duocphuminh.com/san-pham/super-max-go-chai-30v/</loc>
-		<lastmod>2023-05-06T19:14:12+01:00</lastmod>
-		<priority>0.6</priority>
+		<loc>https://duocphuminh.com/dong-san-pham/khang-di-ung</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>
-			https://duocphuminh.com/tin-tuc/here-is-no-one-who-loves-pain-itself-who-seeks-after-it-and-wants/</loc>
-		<lastmod>2023-05-06T19:14:12+01:00</lastmod>
-		<priority>0.6</priority>
+			https://duocphuminh.com/tin-tuc/me-va-be/nguyen-nhan-va-cach-nhan-biet-tre-bieng-an-be-bieng-an</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?type=undefined</loc>
-		<lastmod>2023-05-06T19:14:12+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>https://duocphuminh.com/tin-tuc/me-va-be/bo-sung-lysine-cho-tre-bieng-an-nhu-the-nao</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/index.html</loc>
-		<lastmod>2023-05-06T19:14:12+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/siro-bo-sung-kem-cho-be-bnk-immuno-ho-tro-tre-an-ngon-tang-suc-de-khang</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/tin-tuc/tin-tuc.html</loc>
-		<lastmod>2023-05-06T19:14:12+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/co-nen-bo-sung-lysine-cho-be-nguon-thuc-pham-thuc-an-giau-lysine</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=khang-di-ung</loc>
-		<lastmod>2023-05-06T19:14:13+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>
+			https://duocphuminh.com/tin-tuc/thong-tin/bo-sung-kem-cho-tre-bieng-an-coi-xuong-dung-cach</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
 	<url>
-		<loc>https://duocphuminh.com/dong-san-pham/?page=1&amp;type=undefined</loc>
-		<lastmod>2023-05-06T19:14:17+01:00</lastmod>
-		<priority>0.8</priority>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/nen-bo-sung-kem-cho-be-tu-khi-nao-mua-bnk-immuno-chinh-hang-o-dau</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
 	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/thong-tin/11-thuc-pham-bo-sung-kem-cho-tre-bieng-an-tot-nhat-hien-nay</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/su-dot-pha-cua-bnk-immuno-trong-tang-suc-de-khang-cho-tre-bieng-an</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/thong-tin/lam-sao-de-biet-be-thieu-kem-va-cach-bo-sung-kem-cho-be-hieu-qua</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/tin-tuc/me-va-be/phuong-phap-xay-dung-thuc-don-cho-tre-bieng-an</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/thong-tin/siro-an-ngon-tang-can-cho-be-loai-nao-tot-nhat</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/thong-tin/top-10-siro-an-ngon-cho-be-tang-can-khoe-manh-2023</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/tai-sao-can-bo-sung-kem-cho-tre-khi-gap-tinh-trang-bieng-an-cham-lon</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/bi-quyet-khac-phuc-tre-bieng-an-cham-lon-va-tieu-hoa-kem-o-tre</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/18-cach-giup-be-an-ngon-mieng-het-bieng-an-va-tang-suc-de-khang</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/15-meo-giup-bo-me-cai-thien-tre-bieng-an-kich-thich-an-ngon-cho-be</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/tin-tuc/me-va-be/nguyen-nhan-tre-bieng-an-va-cach-khac-phuc</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/tre-bieng-an-nen-bo-sung-gi-giai-quyet-triet-de-be-bieng-an</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/tin-tuc/song-khoe/tre-bi-tao-bon-tieu-hoa-kem-thi-nen-an-gi</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/tin-tuc?page=1</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/tin-tuc?page=2</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://duocphuminh.com/dong-san-pham?page=1</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>
+			https://duocphuminh.com/tin-tuc/me-va-be/nguyen-nhan-tre-bieng-an-va-cach-khac-phuc-hieu-qua</loc>
+		<lastmod>2023-07-18T17:05:51+00:00</lastmod>
+		<priority>0.51</priority>
+	</url>
+
+
 </urlset>
